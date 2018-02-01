@@ -11,10 +11,11 @@
    ========================================================================== */
 
 html {
-    color: #222;
+    color: #454545;
     font-size: 1em;
     line-height: 1.4;
-    background-color: red; 
+    background-color: #fefefe;
+    font-family: 'Muli', sans-serif; 
 }
 
 /*
