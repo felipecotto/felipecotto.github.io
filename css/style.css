@@ -5,3 +5,9 @@ html,body {
     background-color: #fefefe;
     font-family: 'Muli', sans-serif; 
 }
+
+.flex-body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
