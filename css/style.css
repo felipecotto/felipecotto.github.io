@@ -1,3 +1,7 @@
+body {
+	background-color: #101010;
+}
+
 .main-bg {
 	background-image: url(../img/felipe-oliveira.jpg);
 	background-repeat: no-repeat;
@@ -27,7 +31,8 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    display: grid;
+	display: grid;
+	padding: 30px;
 }
 
 .social {
@@ -69,4 +74,43 @@
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	font-size: 40px;
+}
+
+.mobile {
+	display: none;
+	opacity: 0;
+}
+
+@media only screen and (max-width: 850px)  {
+	.grid-container {
+		display: block;
+		text-align: center;
+	}
+
+	.grid-item { 
+		height: auto;
+	}
+
+	.main-bg {
+		display: none;
+		opacity: 0;
+	}
+
+	.social li {
+		display: block;
+	}
+
+	.title {
+		font-size: 32px;
+	}
+
+	.sub-title {
+		font-size: 24px;
+	}
+
+	.mobile {
+		display: block;
+		opacity: 1;
+		margin-bottom: 30px;
+	}
 }
