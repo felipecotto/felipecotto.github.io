@@ -1,39 +1,51 @@
 body {
-	background-color: #101010;
+	background-color: #F6F6F6;
+	font-family: "Albert Sans", sans-serif;
 }
 
-.main-bg {
-	background-image: url(../img/felipe-oliveira.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	color: #e3e3e3;
-}
-
-.yellow {
-	color: #f8af2c;
-}
-
-.bg-black {
-	background-color: #101010;
-	color: #fff;
-}
-
-.grid-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.grid-item {
-	width: 100%;
+.flex {
+	display: flex;
     height: 100vh;
-    justify-content: center;
     align-items: center;
-    align-content: center;
-	display: grid;
-	padding: 30px;
 }
+
+a {
+	color: #4A5568; 
+}
+
+a:hover {
+	color: #4A5568; 
+}
+
+.links {
+	margin: 0; 
+	padding: 0; 
+	list-style: none;
+	border-bottom: solid 1px #111111;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+}
+
+.links li {
+ /* display: block; */
+}
+
+.links li a {
+    /* text-decoration: none; */
+	padding: 4px 0;
+	padding-right: 12px;
+	color: #4A5568 ;
+	/* display: block; */
+	font-size: 18px;
+	-webkit-transition: all 0.3s ease-out; 
+	transition: all 0.3s ease-out; 
+}
+
+.links li a:hover {
+
+}
+
+/* Social */
 
 .social {
 	margin: 0; 
@@ -42,38 +54,43 @@ body {
 }
 
 .social li {
- display: inline-block;
+ /* display: block; */
+ margin-bottom: 2px;
 }
 
 .social li a {
-	color: #fff;
-    text-decoration: none;
-	padding: 8px 0;
+    /* text-decoration: none; */
+	padding: 4px 0;
 	padding-right: 12px;
-	display: block;
+	color: #4A5568 ;
+	/* display: block; */
 	font-size: 18px;
-    letter-spacing: 0.5px;
-	font-weight: 400;
-	font-family: 'Lato', sans-serif;
-	border: solid 2px transparent;
 	-webkit-transition: all 0.3s ease-out; 
 	transition: all 0.3s ease-out; 
 }
 
 .social li a:hover {
-	color: #f8af2c;
-	border: solid 2px #f8af2c;
+
 }
 
+
 .title {
-	font-family: 'Arvo', serif;
-	font-size: 60px;
+	font-size: 40px;
+	color: #111111;
+	font-family: "Lora", serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-weight: 400;
 }
 
 .sub-title {
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
-	font-size: 40px;
+	font-family: 'Albert Sans', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	color: #111111; 
+	font-optical-sizing: auto;
+	font-style: normal;
+	margin-bottom: 32px;
 }
 
 .mobile {
@@ -96,7 +113,7 @@ body {
 		opacity: 0;
 	}
 
-	.social li {
+	.links li {
 		display: block;
 	}
 
@@ -105,7 +122,7 @@ body {
 	}
 
 	.sub-title {
-		font-size: 24px;
+		font-size: 20px;
 	}
 
 	.mobile {
