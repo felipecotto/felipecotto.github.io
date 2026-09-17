@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nathália Geraldo — Felipe Oliveira</title>
+<meta name="description" content="Case: portfólio da jornalista Nathália Geraldo — design e implementação por Felipe Oliveira, Senior Product Designer.">
+<meta property="og:title" content="Nathália Geraldo — Felipe Oliveira">
+<meta property="og:description" content="Case de produto: portfólio editorial para uma jornalista com 15 anos de carreira.">
+<meta property="og:type" content="article">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Playfair+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Geist', sans-serif;
+        background-color: #FAFAFA;
+        color: #111111;
+    }
+    ::selection {
+        background-color: #E5E5E5;
+        color: #000;
+    }
+    .editorial-text {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+    :focus-visible {
+        outline: 1px solid #111111;
+        outline-offset: 3px;
+    }
+
+    .hero-fade {
+        opacity: 0;
+        transform: translateY(6px);
+        animation: heroFade 0.9s ease forwards;
+    }
+    .hero-fade:nth-child(1) { animation-delay: 0.05s; }
+    .hero-fade:nth-child(2) { animation-delay: 0.3s; }
+    @keyframes heroFade {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ext-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: opacity 0.2s ease;
+    }
+    .ext-link:hover { opacity: 0.65; }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -3rem;
+        background: #111111;
+        color: #FAFAFA;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        z-index: 50;
+        transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+        top: 1rem;
+    }
+
+    /* recriação em miniatura da identidade visual do site da Nathália,
+       usada só dentro dos frames de preview abaixo */
+    .ng-font-serif { font-family: 'Playfair Display', serif; }
+    .ng-font-sans { font-family: 'DM Sans', sans-serif; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .hero-fade { opacity: 1; transform: none; animation: none; }
+    }
+</style>
+</head>
+<body class="editorial-text font-light antialiased">
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-arrow-outward" viewBox="0 0 16 16">
+        <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+    <symbol id="icon-arrow-back" viewBox="0 0 16 16">
+        <path d="M12 4L4 12M4 12H10.5M4 12V5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+</svg>
+
+<main id="conteudo" class="max-w-[864px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16">
+
+    <!-- Topo: voltar + contato -->
+    <div class="hero-fade flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 w-full">
+        <a href="index.html" class="ext-link text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
+            <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
+            felipe oliveira
+        </a>
+        <div class="flex items-center gap-6 flex-wrap">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link text-[16px] font-medium text-[#525252] hover:text-[#111]">
+                e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link text-[16px] font-medium text-[#525252] hover:text-[#111]">
+                linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+                <span class="sr-only">(abre em nova aba)</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Abertura do case -->
+    <section class="hero-fade flex flex-col gap-6 w-full" aria-label="Apresentação do projeto">
+        <div class="flex items-center gap-3 flex-wrap">
+            <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">side project · case de produto</p>
+        </div>
+
+        <h1 class="font-light text-[clamp(32px,6vw,48px)] leading-[1.1] tracking-[-0.96px] text-[#111] m-0">
+            Nathália Geraldo
+        </h1>
+
+        <p class="text-[18px] font-normal text-[#111] max-w-[620px]">
+            Portfólio para uma jornalista com 15 anos de carreira — organizado em torno da própria assinatura editorial dela.
+        </p>
+
+        <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-12 pt-2 text-[14px]">
+            <div class="flex flex-col gap-1">
+                <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">papel</p>
+                <p class="font-normal text-[#111] m-0">Design + implementação, ponta a ponta</p>
+            </div>
+            <div class="flex flex-col gap-1">
+                <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">ferramentas</p>
+                <p class="font-normal text-[#111] m-0">Figma, HTML/CSS/JS puro</p>
+            </div>
+            <div class="flex flex-col gap-1">
+                <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">foco</p>
+                <p class="font-normal text-[#111] m-0">Editorial, performance e SEO</p>
+            </div>
+        </div>
+
+        <a href="https://nathaliageraldo.com.br" target="_blank" rel="noopener noreferrer" class="ext-link w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 mt-2 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">
+            Visitar o site <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            <span class="sr-only">(abre em nova aba)</span>
+        </a>
+    </section>
+
+    <!-- Hero visual: retrato real do site -->
+    <section class="w-full" aria-label="Retrato de Nathália Geraldo, do site no ar">
+        <div class="w-full rounded-lg overflow-hidden bg-[#F2EFEA]">
+            <img
+                src="https://nathaliageraldo.com.br/assets/img/nathalia.png"
+                alt="Retrato de Nathália Geraldo, jornalista e editora em São Paulo — foto do site no ar"
+                class="w-full h-[280px] md:h-[420px] object-cover object-top"
+                loading="lazy"
+            >
+        </div>
+    </section>
+
+    <!-- Divisor -->
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
+    <!-- Contexto -->
+    <section class="flex flex-col gap-4 w-full" aria-labelledby="contexto-heading">
+        <h2 id="contexto-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Contexto</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>A Nathália é jornalista e editora com 15 anos de carreira — passou por veículos como UOL Universa e Marie Claire, foi coordenadora de podcasts na Obvious e tem uma trajetória forte em pautas sociais, culturais e de direitos das mulheres. O desafio não era falta de conteúdo: era o oposto. Reportagens especiais, perfis, roteiros de podcast, cortes para redes sociais, um artigo acadêmico de pós-graduação — um portfólio extenso e de naturezas bem diferentes, que precisava caber num site só sem virar um currículo denso ou uma lista cansativa de links.</p>
+            <p>O site também precisava sustentar duas coisas ao mesmo tempo: a autoridade profissional dela (formação, trajetória em veículos reconhecidos, competências) e a experiência de navegar pelo trabalho publicado — pra quem chega ali é RH avaliando currículo, é marca buscando uma redatora, ou é leitor curioso sobre uma matéria específica.</p>
+        </div>
+    </section>
+
+    <!-- Direção de design -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="direcao-heading">
+        <h2 id="direcao-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Direção de design</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>O princípio que guiou todas as decisões foi simples: na dúvida, o caminho mais limpo. Testamos uma versão com seções escuras e uma segunda versão com tipografia em escada (títulos de tamanhos crescentes, meio editorial de revista) — as duas foram descartadas por ficarem "desorganizadas" diante do resto do site. O que ficou foi uma composição serifada (Playfair Display para títulos, DM Sans para o corpo do texto), paleta quente e clara (bege #F2EFEA de fundo, terracota #9E7C5C como único acento), com uma textura de grain sutil e um cursor customizado — os únicos dois excessos permitidos, porque reforçam a assinatura autoral sem competir com o conteúdo.</p>
+            <p>Pro portfólio extenso, a solução foi um sistema de filtro por categoria — Todos, Reportagem, Podcast &amp; Roteiro, Redes &amp; Vídeo, Acadêmico — em vez de uma grade única e infinita. Cada card carrega o essencial pra escanear rápido: o veículo, o tipo de peça e uma linha de contexto, sem obrigar quem visita a abrir tudo pra entender do que se trata.</p>
+        </div>
+
+        <!-- Preview: recriação fiel do sistema de filtro do portfólio real -->
+        <div class="w-full rounded-lg overflow-hidden border border-[#e5e5e5]" style="background:#F2EFEA">
+            <div class="ng-font-sans px-6 py-8 md:px-10 md:py-10 flex flex-col gap-6">
+                <div>
+                    <p class="text-[11px] font-medium uppercase tracking-[2px]" style="color:#9E7C5C">Portfólio</p>
+                    <h3 class="ng-font-serif text-[28px] md:text-[34px] leading-tight" style="color:#2b2622">
+                        Projetos que <em>falam por si</em>
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-2 text-[12px] tracking-[1px] uppercase">
+                    <span class="px-4 py-2 rounded-full text-white" style="background:#2b2622">Todos</span>
+                    <span class="px-4 py-2 rounded-full" style="color:#6b6258">Reportagem</span>
+                    <span class="px-4 py-2 rounded-full" style="color:#6b6258">Podcast &amp; Roteiro</span>
+                    <span class="px-4 py-2 rounded-full" style="color:#6b6258">Redes &amp; Vídeo</span>
+                    <span class="px-4 py-2 rounded-full" style="color:#6b6258">Acadêmico</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <div class="rounded-md p-5 bg-white/60 border" style="border-color:#e2dcd3">
+                        <div class="flex items-center justify-between text-[11px] uppercase tracking-[1px] mb-2">
+                            <span style="color:#9E7C5C">Reportagem</span>
+                            <span style="color:#9c9488">UOL Universa</span>
+                        </div>
+                        <p class="ng-font-serif text-[19px]" style="color:#2b2622">Quase brancos, quase pretos</p>
+                    </div>
+                    <div class="rounded-md p-5 bg-white/60 border" style="border-color:#e2dcd3">
+                        <div class="flex items-center justify-between text-[11px] uppercase tracking-[1px] mb-2">
+                            <span style="color:#9E7C5C">Reportagem</span>
+                            <span style="color:#9c9488">Marie Claire</span>
+                        </div>
+                        <p class="ng-font-serif text-[19px]" style="color:#2b2622">Carol Trentini, capa da Marie Claire</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6 w-full items-start">
+            <div class="w-full md:flex-[1.4] rounded-xl overflow-hidden" style="border:1px solid #e2ded6; box-shadow: 0 12px 28px -12px rgba(40,32,20,0.18);">
+                <div class="flex items-center gap-1.5 px-3 py-2.5" style="background:#ECE8E1; border-bottom:1px solid #ddd6ca;">
+                    <span class="w-2.5 h-2.5 rounded-full" style="background:#e6a29a;"></span>
+                    <span class="w-2.5 h-2.5 rounded-full" style="background:#ecca8c;"></span>
+                    <span class="w-2.5 h-2.5 rounded-full" style="background:#a3c79d;"></span>
+                    <div class="flex-1 flex justify-center">
+                        <span class="ng-font-sans text-[11px] font-light px-3 py-0.5 rounded-full truncate" style="background:#FAFAF7; color:#8a8378;">nathaliageraldo.com.br</span>
+                    </div>
+                </div>
+                <div class="relative w-full" style="aspect-ratio: 4/3; background:#F2EFEA;">
+                    <img src="assets/case-nathalia/screenshot-site-desktop.jpg" alt="Screenshot real da home do site nathaliageraldo.com.br" class="absolute inset-0 w-full h-full object-cover" style="object-position: top;" loading="lazy">
+                </div>
+            </div>
+            <div class="w-full md:flex-1 flex justify-center">
+                <div class="relative" style="width: min(100%, 240px); aspect-ratio: 9/19.5; background:#171310; border-radius: 2.2rem; padding: 10px; box-shadow: 0 12px 28px -12px rgba(40,32,20,0.22);">
+                    <span class="absolute left-1/2 z-10" style="transform: translateX(-50%); top: 10px; width: 64px; height: 18px; border-radius: 9999px; background:#171310;"></span>
+                    <div class="relative w-full h-full overflow-hidden" style="border-radius: 1.6rem; background:#F2EFEA;">
+                        <img src="assets/case-nathalia/screenshot-site-mobile.jpg" alt="Screenshot real do site nathaliageraldo.com.br em viewport mobile" class="absolute inset-0 w-full h-full object-cover" style="object-position: top;" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementação e SEO -->
+    <section class="flex flex-col gap-4 w-full" aria-labelledby="implementacao-heading">
+        <h2 id="implementacao-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Implementação e SEO</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>O design nasceu no Figma e foi implementado em HTML, CSS e JavaScript puros — sem framework. Essa escolha teve dois motivos: o site é pequeno o bastante pra não precisar da complexidade extra, e um HTML enxuto carrega mais rápido, o que pesa direto no SEO de um site que existe justamente pra ser encontrado por quem procura o trabalho da Nathália.</p>
+            <p>Isso significou cuidar de metadados completos (title, description, Open Graph) pensados pra cada tipo de busca, hierarquia semântica de verdade (header, main, section, footer, headings em ordem), e interações leves em vanilla JS — o próprio filtro de categoria do portfólio e o scroll-reveal dos elementos via IntersectionObserver — sem dependência de bibliotecas pesadas de animação.</p>
+        </div>
+    </section>
+
+    <!-- Divisor -->
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
+    <!-- Resultado -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="resultado-heading">
+        <h2 id="resultado-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Resultado</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>O site está no ar em nathaliageraldo.com.br, reunindo mais de uma dezena de peças de portfólio organizadas em quatro categorias, a trajetória profissional completa e a formação acadêmica da Nathália — tudo isso sem abrir mão da leitura leve e editorial que guiou o projeto desde a primeira decisão de design.</p>
+        </div>
+
+        <div class="relative w-full rounded-lg overflow-hidden" style="aspect-ratio: 21/9; background:#F2EFEA; border:1px solid #e2ded6;">
+            <img src="assets/case-nathalia/screenshot-site-portfolio.jpg" alt="Screenshot real da secao de portfolio do site, mostrando os filtros de categoria e parte dos materiais publicados" class="absolute inset-0 w-full h-full object-cover" style="object-position: top;" loading="lazy">
+        </div>
+
+        <a href="https://nathaliageraldo.com.br" target="_blank" rel="noopener noreferrer" class="ext-link w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">
+            Visitar o site <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            <span class="sr-only">(abre em nova aba)</span>
+        </a>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full pt-4 border-t border-[#e5e5e5]">
+        <a href="index.html" class="ext-link text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
+            <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
+            voltar pro portfólio
+        </a>
+        <div class="flex items-center gap-6 flex-wrap">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link text-[18px] font-medium text-[#525252] hover:text-[#111]">
+                e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link text-[18px] font-medium text-[#525252] hover:text-[#111]">
+                linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+                <span class="sr-only">(abre em nova aba)</span>
+            </a>
+        </div>
+    </footer>
+
+</main>
+</body>
+</html>
