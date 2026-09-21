@@ -1,0 +1,1501 @@
+@charset "UTF-8";
+
+/* =====================================================================
+   CSS Zen Garden — V2 "Signal"
+   ---------------------------------------------------------------------
+   Same constraint as V1: the Garden's HTML is untouched, every element
+   is reached through the classes it already ships, and the only markup
+   addition is the theme switch.
+
+   V1 was quiet. This one is loud on purpose:
+   · the layout grid is drawn, not hidden — four columns, with
+     registration crosses where the rules meet;
+   · the title is set as a single word per line, at poster size;
+   · the hero is lit by particle streaks: one SVG, used as a mask, so
+     the same artwork carries either theme's colour;
+   · the sidebar stops being a sidebar and becomes the page's closing
+     index — which is where it already sits in the document order.
+
+   Contents
+   1. Tokens         5. Preamble        9. Accessibility layers
+   2. Base           6. Sections       10. Motion
+   3. Frame & bar    7. Colophon
+   4. Hero           8. Index (aside)
+   ===================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap");
+
+/* ---------------------------------------------------------------------
+   1. Tokens
+   --------------------------------------------------------------------- */
+
+:root {
+	color-scheme: light;
+
+	--font: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+	/* Type scale — rem, fluid where it matters. */
+	/* Seven sizes, each a clear step from its neighbours. The hero
+	   subtitle and the section titles share --fs-title on purpose: the
+	   hierarchy between them is carried by weight and colour, not by a
+	   near-identical second size. */
+	--fs-mega: clamp(3.75rem, 1rem + 13vw, 12.5rem);
+	--fs-num: clamp(3.5rem, 2rem + 4.2vw, 6.75rem);
+	--fs-statement: clamp(1.625rem, 1.05rem + 1.7vw, 2.625rem);
+	--fs-title: clamp(1.375rem, 1.1rem + 0.7vw, 1.875rem);
+	--fs-body: 1.0625rem;
+	--fs-ui: 0.9375rem;
+	--fs-label: 0.8125rem;
+	--fs-icon: 1.25rem;
+
+	/* Three weights, one job each:
+	   regular — text you read;
+	   medium  — headings, and anything you can click;
+	   bold    — display type: the title and the wordmarks. */
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-bold: 600;
+
+	--lh-display: 0.86;
+	--lh-heading: 1.18;
+	--lh-body: 1.7;
+	--lh-ui: 1.4;
+	--lh-control: 1;
+
+	--tracking-display: -0.055em;
+	--tracking-heading: -0.025em;
+	--tracking-label: 0.08em;
+
+	/* Motion */
+	--dur-fast: 0.15s;
+	--dur-slow: 0.35s;
+	--ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+	/* Hover system — three families, used everywhere:
+	   inline text links   → underline thickens (colour holds);
+	   navigation links    → accent colour + underline;
+	   primary buttons     → accent fill;
+	   outlined controls   → full-strength border + a tint of their own
+	                         text colour behind them. */
+	--hover-tint: color-mix(in srgb, currentColor 10%, transparent);
+
+	--measure: 64ch;
+
+	/* Frame — 12 columns, drawn as 4. The percentage resolves wherever the
+	   token is used: the grid container, the fixed bar, the background. */
+	--pad: clamp(1.25rem, 4vw, 3rem);
+	--frame: min(80rem, 100% - 2 * var(--pad));
+	--nav-top: 0.75rem;
+	--nav: 3.5rem;
+	--hero-h: 100vh;
+	--hero-h: max(44rem, 100svh);
+	--cross: 12px;
+	/* Where the streaks are allowed to be. The title is min-content wide,
+	   so its right edge is the frame's left edge plus the width of
+	   "Garden." — 3.2em in Inter Tight, 4.1em in the widest fallback.
+	   4.3 × --fs-mega covers both. Deliberately rem/vw only: inside a mask
+	   gradient on a pseudo-element, Chromium resolves em and ch against
+	   the parent's font, not the pseudo's, so a font-relative token here
+	   silently lands ~600px short. */
+	--title-end: calc((100% - var(--frame)) / 2 + 4.3 * var(--fs-mega));
+	--streak-safe: linear-gradient(to right, transparent var(--title-end), #000 calc(var(--title-end) + 5rem));
+
+	/* Colour — paper and ink */
+	--bg: #f2f1ec;
+	--text: #0b0c0f;
+	--muted: #3e4450;
+	--faint: #555c69;
+	--line: rgba(11, 12, 15, 0.085);
+	--line-strong: rgba(11, 12, 15, 0.34);
+	--dot: rgba(11, 12, 15, 0.09);
+	--ui-border: #767c88;
+	--stroke: #8a909b;
+
+	--accent: #3730a3;
+	--g1: #3730a3;
+	--g2: #0a6079;
+	--streak: linear-gradient(115deg, #3730a3 20%, #0a6079 80%);
+	--streak-opacity: 0.9;
+
+	--btn-bg: #0b0c0f;
+	--btn-text: #f2f1ec;
+	--btn2-bg: transparent;
+	--btn2-text: #0b0c0f;
+
+	--nav-bg: rgba(242, 241, 236, 0.74);
+	--card-bg: rgba(242, 241, 236, 0.92);
+
+	/* The closing index is an ink panel in both themes. */
+	--panel: #0b0c0f;
+	--panel-text: #eef0f4;
+	--panel-muted: #aab1bd;
+	--panel-faint: #8e96a4;
+	--panel-line: rgba(255, 255, 255, 0.1);
+	--panel-accent: #8ee6ea;
+	--panel-ui: #6b7280;
+	--panel-g1: #b7b3f5;
+	--panel-g2: #8ee6ea;
+	--panel-btn-bg: #eef0f4;
+	--panel-btn-text: #0b0c0f;
+
+	--switch-track: #e3e1da;
+	--switch-ring: #5b6170;
+	--switch-knob: #0b0c0f;
+}
+
+html.theme-dark {
+	color-scheme: dark;
+
+	--bg: #07080a;
+	--text: #f3f4f7;
+	--muted: #aeb4c0;
+	--faint: #8a92a1;
+	--line: rgba(255, 255, 255, 0.075);
+	--line-strong: rgba(255, 255, 255, 0.34);
+	--dot: rgba(255, 255, 255, 0.075);
+	--ui-border: #666d7b;
+	--stroke: #5d6472;
+
+	--accent: #8ee6ea;
+	--g1: #b7b3f5;
+	--g2: #8ee6ea;
+	--streak: linear-gradient(115deg, #dcdcff 15%, #ffffff 50%, #c8f6f8 85%);
+	--streak-opacity: 1;
+
+	--btn-bg: #f3f4f7;
+	--btn-text: #07080a;
+	--btn2-bg: #111318;
+	--btn2-text: #f3f4f7;
+
+	--nav-bg: rgba(7, 8, 10, 0.62);
+	--card-bg: rgba(7, 8, 10, 0.92);
+
+	--panel: #0e1015;
+	--panel-text: #f3f4f7;
+	--panel-muted: #aeb4c0;
+	--panel-faint: #8a92a1;
+	--panel-line: rgba(255, 255, 255, 0.08);
+	--panel-ui: #666d7b;
+	--panel-btn-bg: #f3f4f7;
+	--panel-btn-text: #07080a;
+
+	--switch-track: #1a1d24;
+	--switch-ring: #7d879a;
+	--switch-knob: #8ee6ea;
+}
+
+/* ---------------------------------------------------------------------
+   2. Base
+   The page grid lives on the root: four drawn columns aligned to the
+   frame, and a dot field under everything.
+   --------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	overflow-x: clip;
+	background-color: var(--bg);
+	background-image:
+		repeating-linear-gradient(to right, var(--line) 0 1px, transparent 1px 25%),
+		radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 1.5px);
+	background-size:
+		calc(var(--frame) + 1px) 100%,
+		24px 24px;
+	background-position:
+		center top,
+		center top;
+	background-repeat: no-repeat, repeat;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	color: var(--muted);
+	font-family: var(--font);
+	font-size: var(--fs-body);
+	line-height: var(--lh-body);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+::selection {
+	background: color-mix(in srgb, var(--accent) 30%, transparent);
+	color: var(--text);
+}
+
+a {
+	color: var(--accent);
+	font-weight: var(--fw-medium);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+	transition: color var(--dur-fast) var(--ease), text-decoration-thickness var(--dur-fast) var(--ease);
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
+abbr {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+	border-bottom: 1px dotted currentColor;
+	cursor: help;
+}
+
+a abbr,
+h1 abbr,
+h2 abbr,
+.summary abbr {
+	border-bottom: 0;
+	cursor: inherit;
+}
+
+p {
+	margin: 0;
+	text-wrap: pretty;
+}
+
+p + p {
+	margin-top: 0.85em;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	color: var(--text);
+	font-weight: var(--fw-medium);
+	text-wrap: balance;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Particle streaks. The artwork is an SVG whose filter turns five soft
+   ellipses into grain; it is used as a *mask*, so the fill underneath
+   (--streak) decides the colour and one file serves both themes. It sits
+   on the root's negative layer: above the page grid, below all content. */
+body::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	height: var(--hero-h);
+	pointer-events: none;
+	background: var(--streak);
+	opacity: var(--streak-opacity);
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3CradialGradient id='s'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.45' stop-color='%23fff' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cfilter id='p' filterUnits='userSpaceOnUse' x='0' y='0' width='1600' height='1000' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='1' seed='7' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 11 -5.4' result='d'/%3E%3CfeComposite in='d' in2='SourceGraphic' operator='in' result='dots'/%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='22' result='b'/%3E%3CfeComponentTransfer in='b' result='glow'%3E%3CfeFuncA type='linear' slope='.32'/%3E%3C/feComponentTransfer%3E%3CfeMerge%3E%3CfeMergeNode in='glow'/%3E%3CfeMergeNode in='dots'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url%28%23p%29'%3E%3Cellipse cx='1350' cy='120' rx='360' ry='50' fill='url%28%23s%29' opacity='1.0' transform='rotate%28-38 1350 120%29'/%3E%3Cellipse cx='1230' cy='300' rx='320' ry='40' fill='url%28%23s%29' opacity='0.9' transform='rotate%28-38 1230 300%29'/%3E%3Cellipse cx='1290' cy='560' rx='250' ry='46' fill='url%28%23s%29' opacity='1.0' transform='rotate%28-38 1290 560%29'/%3E%3Cellipse cx='1080' cy='820' rx='300' ry='48' fill='url%28%23s%29' opacity='0.9' transform='rotate%28-38 1080 820%29'/%3E%3Cellipse cx='1520' cy='460' rx='190' ry='22' fill='url%28%23s%29' opacity='0.55' transform='rotate%28-38 1520 460%29'/%3E%3C/g%3E%3C/svg%3E");
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3CradialGradient id='s'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.45' stop-color='%23fff' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cfilter id='p' filterUnits='userSpaceOnUse' x='0' y='0' width='1600' height='1000' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='1' seed='7' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 11 -5.4' result='d'/%3E%3CfeComposite in='d' in2='SourceGraphic' operator='in' result='dots'/%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='22' result='b'/%3E%3CfeComponentTransfer in='b' result='glow'%3E%3CfeFuncA type='linear' slope='.32'/%3E%3C/feComponentTransfer%3E%3CfeMerge%3E%3CfeMergeNode in='glow'/%3E%3CfeMergeNode in='dots'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url%28%23p%29'%3E%3Cellipse cx='1350' cy='120' rx='360' ry='50' fill='url%28%23s%29' opacity='1.0' transform='rotate%28-38 1350 120%29'/%3E%3Cellipse cx='1230' cy='300' rx='320' ry='40' fill='url%28%23s%29' opacity='0.9' transform='rotate%28-38 1230 300%29'/%3E%3Cellipse cx='1290' cy='560' rx='250' ry='46' fill='url%28%23s%29' opacity='1.0' transform='rotate%28-38 1290 560%29'/%3E%3Cellipse cx='1080' cy='820' rx='300' ry='48' fill='url%28%23s%29' opacity='0.9' transform='rotate%28-38 1080 820%29'/%3E%3Cellipse cx='1520' cy='460' rx='190' ry='22' fill='url%28%23s%29' opacity='0.55' transform='rotate%28-38 1520 460%29'/%3E%3C/g%3E%3C/svg%3E");
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	-webkit-mask-position: right top;
+	mask-position: right top;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+}
+
+/* Intersect the artwork with the safe zone. Guarded, because without
+   compositing the two mask layers would *add*, and the gradient layer
+   alone would reveal a solid block of colour. */
+@supports (mask-composite: intersect) or (-webkit-mask-composite: source-in) {
+	body::before {
+		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3CradialGradient id='s'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.45' stop-color='%23fff' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cfilter id='p' filterUnits='userSpaceOnUse' x='0' y='0' width='1600' height='1000' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='1' seed='7' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 11 -5.4' result='d'/%3E%3CfeComposite in='d' in2='SourceGraphic' operator='in' result='dots'/%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='22' result='b'/%3E%3CfeComponentTransfer in='b' result='glow'%3E%3CfeFuncA type='linear' slope='.32'/%3E%3C/feComponentTransfer%3E%3CfeMerge%3E%3CfeMergeNode in='glow'/%3E%3CfeMergeNode in='dots'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url%28%23p%29'%3E%3Cellipse cx='1350' cy='120' rx='360' ry='50' fill='url%28%23s%29' opacity='1.0' transform='rotate%28-38 1350 120%29'/%3E%3Cellipse cx='1230' cy='300' rx='320' ry='40' fill='url%28%23s%29' opacity='0.9' transform='rotate%28-38 1230 300%29'/%3E%3Cellipse cx='1290' cy='560' rx='250' ry='46' fill='url%28%23s%29' opacity='1.0' transform='rotate%28-38 1290 560%29'/%3E%3Cellipse cx='1080' cy='820' rx='300' ry='48' fill='url%28%23s%29' opacity='0.9' transform='rotate%28-38 1080 820%29'/%3E%3Cellipse cx='1520' cy='460' rx='190' ry='22' fill='url%28%23s%29' opacity='0.55' transform='rotate%28-38 1520 460%29'/%3E%3C/g%3E%3C/svg%3E"), var(--streak-safe);
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3CradialGradient id='s'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.45' stop-color='%23fff' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cfilter id='p' filterUnits='userSpaceOnUse' x='0' y='0' width='1600' height='1000' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='1' seed='7' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 11 -5.4' result='d'/%3E%3CfeComposite in='d' in2='SourceGraphic' operator='in' result='dots'/%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='22' result='b'/%3E%3CfeComponentTransfer in='b' result='glow'%3E%3CfeFuncA type='linear' slope='.32'/%3E%3C/feComponentTransfer%3E%3CfeMerge%3E%3CfeMergeNode in='glow'/%3E%3CfeMergeNode in='dots'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url%28%23p%29'%3E%3Cellipse cx='1350' cy='120' rx='360' ry='50' fill='url%28%23s%29' opacity='1.0' transform='rotate%28-38 1350 120%29'/%3E%3Cellipse cx='1230' cy='300' rx='320' ry='40' fill='url%28%23s%29' opacity='0.9' transform='rotate%28-38 1230 300%29'/%3E%3Cellipse cx='1290' cy='560' rx='250' ry='46' fill='url%28%23s%29' opacity='1.0' transform='rotate%28-38 1290 560%29'/%3E%3Cellipse cx='1080' cy='820' rx='300' ry='48' fill='url%28%23s%29' opacity='0.9' transform='rotate%28-38 1080 820%29'/%3E%3Cellipse cx='1520' cy='460' rx='190' ry='22' fill='url%28%23s%29' opacity='0.55' transform='rotate%28-38 1520 460%29'/%3E%3C/g%3E%3C/svg%3E"), var(--streak-safe);
+		-webkit-mask-size: cover, 100% 100%;
+		mask-size: cover, 100% 100%;
+		-webkit-mask-position: right top, 0 0;
+		mask-position: right top, 0 0;
+		-webkit-mask-composite: source-in;
+		mask-composite: intersect;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   3. Frame & bar
+   --------------------------------------------------------------------- */
+
+.page-wrapper {
+	position: relative;
+	display: grid;
+	grid-template-columns:
+		[full-start] minmax(var(--pad), 1fr)
+		[frame-start] repeat(12, minmax(0, calc(var(--frame) / 12)))
+		[frame-end] minmax(var(--pad), 1fr)
+		[full-end];
+}
+
+.intro {
+	display: contents;
+}
+
+/* A floating bar, inset to the frame. The wordmark is generated content,
+   hidden from assistive tech with the alt-text syntax because the h1
+   already says it; browsers without that syntax keep the first rule. */
+html::before {
+	content: "CSS Zen Garden";
+	content: "CSS Zen Garden" / "";
+	position: fixed;
+	top: var(--nav-top);
+	left: calc((100% - var(--frame)) / 2);
+	z-index: 40;
+	width: var(--frame);
+	height: var(--nav);
+	display: flex;
+	align-items: center;
+	padding-left: 2.75rem;
+	border: 1px solid var(--line-strong);
+	color: var(--text);
+	font-family: var(--font);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-control);
+	background:
+		linear-gradient(135deg, var(--g1), var(--g2)) no-repeat 1.125rem 50% / 0.875rem 0.875rem,
+		var(--nav-bg);
+	backdrop-filter: blur(18px) saturate(140%);
+	-webkit-backdrop-filter: blur(18px) saturate(140%);
+	pointer-events: none;
+}
+
+.theme-switch {
+	position: fixed;
+	top: var(--nav-top);
+	right: calc((100% - var(--frame)) / 2 + 0.75rem);
+	z-index: 60;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.25rem;
+	height: var(--nav);
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.theme-switch-track {
+	position: relative;
+	display: block;
+	width: 2.75rem;
+	height: 1.5rem;
+	background: var(--switch-track);
+	box-shadow: inset 0 0 0 1px var(--switch-ring);
+	transition: background-color var(--dur-fast) var(--ease);
+}
+
+.theme-switch-track::before {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 1.125rem;
+	height: 1.125rem;
+	background: var(--switch-knob);
+	transition: transform var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+
+html.theme-dark .theme-switch-track::before {
+	transform: translateX(1.25rem);
+}
+
+.theme-switch:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+}
+
+/* Hoverable (it is part of the button's hit area) and dismissible with
+   Escape via the script — WCAG 1.4.13. */
+.theme-switch-tooltip {
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	right: 0;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--line-strong);
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--mono);
+	font-size: var(--fs-label);
+	line-height: var(--lh-ui);
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-4px);
+	transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), visibility var(--dur-fast);
+}
+
+.theme-switch:hover .theme-switch-tooltip,
+.theme-switch:focus-visible .theme-switch-tooltip {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.theme-switch.is-tooltip-dismissed .theme-switch-tooltip {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* Design switcher — only on the showcase page (css-zen-garden/index.html),
+   declared like the theme switch. Same HTML, swapped stylesheet; each
+   design draws the control in its own language. Here: a square segmented
+   control in mono caps, current option inverted. Hover follows the
+   system above — "back" is a navigation link, the options are outlined
+   controls. */
+.design-switcher {
+	position: fixed;
+	top: var(--nav-top);
+	right: calc((100% - var(--frame)) / 2 + 0.75rem + 3.25rem + 0.5rem);
+	z-index: 60;
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	height: var(--nav);
+	font-family: var(--mono);
+	font-size: var(--fs-label);
+	letter-spacing: var(--tracking-label);
+	line-height: var(--lh-control);
+	text-transform: uppercase;
+}
+
+.switcher-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	min-height: 2rem;
+	color: var(--text);
+	font-weight: var(--fw-medium);
+	text-decoration: none;
+}
+
+.switcher-back:hover {
+	color: var(--accent);
+	text-decoration: underline;
+}
+
+.switcher-designs {
+	display: flex;
+	border: 1px solid var(--line-strong);
+}
+
+.switcher-designs li + li a {
+	border-left: 1px solid var(--line-strong);
+}
+
+.switcher-designs a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	min-height: 2rem;
+	padding: 0 0.75rem;
+	color: var(--text);
+	font-weight: var(--fw-medium);
+	text-decoration: none;
+	transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+.switcher-designs a:hover {
+	background: var(--hover-tint);
+}
+
+/* Styled from the ARIA state, so announcement and appearance can't drift. */
+.switcher-designs a[aria-current="true"] {
+	background: var(--text);
+	color: var(--bg);
+}
+
+.switcher-name {
+	font-weight: var(--fw-regular);
+}
+
+.switcher-status {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+/* Shared label style: mono, uppercase, a square bullet in the accent. */
+.preamble h3,
+.sidebar h3 {
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+	margin-bottom: 1.5rem;
+	color: var(--faint);
+	font-family: var(--mono);
+	font-size: var(--fs-label);
+	font-weight: var(--fw-medium);
+	line-height: var(--lh-ui);
+	letter-spacing: var(--tracking-label);
+	text-transform: uppercase;
+}
+
+.preamble h3::before,
+.sidebar h3::before {
+	content: "";
+	flex: none;
+	width: 0.5rem;
+	height: 0.5rem;
+	background: linear-gradient(135deg, var(--g1), var(--g2));
+}
+
+/* ---------------------------------------------------------------------
+   4. Hero
+   Poster type, bottom-aligned; the summary card sits in the same grid
+   row, in the right-hand columns, on the same baseline.
+   --------------------------------------------------------------------- */
+
+header {
+	position: relative;
+	grid-column: frame;
+	grid-row: 1;
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	grid-template-columns: subgrid;
+	align-content: end;
+	min-height: var(--hero-h);
+	padding: calc(var(--nav-top) + var(--nav) + 6rem) 0 5rem;
+}
+
+/* Registration line across the top of the hero, with crosses where it
+   meets the four drawn columns. ::before draws the crosses inside the
+   frame, ::after the full-bleed rule. */
+header::before,
+header::after,
+.preamble::before,
+.preamble::after {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+}
+
+header::before,
+.preamble::before {
+	top: calc(var(--cross) / -2);
+	left: calc(var(--cross) / -2);
+	width: calc(100% + var(--cross));
+	height: var(--cross);
+	background-image:
+		linear-gradient(to right, var(--line-strong) 0 var(--cross), transparent var(--cross)),
+		linear-gradient(to right, transparent 5px, var(--line-strong) 5px 6px, transparent 6px);
+	background-size:
+		calc((100% - var(--cross)) / 4) 1px,
+		calc((100% - var(--cross)) / 4) var(--cross);
+	background-position:
+		0 5px,
+		0 0;
+	background-repeat: repeat-x;
+}
+
+header::after,
+.preamble::after {
+	top: 0;
+	left: calc(50% - 50vw);
+	width: 100vw;
+	height: 1px;
+	background: var(--line);
+}
+
+header::before,
+header::after {
+	top: calc(var(--nav-top) + var(--nav) + 2.5rem);
+}
+
+header::before {
+	top: calc(var(--nav-top) + var(--nav) + 2.5rem - var(--cross) / 2);
+}
+
+/* One word per line: min-content width breaks at every space. The
+   trailing full stop is inside the gradient, so it takes the end colour. */
+h1 {
+	grid-column: 1 / 10;
+	width: min-content;
+	/* WCAG 1.4.12: if a user's own letter-spacing makes a word wider than
+	   the column, break it rather than clip it. In normal use min-content
+	   fits and this never triggers. */
+	max-width: 100%;
+	overflow-wrap: break-word;
+	color: var(--g1);
+	font-size: var(--fs-mega);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-display);
+	letter-spacing: var(--tracking-display);
+}
+
+h1::after {
+	content: ".";
+	content: "." / "";
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+	h1 {
+		padding-bottom: 0.06em;
+		background-image: linear-gradient(105deg, var(--g1) 12%, var(--g2) 88%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	h1::selection {
+		-webkit-text-fill-color: var(--text);
+	}
+}
+
+h2 {
+	grid-column: 1 / 7;
+	max-width: 28ch;
+	margin-top: 2.25rem;
+	color: var(--muted);
+	font-size: var(--fs-title);
+	font-weight: var(--fw-regular);
+	line-height: var(--lh-heading);
+	letter-spacing: var(--tracking-heading);
+}
+
+.summary {
+	position: relative;
+	z-index: 1;
+	grid-column: 10 / 14;
+	grid-row: 1;
+	align-self: end;
+	margin-bottom: 5rem;
+	padding: 1.75rem;
+	border: 1px solid var(--line-strong);
+	background: var(--card-bg);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+}
+
+.summary p:first-child {
+	color: var(--text);
+	font-size: var(--fs-body);
+	line-height: var(--lh-body);
+}
+
+/* "Download the example html file and css file" — the sentence stays
+   whole for assistive tech; visually the connecting words are set to
+   zero and a label is generated above two buttons. Spacing is done with
+   margins, not gap: the zero-size text runs are still anonymous flex
+   items, and gap would put space around each of them. */
+.summary p:last-child {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 1.5rem;
+	font-size: 0;
+}
+
+.summary p:last-child a {
+	margin: 0 0.625rem 0.625rem 0;
+}
+
+.summary p:last-child::before {
+	content: "Download the example";
+	content: "Download the example" / "";
+	flex-basis: 100%;
+	margin-bottom: 0.75rem;
+	color: var(--faint);
+	font-family: var(--mono);
+	font-size: var(--fs-label);
+	letter-spacing: var(--tracking-label);
+	line-height: var(--lh-ui);
+	text-transform: uppercase;
+}
+
+.summary p:last-child a,
+.design-archives a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	min-height: 2.75rem;
+	padding: 0.625rem 1rem;
+	border: 1px solid transparent;
+	font-family: var(--font);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-medium);
+	line-height: var(--lh-control);
+	text-decoration: none;
+	transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+
+.summary p:last-child a:first-child {
+	background: var(--btn-bg);
+	color: var(--btn-text);
+}
+
+.summary p:last-child a:first-child:hover {
+	background: var(--accent);
+	color: var(--bg);
+}
+
+.summary p:last-child a:last-child {
+	border-color: var(--ui-border);
+	background: var(--btn2-bg);
+	color: var(--btn2-text);
+}
+
+.summary p:last-child a:last-child::after {
+	content: "↗";
+	content: "↗" / "";
+	display: inline-grid;
+	place-items: center;
+	width: 1.375rem;
+	height: 1.375rem;
+	background: var(--btn2-text);
+	color: var(--bg);
+	font-size: var(--fs-label);
+}
+
+.summary p:last-child a:last-child:hover {
+	border-color: currentColor;
+	background: var(--hover-tint);
+}
+
+/* ---------------------------------------------------------------------
+   5. Preamble — one large statement, two columns of support
+   --------------------------------------------------------------------- */
+
+.preamble {
+	position: relative;
+	grid-column: frame;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	grid-template-columns: subgrid;
+	align-items: start;
+	row-gap: 3rem;
+	padding: 8rem 0;
+}
+
+.preamble h3 {
+	grid-column: 1 / 4;
+	grid-row: 1;
+	margin: 0.75rem 0 0;
+}
+
+.preamble p:first-of-type {
+	grid-column: 4 / 13;
+	grid-row: 1;
+	color: var(--text);
+	font-size: var(--fs-statement);
+	font-weight: var(--fw-regular);
+	line-height: var(--lh-heading);
+	letter-spacing: var(--tracking-heading);
+}
+
+.preamble p + p {
+	margin-top: 0;
+}
+
+.preamble p:nth-of-type(2) {
+	grid-column: 4 / 8;
+	grid-row: 2;
+}
+
+.preamble p:nth-of-type(3) {
+	grid-column: 9 / 13;
+	grid-row: 2;
+}
+
+/* ---------------------------------------------------------------------
+   6. Sections — outlined numeral and title on the left, pinned while
+   the text on the right scrolls past
+   --------------------------------------------------------------------- */
+
+.main {
+	grid-column: frame;
+	grid-row: 3;
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	grid-template-columns: subgrid;
+	counter-reset: section;
+}
+
+.explanation,
+.participation,
+.benefits,
+.requirements {
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	grid-template-columns: subgrid;
+	align-items: start;
+	padding: 6rem 0;
+	border-top: 1px solid var(--line);
+	counter-increment: section;
+}
+
+.requirements {
+	padding-bottom: 0;
+}
+
+.main h3 {
+	grid-column: 1 / 5;
+	grid-row: 1 / span 6;
+	position: sticky;
+	top: calc(var(--nav-top) + var(--nav) + 2rem);
+	padding-right: 2rem;
+	color: var(--text);
+	font-size: var(--fs-title);
+	line-height: var(--lh-heading);
+	letter-spacing: var(--tracking-heading);
+}
+
+/* Decorative numeral: hidden from assistive tech (alt text ""), and
+   outlined only where text-stroke exists — otherwise it stays solid. */
+.main h3::before {
+	content: counter(section, decimal-leading-zero);
+	content: counter(section, decimal-leading-zero) / "";
+	display: block;
+	margin-bottom: 1.25rem;
+	color: var(--stroke);
+	font-size: var(--fs-num);
+	font-weight: var(--fw-medium);
+	line-height: var(--lh-display);
+	letter-spacing: var(--tracking-display);
+}
+
+@supports (-webkit-text-stroke: 1px black) {
+	.main h3::before {
+		color: transparent;
+		-webkit-text-stroke: 1px var(--stroke);
+	}
+}
+
+.main p {
+	grid-column: 5 / 12;
+	max-width: var(--measure);
+}
+
+/* ---------------------------------------------------------------------
+   7. Colophon — the credit line and the validator chips
+   --------------------------------------------------------------------- */
+
+.requirements p:last-child {
+	grid-column: 1 / -1;
+	max-width: none;
+	margin-top: 6rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--line);
+	color: var(--muted);
+	font-family: var(--mono);
+	font-size: var(--fs-label);
+	line-height: var(--lh-body);
+}
+
+.requirements p:last-child a {
+	color: var(--text);
+}
+
+footer {
+	grid-column: 1 / -1;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 1.5rem 0 6rem;
+}
+
+footer a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3.25rem;
+	min-height: 2.75rem;
+	padding: 0.5rem 0.875rem;
+	border: 1px solid var(--ui-border);
+	color: var(--text);
+	font-family: var(--mono);
+	font-size: var(--fs-label);
+	font-weight: var(--fw-medium);
+	letter-spacing: var(--tracking-label);
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+footer a:hover {
+	border-color: currentColor;
+	background: var(--hover-tint);
+}
+
+/* ---------------------------------------------------------------------
+   8. Index — the aside, rebuilt as the closing panel
+   The Garden's markup puts the design list *after* everything else, so
+   this is where it lands: visual order, reading order and focus order
+   stay the same thing.
+   --------------------------------------------------------------------- */
+
+.sidebar {
+	grid-column: full;
+	grid-row: 4;
+	display: grid;
+	grid-template-columns:
+		[full-start] minmax(var(--pad), 1fr)
+		[frame-start] minmax(0, var(--frame))
+		[frame-end] minmax(var(--pad), 1fr)
+		[full-end];
+	grid-template-columns: subgrid;
+	overflow: clip;
+	background: var(--panel);
+	color: var(--panel-muted);
+	counter-reset: design;
+}
+
+.sidebar .wrapper {
+	grid-column: frame;
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	grid-template-columns: subgrid;
+	row-gap: 5rem;
+	padding: 7rem 0 4rem;
+}
+
+.sidebar h3 {
+	color: var(--panel-faint);
+}
+
+.sidebar h3::before {
+	background: linear-gradient(135deg, var(--panel-g1), var(--panel-g2));
+}
+
+.sidebar a:focus-visible {
+	outline-color: var(--panel-accent);
+}
+
+.design-selection {
+	grid-column: 1 / -1;
+}
+
+/* Eight designs as a four-up spec row, each with its index. */
+.design-selection ul {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.design-selection li {
+	position: relative;
+	padding: 1.25rem 1.5rem 2.5rem 0;
+	border-top: 1px solid var(--panel-line);
+	font-size: 0;
+	counter-increment: design;
+}
+
+.design-selection li::before {
+	content: counter(design, decimal-leading-zero);
+	content: counter(design, decimal-leading-zero) / "";
+	display: block;
+	margin-bottom: 1.5rem;
+	color: var(--panel-faint);
+	font-family: var(--mono);
+	font-size: var(--fs-label);
+	letter-spacing: var(--tracking-label);
+	line-height: var(--lh-control);
+}
+
+/* A rule that fills in along the top edge on hover or focus. */
+.design-selection li::after {
+	content: "";
+	position: absolute;
+	top: -1px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: linear-gradient(90deg, var(--panel-g1), var(--panel-g2));
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform var(--dur-slow) var(--ease);
+}
+
+.design-selection li:hover::after,
+.design-selection li:focus-within::after {
+	transform: scaleX(1);
+}
+
+.design-selection a {
+	text-decoration: none;
+}
+
+.design-selection .design-name {
+	display: block;
+	color: var(--panel-text);
+	font-size: var(--fs-title);
+	font-weight: var(--fw-medium);
+	line-height: var(--lh-heading);
+	letter-spacing: var(--tracking-heading);
+}
+
+.design-selection .designer-name {
+	display: inline-block;
+	margin-top: 0.625rem;
+	color: var(--panel-faint);
+	font-family: var(--mono);
+	font-size: var(--fs-label);
+	font-weight: var(--fw-regular);
+	line-height: var(--lh-ui);
+}
+
+.design-selection li:hover .design-name,
+.design-selection .design-name:focus-visible {
+	color: var(--panel-accent);
+}
+
+.design-selection .designer-name:hover {
+	color: var(--panel-accent);
+	text-decoration: underline;
+}
+
+.design-archives {
+	grid-column: 1 / 7;
+}
+
+.design-archives ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.625rem;
+}
+
+.design-archives .next a {
+	border-color: var(--panel-ui);
+	color: var(--panel-text);
+}
+
+.design-archives .next a:hover {
+	border-color: currentColor;
+	background: var(--hover-tint);
+}
+
+.design-archives .viewall a {
+	background: var(--panel-btn-bg);
+	color: var(--panel-btn-text);
+}
+
+.design-archives .viewall a:hover {
+	background: var(--panel-accent);
+}
+
+.indicator {
+	font-size: var(--fs-icon);
+	line-height: var(--lh-control);
+}
+
+.zen-resources {
+	grid-column: 7 / 13;
+}
+
+.zen-resources ul {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 2rem;
+}
+
+/* Block, not flex: flex would turn the text run and the <abbr> into
+   separate items and swallow the space between them. */
+.zen-resources a {
+	display: block;
+	padding: 0.75rem 0;
+	border-bottom: 1px solid var(--panel-line);
+	color: var(--panel-text);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-medium);
+	text-decoration: none;
+}
+
+.zen-resources a:hover {
+	color: var(--panel-accent);
+	text-decoration: underline;
+}
+
+/* The closing wordmark: decoration, so hidden from assistive tech and
+   exempt from contrast (WCAG 1.4.3 exception for incidental text). Set
+   to run off the bottom of the panel. */
+.sidebar::after {
+	content: "Zen Garden";
+	content: "Zen Garden" / "";
+	grid-column: frame;
+	margin-bottom: -0.2em;
+	color: var(--panel-g1);
+	font-size: min(14.5vw, 13rem);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-display);
+	letter-spacing: var(--tracking-display);
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+	.sidebar::after {
+		background-image: linear-gradient(105deg, var(--panel-g1) 10%, var(--panel-g2) 90%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.extra1,
+.extra2,
+.extra3,
+.extra4,
+.extra5,
+.extra6 {
+	display: none;
+}
+
+/* ---------------------------------------------------------------------
+   Responsive
+   --------------------------------------------------------------------- */
+
+@media (max-width: 69.9375rem) {
+	:root {
+		--hero-h: 40rem;
+		/* Single column: the title can take the full measure. Sized so
+		   "Garden." fits a 320px screen even in the wider fallback face. */
+		--fs-mega: clamp(3.75rem, 1rem + 16vw, 7rem);
+	}
+
+	.page-wrapper {
+		grid-template-columns:
+			[full-start] var(--pad)
+			[frame-start] repeat(4, minmax(0, 1fr))
+			[frame-end] var(--pad)
+			[full-end];
+	}
+
+	header,
+	.summary,
+	.preamble,
+	.main,
+	.sidebar {
+		grid-row: auto;
+	}
+
+	header {
+		min-height: 0;
+		padding-bottom: 2.5rem;
+	}
+
+	h1,
+	h2,
+	.preamble h3,
+	.preamble p:first-of-type,
+	.preamble p:nth-of-type(2),
+	.preamble p:nth-of-type(3),
+	.main h3,
+	.main p,
+	.design-archives,
+	.zen-resources {
+		grid-column: 1 / -1;
+		grid-row: auto;
+	}
+
+	.summary {
+		grid-column: frame;
+		margin-bottom: 0;
+	}
+
+	.preamble {
+		row-gap: 1.5rem;
+		padding: 5rem 0;
+	}
+
+	.preamble h3 {
+		margin: 0;
+	}
+
+	.explanation,
+	.participation,
+	.benefits,
+	.requirements {
+		padding: 4rem 0;
+	}
+
+	.requirements {
+		padding-bottom: 0;
+	}
+
+	.main h3 {
+		position: static;
+		margin-bottom: 1.5rem;
+		padding-right: 0;
+	}
+
+	.requirements p:last-child {
+		margin-top: 4rem;
+	}
+
+	.design-selection ul {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.sidebar .wrapper {
+		row-gap: 3.5rem;
+		padding-top: 5rem;
+	}
+
+	/* On a single column the title spans the full width, so the streaks
+	   move up into the band behind the glass bar and stop, faded, before
+	   the title begins. */
+	:root {
+		--streak-safe: linear-gradient(to bottom, #000 35%, transparent 100%);
+	}
+
+	body::before {
+		height: calc(var(--nav-top) + var(--nav) + 5rem);
+		-webkit-mask-size: 170vw auto;
+		mask-size: 170vw auto;
+	}
+
+	@supports (mask-composite: intersect) or (-webkit-mask-composite: source-in) {
+		body::before {
+			-webkit-mask-size: 170vw auto, 100% 100%;
+			mask-size: 170vw auto, 100% 100%;
+		}
+	}
+}
+
+/* Mono caps run wide, so the switcher sheds text in steps as the bar
+   narrows — names first, then the wordmark, then the word "Portfólio".
+   Everything shed stays available to screen readers. */
+@media (max-width: 47.9375rem) {
+	.switcher-name {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+}
+
+@media (max-width: 39.9375rem) {
+	html:has(.design-switcher)::before {
+		content: "";
+	}
+
+	.design-switcher {
+		gap: 0.75rem;
+		right: calc((100% - var(--frame)) / 2 + 0.75rem + 3.25rem + 0.25rem);
+	}
+}
+
+@media (max-width: 22.4375rem) {
+	.switcher-back-label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+
+	.switcher-back {
+		min-width: 2rem;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 30rem) {
+	.design-selection ul,
+	.zen-resources ul {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.summary {
+		padding: 1.25rem;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   9. Accessibility layers
+   --------------------------------------------------------------------- */
+
+@media (forced-colors: active) {
+	html {
+		background-image: none;
+	}
+
+	body::before,
+	header::before,
+	header::after,
+	.preamble::before,
+	.preamble::after,
+	.design-selection li::after {
+		display: none;
+	}
+
+	/* background-clip: text has no background to clip in this mode, so
+	   gradient text would be invisible — restore a real fill. */
+	h1,
+	.sidebar::after {
+		background: none;
+		-webkit-text-fill-color: CanvasText;
+		color: CanvasText;
+	}
+
+	html::before {
+		forced-color-adjust: none;
+		background: Canvas;
+		color: CanvasText;
+		border-color: CanvasText;
+	}
+
+	.summary {
+		border-color: CanvasText;
+	}
+
+	/* Selectors match the specificity of the normal button rules, so the
+	   user's system colours actually win. */
+	.summary p:last-child a:first-child,
+	.summary p:last-child a:last-child,
+	.design-archives .next a,
+	.design-archives .viewall a,
+	footer a {
+		border: 1px solid ButtonText;
+		background: ButtonFace;
+		color: ButtonText;
+	}
+
+	.summary p:last-child a:last-child::after {
+		background: ButtonText;
+		color: ButtonFace;
+	}
+
+	.switcher-designs,
+	.switcher-designs li + li a {
+		border-color: ButtonText;
+	}
+
+	.switcher-designs a[aria-current="true"] {
+		forced-color-adjust: none;
+		background: Highlight;
+		color: HighlightText;
+	}
+
+	.theme-switch-track {
+		border: 1px solid ButtonText;
+		background: ButtonFace;
+		box-shadow: none;
+	}
+
+	.theme-switch-track::before {
+		background: ButtonText;
+	}
+
+	html.theme-dark .theme-switch-track::before {
+		background: Highlight;
+	}
+
+	a:focus-visible,
+	.theme-switch:focus-visible {
+		outline: 3px solid Highlight;
+	}
+}
+
+@media print {
+	html,
+	body {
+		background: #fff;
+		color: #000;
+	}
+
+	html::before,
+	body::before,
+	header::before,
+	header::after,
+	.preamble::before,
+	.preamble::after,
+	.theme-switch,
+	.design-switcher,
+	.sidebar::after {
+		display: none;
+	}
+
+	.page-wrapper {
+		display: block;
+	}
+
+	header {
+		min-height: 0;
+		padding: 0 0 1rem;
+	}
+
+	h1,
+	.sidebar {
+		background: none;
+		-webkit-text-fill-color: #000;
+		color: #000;
+	}
+
+	.summary {
+		border: 0;
+		background: none;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   10. Motion
+   One-shot entrance, under two seconds, only for people who have not
+   asked for less motion. Nothing loops (WCAG 2.2.2).
+   --------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+	body::before {
+		animation: streaks-in 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	}
+
+	h1 {
+		animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	}
+
+	h2 {
+		animation: rise 0.9s 0.12s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	}
+
+	.summary {
+		animation: rise 0.9s 0.24s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	}
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(1.5rem);
+		}
+	}
+
+	@keyframes streaks-in {
+		from {
+			opacity: 0;
+			transform: translate(-2%, 3%);
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+		animation: none !important;
+	}
+}

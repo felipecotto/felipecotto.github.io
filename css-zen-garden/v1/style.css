@@ -1,0 +1,1249 @@
+@charset "UTF-8";
+
+/* =====================================================================
+   CSS Zen Garden — "Quiet Light"
+   ---------------------------------------------------------------------
+   Constraint: the HTML is fixed. Every element below is styled through
+   the classes the Garden already ships. The only markup addition is the
+   theme switch in the header.
+
+   View source is a feature, not a bug — so this file is written to be
+   read: tokens first, then structure, then components, then the
+   responsive and accessibility layers.
+   ===================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap");
+
+/* ---------------------------------------------------------------------
+   1. Tokens
+   Two layers: primitives (scale, measure) and semantic roles (text,
+   surface, accent). The dark theme only re-binds the semantic layer.
+   --------------------------------------------------------------------- */
+
+:root {
+	color-scheme: light;
+
+	/* Typography — rem-based so user font-size settings are respected. */
+	--font: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--fs-display: clamp(2.5rem, 1.55rem + 3.4vw, 3.75rem);
+	--fs-title: clamp(1.125rem, 1.06rem + 0.26vw, 1.25rem);
+	--fs-lead: 1.125rem;
+	--fs-body: 1.0625rem;
+	--fs-ui: 0.875rem;
+	--fs-meta: 0.8125rem;
+
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-semibold: 600;
+
+	--lh-display: 1.06;
+	--lh-title: 1.5;
+	--lh-body: 1.7;
+	--lh-ui: 1.45;
+
+	--tracking-display: -0.035em;
+	--tracking-label: 0.09em;
+
+	/* Measure — the grid can be wide, the prose should not be. */
+	--measure: 66ch;
+
+	/* Layout */
+	--main: 45rem;
+	--sidebar: 17rem;
+	--gutter: 4rem;
+	--col-gap: 3.25rem;
+	--frame: calc(var(--main) + var(--gutter) + var(--sidebar));
+	--edge: max(2rem, calc((100vw - var(--frame)) / 2));
+	--nav: 3.5rem;
+	/* How far the main column's centre sits from the viewport's centre —
+	   used to bleed full-width decoration without overscrolling. */
+	--bleed-offset: calc((var(--sidebar) + var(--gutter)) / 2);
+	--hero-h: 42rem;
+	--hero-h: clamp(30rem, 70svh, 46rem);
+	/* Height reserved for the colophon band plus its fade — see .sidebar. */
+	--colophon-clearance: 28rem;
+
+	/* Colour — semantic roles */
+	--surface: #ffffff;
+	--hero: #f4f7fd;
+	--text: #0c0c0c;
+	--muted: #3d4559;
+	--faint: #4a5568;
+	--border: #e3e8f1;
+
+	--accent: #0047cc;
+	--accent-hover: #0039a8;
+	--accent-solid: #0047cc;
+	--on-accent: #ffffff;
+
+	--nav-bg: rgba(255, 255, 255, 0.72);
+	--nav-line: rgba(12, 12, 12, 0.08);
+
+	/* Hero light source — derived from --accent further down. */
+	--glow-key: rgba(0, 71, 204, 0.20);
+	--glow-fill: rgba(0, 71, 204, 0.08);
+
+	/* Colophon band — an inverted panel, deep blue rather than black so
+	   it stays inside the same hue family as the hero. */
+	--ink: #0a0f1c;
+	--ink-text: #9aa3b5;
+	--ink-link: #c8d0de;
+	--ink-hover: #ffffff;
+	--ink-border: #7f8a9c;
+	--ink-edge: rgba(255, 255, 255, 0.16);
+	--ink-glow: rgba(120, 160, 255, 0.11);
+
+	/* Theme switch */
+	--switch-track: #dfe4ed;
+	--switch-ring: #5b6375;
+	--switch-knob: #ffffff;
+}
+
+html.theme-dark {
+	color-scheme: dark;
+
+	--surface: #07090e;
+	--hero: #0a1018;
+	--text: #eef2f8;
+	--muted: #b4bccb;
+	--faint: #9aa4b6;
+	--border: #1e2533;
+
+	--accent: #9cc0ff;
+	--accent-hover: #c3d8ff;
+	--accent-solid: #3d7dff;
+	--on-accent: #05070b;
+
+	--nav-bg: rgba(7, 9, 14, 0.68);
+	--nav-line: rgba(238, 242, 248, 0.09);
+
+	--glow-key: rgba(156, 192, 255, 0.20);
+	--glow-fill: rgba(156, 192, 255, 0.07);
+
+	--ink: #161e2c;
+	--ink-text: #aab3c2;
+	--ink-link: #cfd8e6;
+	--ink-hover: #eef2f8;
+	--ink-border: #6f7a8c;
+	--ink-edge: rgba(238, 242, 248, 0.13);
+	--ink-glow: rgba(156, 192, 255, 0.09);
+
+	--switch-track: #2a3445;
+	--switch-ring: #7d879a;
+	--switch-knob: #c8d0de;
+}
+
+/* Progressive enhancement: tie the hero light to the accent token, so
+   re-theming the accent re-themes the atmosphere. Falls back to the
+   static rgba() values above where color-mix() is unsupported. */
+@supports (color: color-mix(in oklab, red, blue)) {
+	:root,
+	html.theme-dark {
+		--glow-key: color-mix(in oklab, var(--accent) 22%, transparent);
+		--glow-fill: color-mix(in oklab, var(--accent) 8%, transparent);
+	}
+}
+
+/* ---------------------------------------------------------------------
+   2. Base
+   --------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	background: var(--surface);
+	overflow-x: clip;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	color: var(--muted);
+	font-family: var(--font);
+	font-size: var(--fs-body);
+	font-weight: var(--fw-regular);
+	line-height: var(--lh-body);
+	background: var(--surface);
+	overflow-x: clip;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+::selection {
+	background: var(--glow-key);
+	color: var(--text);
+}
+
+/* Hero atmosphere.
+   One off-axis key light, one weak fill — not a mirrored pair of blobs.
+   The topmost background layer is a grain plate: it breaks the banding
+   that any large, low-contrast gradient produces on 8-bit displays. */
+body::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: var(--hero-h);
+	pointer-events: none;
+	z-index: 0;
+	background-color: var(--hero);
+	background-image:
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)' opacity='0.42'/%3E%3C/svg%3E"),
+		radial-gradient(118% 78% at 14% -12%, var(--glow-key) 0%, transparent 58%),
+		radial-gradient(86% 58% at 82% 6%, var(--glow-fill) 0%, transparent 64%);
+	background-repeat: repeat, no-repeat, no-repeat;
+	background-size: 160px 160px, auto, auto;
+	background-blend-mode: soft-light, normal, normal;
+	-webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 38%, transparent 100%);
+	mask-image: linear-gradient(to bottom, #000 0%, #000 38%, transparent 100%);
+}
+
+a {
+	color: var(--accent);
+	font-weight: var(--fw-medium);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+	text-decoration-skip-ink: auto;
+	transition: color 0.15s ease, text-decoration-thickness 0.15s ease;
+}
+
+a:hover {
+	color: var(--accent-hover);
+	text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+/* An abbreviation is not a link. It keeps the colour and weight of its
+   surrounding text and takes the conventional dotted rule instead. */
+abbr {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+	border-bottom: 1px dotted currentColor;
+	cursor: help;
+}
+
+a abbr,
+h1 abbr,
+h2 abbr,
+.summary p:first-child abbr {
+	border-bottom: 0;
+	cursor: inherit;
+}
+
+p {
+	margin: 0;
+	color: var(--muted);
+	text-wrap: pretty;
+}
+
+p + p {
+	margin-top: 0.8em;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	color: var(--text);
+	font-weight: var(--fw-semibold);
+	text-wrap: balance;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* ---------------------------------------------------------------------
+   3. Fixed bar
+   The wordmark is generated content on html::before, so it can never
+   become a grid item of .page-wrapper. Below 120px of scroll the bar is
+   transparent and the hero reads edge to edge; past that it resolves
+   into glass. Scroll-driven, so no script and no seam.
+   --------------------------------------------------------------------- */
+
+html::before {
+	content: "CSS Zen Garden";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 40;
+	height: var(--nav);
+	display: flex;
+	align-items: center;
+	padding-left: calc(var(--edge) + 1.625rem);
+	color: var(--text);
+	font-family: var(--font);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-semibold);
+	letter-spacing: -0.01em;
+	line-height: 1;
+	background-color: var(--nav-bg);
+	background-image: radial-gradient(
+		circle at calc(var(--edge) + 0.5rem) 50%,
+		transparent 6px,
+		var(--accent) 6.5px,
+		var(--accent) 8px,
+		transparent 8.5px
+	);
+	backdrop-filter: blur(16px) saturate(150%);
+	-webkit-backdrop-filter: blur(16px) saturate(150%);
+	border-bottom: 1px solid var(--nav-line);
+	pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+	html::before {
+		background-color: transparent;
+		border-bottom-color: transparent;
+		animation: bar-settle linear both;
+		animation-timeline: scroll(root block);
+		animation-range: 0 7.5rem;
+	}
+
+	@keyframes bar-settle {
+		to {
+			background-color: var(--nav-bg);
+			border-bottom-color: var(--nav-line);
+		}
+	}
+}
+
+/* ---------------------------------------------------------------------
+   4. Theme switch — the one piece of added markup
+   --------------------------------------------------------------------- */
+
+.theme-switch {
+	position: fixed;
+	top: 0;
+	right: var(--edge);
+	z-index: 60;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.25rem;
+	height: var(--nav);
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.theme-switch-track {
+	position: relative;
+	display: block;
+	width: 2.75rem;
+	height: 1.5rem;
+	border-radius: 999px;
+	background: var(--switch-track);
+	/* 1.4.11: the control's boundary carries the contrast, not the fill. */
+	box-shadow: inset 0 0 0 1px var(--switch-ring);
+	transition: background-color 0.2s ease;
+}
+
+.theme-switch-track::before {
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 50%;
+	background: var(--switch-knob);
+	/* The thumb needs its own boundary against the track. */
+	box-shadow: 0 0 0 1px var(--switch-ring), 0 1px 2px rgba(12, 12, 12, 0.24);
+	transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+html.theme-dark .theme-switch-track {
+	background: var(--accent-solid);
+	box-shadow: inset 0 0 0 1px var(--accent-solid);
+}
+
+html.theme-dark .theme-switch-track::before {
+	transform: translateX(1.25rem);
+	background: var(--on-accent);
+	box-shadow: 0 0 0 1px var(--accent-solid);
+}
+
+.theme-switch:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+	border-radius: 999px;
+}
+
+.theme-switch-tooltip {
+	position: absolute;
+	top: calc(100% - 0.375rem);
+	right: 0;
+	padding: 0.4375rem 0.625rem;
+	border-radius: 8px;
+	background: var(--text);
+	color: var(--surface);
+	font-family: var(--font);
+	font-size: var(--fs-meta);
+	font-weight: var(--fw-medium);
+	line-height: var(--lh-ui);
+	letter-spacing: 0;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(4px);
+	transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+
+/* WCAG 1.4.13: the tooltip is part of the button's hit area, so it stays
+   open while the pointer moves onto it, and Escape dismisses it (the
+   page script toggles .is-tooltip-dismissed). */
+.theme-switch:hover .theme-switch-tooltip,
+.theme-switch:focus-visible .theme-switch-tooltip {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.theme-switch.is-tooltip-dismissed .theme-switch-tooltip {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* ---------------------------------------------------------------------
+   4b. Design switcher
+   Only on the showcase page (css-zen-garden/index.html) — a second piece
+   of added markup, declared like the theme switch. It swaps between V1
+   and V2 in place: same HTML, different stylesheet. Each design styles
+   it in its own language, so the control itself changes with the swap.
+   The pure submission pages do not contain it.
+   --------------------------------------------------------------------- */
+
+.design-switcher {
+	position: fixed;
+	top: 0;
+	right: calc(var(--edge) + 3.25rem + 0.75rem);
+	z-index: 60;
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	height: var(--nav);
+	font-family: var(--font);
+	font-size: var(--fs-ui);
+	line-height: 1;
+}
+
+.switcher-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.375rem;
+	min-height: 2rem;
+	color: var(--muted);
+	font-weight: var(--fw-medium);
+	text-decoration: none;
+}
+
+.switcher-back:hover {
+	color: var(--accent);
+	text-decoration: underline;
+}
+
+.switcher-designs {
+	display: flex;
+	gap: 2px;
+	padding: 3px;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	background: var(--surface);
+}
+
+.switcher-designs a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.375rem;
+	min-height: 1.75rem;
+	padding: 0 0.75rem;
+	border-radius: 999px;
+	color: var(--muted);
+	font-weight: var(--fw-medium);
+	text-decoration: none;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.switcher-designs a:hover {
+	background: var(--hero);
+	color: var(--text);
+}
+
+/* Styled from the ARIA state, so what is announced and what is shown
+   cannot drift apart. */
+.switcher-designs a[aria-current="true"] {
+	background: var(--accent-solid);
+	color: var(--on-accent);
+}
+
+.switcher-num {
+	font-weight: var(--fw-semibold);
+}
+
+.switcher-name {
+	font-weight: var(--fw-regular);
+}
+
+.switcher-status {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------
+   5. Page grid
+   Desktop: gutter · main · gap · sidebar · gutter.
+   The outer tracks are sized by --edge, never by 1fr — otherwise the
+   three-column fallback splits the viewport into equal thirds and the
+   measure collapses.
+   --------------------------------------------------------------------- */
+
+.page-wrapper {
+	position: relative;
+	display: grid;
+	grid-template-columns:
+		minmax(2rem, 1fr)
+		minmax(0, var(--main))
+		var(--gutter)
+		var(--sidebar)
+		minmax(2rem, 1fr);
+}
+
+.intro {
+	display: contents;
+}
+
+/* ---------------------------------------------------------------------
+   6. Hero
+   --------------------------------------------------------------------- */
+
+header {
+	grid-column: 1 / -1;
+	grid-row: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: calc(var(--nav) + 4.5rem) 2rem 0;
+	text-align: center;
+}
+
+h1 {
+	color: var(--text);
+	font-size: var(--fs-display);
+	font-weight: var(--fw-semibold);
+	line-height: var(--lh-display);
+	letter-spacing: var(--tracking-display);
+}
+
+h2 {
+	padding-top: 1rem;
+	color: var(--muted);
+	font-size: var(--fs-title);
+	font-weight: var(--fw-regular);
+	line-height: var(--lh-title);
+	letter-spacing: -0.015em;
+}
+
+.summary {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 2rem 3.5rem;
+	text-align: center;
+}
+
+.summary p:first-child {
+	max-width: 34rem;
+	padding-top: 0.875rem;
+	color: var(--muted);
+	font-size: var(--fs-body);
+	line-height: var(--lh-body);
+}
+
+.summary p:last-child {
+	margin-top: 0;
+	padding-top: 1.75rem;
+	color: var(--faint);
+	font-size: var(--fs-ui);
+	line-height: var(--lh-ui);
+}
+
+/* The key light, continued as a thread into the document. Fills the
+   space under the hero with something deliberate instead of padding. */
+.summary::after {
+	content: "";
+	display: block;
+	width: 1px;
+	height: 4.5rem;
+	margin-top: 3.25rem;
+	background: linear-gradient(to bottom, var(--accent), transparent);
+	opacity: 0.55;
+}
+
+/* ---------------------------------------------------------------------
+   7. Document body
+   --------------------------------------------------------------------- */
+
+.preamble {
+	grid-column: 2;
+	grid-row: 3;
+	padding: 4.5rem 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.preamble h3,
+.main h3 {
+	margin-bottom: 1rem;
+	color: var(--text);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-semibold);
+	line-height: var(--lh-ui);
+	letter-spacing: var(--tracking-label);
+	text-transform: uppercase;
+}
+
+.preamble p {
+	max-width: var(--measure);
+}
+
+.preamble p:first-of-type {
+	color: var(--text);
+	font-size: var(--fs-lead);
+	line-height: var(--lh-body);
+}
+
+.main {
+	grid-column: 2;
+	grid-row: 4;
+	display: grid;
+	grid-template-columns: minmax(0, 1.32fr) minmax(0, 1fr);
+	column-gap: 0;
+	counter-reset: section;
+}
+
+.main h3::before {
+	content: counter(section, decimal-leading-zero) " — ";
+	color: var(--accent);
+	letter-spacing: 0.06em;
+}
+
+.explanation {
+	grid-column: 1 / -1;
+	grid-row: 1;
+	padding: 3.5rem 0;
+	border-bottom: 1px solid var(--border);
+	counter-increment: section;
+}
+
+.explanation p,
+.requirements p {
+	max-width: var(--measure);
+}
+
+/* 02 and 03 run side by side. They are very different lengths, so the
+   short one is treated as an aside: a rule between them turns the
+   leftover space into a margin rather than a hole. */
+.participation,
+.benefits {
+	grid-row: 2;
+	padding: 3.5rem 0;
+	border-bottom: 1px solid var(--border);
+	counter-increment: section;
+}
+
+.participation {
+	grid-column: 1;
+	padding-right: var(--col-gap);
+}
+
+.benefits {
+	grid-column: 2;
+	padding-left: var(--col-gap);
+	border-left: 1px solid var(--border);
+}
+
+.requirements {
+	grid-column: 1 / -1;
+	grid-row: 3;
+	padding: 3.5rem 0 0;
+	counter-increment: section;
+}
+
+/* ---------------------------------------------------------------------
+   8. Colophon band
+   Full-bleed via pseudo-elements 100vw wide, offset by --bleed-offset
+   (the element itself stays inside the grid). Not the ±50vw box-shadow
+   trick: shadow copies are the element's own width, so once half the
+   viewport is wider than the column (~1440px and up) they drift apart
+   and open gaps.
+
+   The edge is crisp on purpose. Fading a deep navy up into white forces
+   the ramp through a desaturated grey — it reads as smoke, not as a
+   transition. Instead the panel keeps a clean architectural edge, and
+   the join is made with light: the page's own key light washes up off
+   the panel, and the panel is lit from its top edge inward. The page
+   closes the way it opens.
+
+   The band and the footer are raised to z-index 1 because the sidebar is
+   sticky, and a sticky element paints in the positioned layer — a static
+   full-bleed band would otherwise be drawn *underneath* it and the
+   sidebar's dark text would sit on the dark band.
+   --------------------------------------------------------------------- */
+
+.requirements p:last-child {
+	position: relative;
+	z-index: 1;
+	margin-top: 9.5rem;
+	margin-bottom: 0;
+	padding: 3.5rem 0 0.75rem;
+	color: var(--ink-text);
+	font-size: var(--fs-ui);
+	line-height: var(--lh-body);
+	text-align: center;
+	max-width: none;
+}
+
+/* Light rising off the panel, in the page's own accent — an accent wash
+   on white never goes through grey. Bled past both edges with the same
+   offset trick as the band, because the main column is not centred in
+   the viewport. */
+.requirements p:last-child::before {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: calc(50% - 50vw + var(--bleed-offset));
+	width: 100vw;
+	height: 9rem;
+	background: radial-gradient(
+		62% 100% at 50% 100%,
+		var(--glow-key) 0%,
+		var(--glow-fill) 38%,
+		transparent 72%
+	);
+	pointer-events: none;
+}
+
+/* The panel itself, full-bleed: a hairline on the top edge and a short
+   internal glow over the ink, so it reads as a lit surface rather than
+   a flat slab. z-index -1 keeps it behind the credit line; the glow ends
+   at 3.5rem — where the padding ends — so it never sits under the text
+   and cannot affect its contrast. */
+.requirements p:last-child::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	left: calc(50% - 50vw + var(--bleed-offset));
+	width: 100vw;
+	border-top: 1px solid var(--ink-edge);
+	background:
+		linear-gradient(to bottom, var(--ink-glow), transparent 3.5rem),
+		var(--ink);
+	pointer-events: none;
+}
+
+.requirements p:last-child a {
+	color: var(--ink-link);
+	font-weight: var(--fw-medium);
+}
+
+.requirements p:last-child a:hover {
+	color: var(--ink-hover);
+}
+
+.requirements p:last-child a:focus-visible {
+	outline-color: var(--ink-hover);
+}
+
+footer {
+	position: relative;
+	z-index: 1;
+	grid-column: 1 / -1;
+	grid-row: 4;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 1rem 0 4rem;
+}
+
+/* Same full-bleed panel as the credit line, continued behind the chips. */
+footer::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	left: calc(50% - 50vw + var(--bleed-offset));
+	width: 100vw;
+	background: var(--ink);
+	pointer-events: none;
+}
+
+footer a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.75rem;
+	min-height: 2rem;
+	padding: 0.375rem 0.75rem;
+	border: 1px solid var(--ink-border);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--ink-text);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-medium);
+	line-height: var(--lh-ui);
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: var(--ink-hover);
+	border-color: var(--ink-hover);
+}
+
+footer a:focus-visible {
+	outline: 2px solid var(--ink-hover);
+	outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------------------
+   9. Sidebar
+   Sticky, because "select a design" is the site's primary action and the
+   main column is three times taller than this one.
+   --------------------------------------------------------------------- */
+
+.sidebar {
+	grid-column: 4;
+	grid-row: 3 / 5;
+	align-self: start;
+	position: sticky;
+	top: calc(var(--nav) + 2rem);
+	margin-top: 4.5rem;
+	/* A sticky box is constrained to its containing block inset by its own
+	   margins. The containing block here is the whole main column, which
+	   ends inside the colophon — so this margin is what releases the
+	   sidebar *before* the full-bleed band reaches it, instead of letting
+	   it be sliced by the band's fade. Generous on purpose: releasing a
+	   little early is invisible, releasing late is not. */
+	margin-bottom: var(--colophon-clearance);
+	min-width: 0;
+	background: transparent;
+}
+
+.sidebar .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2.25rem;
+}
+
+.sidebar h3 {
+	margin-bottom: 0.625rem;
+	color: var(--faint);
+	font-size: var(--fs-meta);
+	font-weight: var(--fw-semibold);
+	line-height: var(--lh-ui);
+	letter-spacing: var(--tracking-label);
+	text-transform: uppercase;
+}
+
+.design-selection li {
+	position: relative;
+	padding: 0.5rem 0 0.5rem 0.75rem;
+	font-size: 0;
+}
+
+.design-selection li::before {
+	content: "";
+	position: absolute;
+	top: 0.625rem;
+	bottom: 0.625rem;
+	left: 0;
+	width: 2px;
+	background: transparent;
+	transition: background-color 0.15s ease;
+}
+
+.design-selection li:first-child::before,
+.design-selection li:hover::before,
+.design-selection li:focus-within::before {
+	background: var(--accent);
+}
+
+.design-selection li a {
+	text-decoration: none;
+}
+
+.design-selection .design-name {
+	display: block;
+	color: var(--text);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-medium);
+	line-height: var(--lh-ui);
+}
+
+.design-selection .designer-name {
+	display: block;
+	margin-top: 2px;
+	color: var(--faint);
+	font-size: var(--fs-meta);
+	font-weight: var(--fw-regular);
+	line-height: var(--lh-ui);
+}
+
+.design-selection li:hover .design-name,
+.design-selection li:focus-within .design-name {
+	color: var(--accent);
+}
+
+.design-archives a,
+.zen-resources a {
+	display: block;
+	padding: 0.625rem 0;
+	border-bottom: 1px solid var(--border);
+	color: var(--text);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-medium);
+	line-height: var(--lh-ui);
+	text-decoration: none;
+}
+
+.design-archives .next a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.design-archives .next a,
+.zen-resources .zen-translations a {
+	border-bottom: 0;
+}
+
+.design-archives a:hover,
+.zen-resources a:hover {
+	color: var(--accent);
+}
+
+.indicator {
+	color: var(--faint);
+	font-size: var(--fs-title);
+	font-weight: var(--fw-regular);
+	line-height: 1;
+}
+
+/* Primary action. It stays in the sidebar, in document order: a control
+   pinned to the top-right of the bar would be the last thing a keyboard
+   reaches (2.4.3) while being the first thing a mouse sees. */
+.design-archives .viewall {
+	margin-top: 1rem;
+}
+
+.design-archives .viewall a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: 0.625rem 1rem;
+	border: 0;
+	border-radius: 10px;
+	background: var(--accent-solid);
+	color: var(--on-accent);
+	font-size: var(--fs-ui);
+	font-weight: var(--fw-medium);
+	line-height: 1;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+}
+
+.design-archives .viewall a:hover {
+	background: var(--accent-hover);
+	color: var(--on-accent);
+}
+
+.design-archives .viewall a:focus-visible {
+	outline: 2px solid var(--text);
+	outline-offset: 3px;
+}
+
+/* Historical catch-alls. ::before / ::after do the work instead. */
+.extra1,
+.extra2,
+.extra3,
+.extra4,
+.extra5,
+.extra6 {
+	display: none;
+}
+
+/* ---------------------------------------------------------------------
+   10. Responsive
+   --------------------------------------------------------------------- */
+
+@media (max-width: 69.9375rem) {
+	:root {
+		--edge: 1.5rem;
+		--hero-h: 40rem;
+		--reading: 44rem;
+		--bleed-offset: 0px;
+	}
+
+	/* Single column, centred, capped. The outer tracks are minmax(edge,
+	   1fr) so they grow on tablets and collapse to the gutter on phones —
+	   they are never an equal share of the viewport. */
+	.page-wrapper {
+		grid-template-columns:
+			minmax(var(--edge), 1fr)
+			minmax(0, var(--reading))
+			minmax(var(--edge), 1fr);
+	}
+
+	header,
+	.summary,
+	.preamble,
+	.main,
+	.sidebar {
+		grid-column: 2;
+		grid-row: auto;
+	}
+
+	header {
+		padding: calc(var(--nav) + 3rem) 0 0;
+	}
+
+	.summary {
+		padding: 0 0 3rem;
+	}
+
+	.preamble {
+		padding-top: 3rem;
+	}
+
+	.main {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.explanation {
+		grid-row: auto;
+	}
+
+	.participation,
+	.benefits {
+		grid-column: 1;
+		padding-right: 0;
+		padding-left: 0;
+		border-left: 0;
+	}
+
+	.participation {
+		grid-row: 2;
+	}
+
+	.benefits {
+		grid-row: 3;
+	}
+
+	.requirements {
+		grid-row: 4;
+	}
+
+	footer {
+		grid-row: 5;
+	}
+
+	.sidebar {
+		position: static;
+		margin-top: 0;
+		/* Not sticky here, so the clearance would only be dead space. */
+		margin-bottom: 0;
+		padding-top: 3.5rem;
+		padding-bottom: 3rem;
+	}
+}
+
+@media (max-width: 39.9375rem) {
+	:root {
+		--edge: 1.25rem;
+		--hero-h: 34rem;
+	}
+
+	/* The switcher needs the bar's width, so on the showcase page the
+	   wordmark text yields — the ring stays, and the h1 is right below. */
+	html:has(.design-switcher)::before {
+		content: "";
+	}
+
+	.design-switcher {
+		gap: 0.75rem;
+		right: calc(var(--edge) + 3.25rem + 0.25rem);
+	}
+
+	.switcher-name {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+
+	html::before {
+		padding-left: 2.625rem;
+		background-image: radial-gradient(
+			circle at 1.5rem 50%,
+			transparent 5.5px,
+			var(--accent) 6px,
+			var(--accent) 7.5px,
+			transparent 8px
+		);
+	}
+
+	.summary::after {
+		height: 3rem;
+		margin-top: 2.5rem;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   11. Accessibility layers
+   --------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+		scroll-behavior: auto !important;
+	}
+
+	/* Resolve the bar immediately rather than tying it to scroll. */
+	html::before {
+		animation: none !important;
+		background-color: var(--nav-bg);
+		border-bottom-color: var(--nav-line);
+	}
+}
+
+@media (forced-colors: active) {
+	html::before,
+	.requirements p:last-child,
+	footer {
+		forced-color-adjust: none;
+		background: Canvas;
+		box-shadow: none;
+		color: CanvasText;
+	}
+
+	.requirements p:last-child::before,
+	.requirements p:last-child::after,
+	footer::before,
+	body::before {
+		display: none;
+	}
+
+	.design-archives .viewall a,
+	footer a {
+		border: 1px solid ButtonText;
+		background: ButtonFace;
+		color: ButtonText;
+	}
+
+	.switcher-designs {
+		border-color: ButtonText;
+	}
+
+	.switcher-designs a[aria-current="true"] {
+		forced-color-adjust: none;
+		background: Highlight;
+		color: HighlightText;
+	}
+
+	/* box-shadow is not painted in forced-colors mode, so the switch
+	   needs real borders or it disappears entirely. */
+	.theme-switch-track {
+		border: 1px solid ButtonText;
+		background: ButtonFace;
+		box-shadow: none;
+	}
+
+	.theme-switch-track::before {
+		border: 1px solid ButtonText;
+		background: ButtonText;
+		box-shadow: none;
+	}
+
+	html.theme-dark .theme-switch-track::before {
+		background: Highlight;
+	}
+
+	a:focus-visible,
+	footer a:focus-visible,
+	.design-archives .viewall a:focus-visible,
+	.theme-switch:focus-visible {
+		outline: 3px solid Highlight;
+	}
+}
+
+@media print {
+	html::before,
+	body::before,
+	.theme-switch,
+	.design-switcher,
+	.sidebar {
+		display: none;
+	}
+
+	body {
+		color: #000;
+		background: #fff;
+		font-size: 11pt;
+	}
+
+	.page-wrapper {
+		display: block;
+	}
+
+	.requirements p:last-child,
+	footer {
+		background: none;
+		box-shadow: none;
+		color: #000;
+	}
+
+	.requirements p:last-child::before,
+	.requirements p:last-child::after,
+	footer::before {
+		display: none;
+	}
+
+	a {
+		color: #000;
+	}
+}
