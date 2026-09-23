@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIATRANS — Felipe Oliveira</title>
+<meta name="description" content="CIATRANS — case de design: landing page e design system para uma empresa de logística portuária do Porto de Santos. Por Felipe Oliveira, Senior Product Designer.">
+<meta property="og:title" content="CIATRANS — Felipe Oliveira">
+<meta property="og:description" content="Case de design: landing page e design system para uma empresa de logística portuária do Porto de Santos.">
+<meta property="og:type" content="article">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Geist', sans-serif;
+        background-color: #FAFAFA;
+        color: #111111;
+    }
+    ::selection {
+        background-color: #E5E5E5;
+        color: #000;
+    }
+    .editorial-text {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+    :focus-visible {
+        outline: 1px solid #111111;
+        outline-offset: 3px;
+    }
+
+    .hero-fade {
+        opacity: 0;
+        transform: translateY(6px);
+        animation: heroFade 0.9s ease forwards;
+    }
+    .hero-fade:nth-child(1) { animation-delay: 0.05s; }
+    .hero-fade:nth-child(2) { animation-delay: 0.3s; }
+    @keyframes heroFade {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ext-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: opacity 0.2s ease;
+    }
+    .ext-link:hover { opacity: 0.65; }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -3rem;
+        background: #111111;
+        color: #FAFAFA;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        z-index: 50;
+        transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+        top: 1rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .hero-fade { opacity: 1; transform: none; animation: none; }
+    }
+</style>
+</head>
+<body class="editorial-text font-light antialiased">
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-arrow-outward" viewBox="0 0 16 16">
+        <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+    <symbol id="icon-arrow-back" viewBox="0 0 16 16">
+        <path d="M12 4L4 12M4 12H10.5M4 12V5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+</svg>
+
+<main id="conteudo" class="max-w-[864px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16">
+
+    <!-- Topo: voltar + contato -->
+    <div class="hero-fade flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 w-full">
+        <a href="index.html" class="ext-link text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
+            <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
+            felipe oliveira
+        </a>
+        <div class="flex items-center gap-6 flex-wrap">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link text-[16px] font-medium text-[#525252] hover:text-[#111]">
+                e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link text-[16px] font-medium text-[#525252] hover:text-[#111]">
+                linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+                <span class="sr-only">(abre em nova aba)</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Abertura do case -->
+    <section class="hero-fade flex flex-col gap-6 w-full" aria-label="Apresentação do projeto">
+        <div class="flex items-center gap-3 flex-wrap">
+            <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">cliente · landing page + design system</p>
+            <span class="text-[12px] font-light text-[#6E6E6E]">no ar</span>
+        </div>
+
+        <h1 class="font-light text-[clamp(32px,6vw,48px)] leading-[1.1] tracking-[-0.96px] text-[#111] m-0">
+            CIATRANS
+        </h1>
+
+        <p class="text-[18px] font-normal text-[#111] max-w-[620px]">
+            Logística portuária no Porto de Santos: a primeira peça de comunicação de uma empresa com décadas de operação e nenhum material próprio.
+        </p>
+
+        <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-12 pt-2 text-[14px]">
+            <div class="flex flex-col gap-1">
+                <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">papel</p>
+                <p class="font-normal text-[#111] m-0">Product design ponta a ponta + implementação</p>
+            </div>
+            <div class="flex flex-col gap-1">
+                <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">ferramentas</p>
+                <p class="font-normal text-[#111] m-0">Figma, Claude Code, HTML/CSS, axe-core</p>
+            </div>
+            <div class="flex flex-col gap-1">
+                <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">entrega</p>
+                <p class="font-normal text-[#111] m-0">Landing page, apresentação comercial e design system</p>
+            </div>
+        </div>
+
+        <a href="https://projeto-ciatrans.netlify.app/" target="_blank" rel="noopener noreferrer" class="ext-link w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 mt-2 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">
+            Visitar o site <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            <span class="sr-only">(abre em nova aba)</span>
+        </a>
+    </section>
+
+    <!-- Hero visual: site no ar em desktop e mobile -->
+    <section class="w-full" aria-label="A landing page da CIATRANS em desktop e em mobile">
+        <div class="flex flex-col md:flex-row gap-6 w-full items-start">
+            <div class="w-full md:flex-[1.4] rounded-xl overflow-hidden" style="border:1px solid #e5e5e5; box-shadow: 0 12px 28px -12px rgba(8,19,48,0.20);">
+                <div class="flex items-center gap-1.5 px-3 py-2.5" style="background:#F2F2F2; border-bottom:1px solid #e5e5e5;">
+                    <span class="w-2.5 h-2.5 rounded-full" style="background:#dcdcdc;"></span>
+                    <span class="w-2.5 h-2.5 rounded-full" style="background:#dcdcdc;"></span>
+                    <span class="w-2.5 h-2.5 rounded-full" style="background:#dcdcdc;"></span>
+                    <div class="flex-1 flex justify-center">
+                        <span class="text-[11px] font-light px-3 py-0.5 rounded-full truncate" style="background:#FAFAFA; color:#6E6E6E;">ciatrans.com.br</span>
+                    </div>
+                </div>
+                <img src="assets/case-ciatrans/depois.jpg" width="1728" height="1080" loading="lazy" decoding="async"
+                     alt="Topo da landing page: título 'Infraestrutura logística confiável' e um diagrama que liga terminais, retroporto, aeroporto e rodovia."
+                     class="w-full h-auto block bg-[#FAFAF7]">
+            </div>
+            <div class="w-full md:flex-1 flex justify-center">
+                <div class="relative" style="width: min(100%, 240px); aspect-ratio: 9/19.5; background:#101828; border-radius: 2.2rem; padding: 10px; box-shadow: 0 12px 28px -12px rgba(8,19,48,0.25);">
+                    <span class="absolute left-1/2 z-10" style="transform: translateX(-50%); top: 10px; width: 64px; height: 18px; border-radius: 9999px; background:#101828;"></span>
+                    <div class="relative w-full h-full overflow-hidden" style="border-radius: 1.6rem; background:#FAFAF7;">
+                        <img src="assets/case-ciatrans/mobile.jpg" width="720" height="1558" loading="lazy" decoding="async"
+                             alt="A mesma página em viewport de celular, com o diagrama abaixo do título."
+                             class="absolute inset-0 w-full h-full object-cover" style="object-position: top;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisor -->
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
+    <!-- Contexto -->
+    <section class="flex flex-col gap-4 w-full" aria-labelledby="contexto-heading">
+        <h2 id="contexto-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Contexto</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>A CIATRANS presta suporte logístico no Porto de Santos há décadas: transporte de cargas e de marítimos, despacho, translados, spare parts, remoção de resíduos. Atende armadores, terminais e agentes — e não tinha nenhum material de comunicação próprio. Nem site, nem apresentação para mandar a um cliente novo.</p>
+            <p>A primeira versão que montei tinha um problema que eu mesmo criei: uma página bonita cheia de coisa que a empresa não faz. Painel de navios atracados, contagem de TEUs, carga oversized, números de operações por mês. Tudo plausível para uma transportadora portuária, nada verdadeiro para essa.</p>
+            <p>Quando a apresentação comercial ficou pronta, com o escopo real descrito pela própria empresa, o site foi refeito em cima dela. Este case é sobre essa correção de rota e sobre o sistema que sobrou dela.</p>
+        </div>
+    </section>
+
+    <!-- Antes e depois -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="antes-heading">
+        <h2 id="antes-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Antes e depois</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>À esquerda, a versão que inventava uma operação. À direita, a versão que mostra a que existe: em vez de um painel de navios fictício, um diagrama da atuação integrada entre porto, retroporto, aeroporto e rodovia — que é justamente o diferencial da empresa, e o único dado que eu podia afirmar.</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 w-full">
+            <figure class="md:flex-1 flex flex-col gap-2 m-0">
+                <img src="assets/case-ciatrans/antes.jpg" width="1728" height="1080" loading="lazy" decoding="async"
+                     alt="Versão anterior da página, com um painel de navios e status inventados."
+                     class="w-full h-auto rounded border border-[#e5e5e5]">
+                <figcaption class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E]">antes — dados ilustrativos</figcaption>
+            </figure>
+            <figure class="md:flex-1 flex flex-col gap-2 m-0">
+                <img src="assets/case-ciatrans/depois.jpg" width="1728" height="1080" loading="lazy" decoding="async"
+                     alt="Versão final, com o diagrama da atuação integrada no lugar do painel."
+                     class="w-full h-auto rounded border border-[#e5e5e5]">
+                <figcaption class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E]">depois — operação real</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Direção de design -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="direcao-heading">
+        <h2 id="direcao-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Direção de design</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>O azul e o verde vêm do logo da empresa, que é o único ativo de marca que existia. A régua foi manter a página clara e sóbria, com o azul-escuro entrando em poucos blocos — pilares, contato, rodapé — para marcar ritmo sem transformar o site num panfleto colorido.</p>
+            <p>O tom da escrita seguiu a mesma lógica: nada de "soluções inovadoras". A empresa vende previsibilidade em um ambiente onde tempo, documentação e acesso decidem a operação, e a copy fala disso.</p>
+        </div>
+        <img src="assets/case-ciatrans/pilares.jpg" width="1728" height="1007" loading="lazy" decoding="async"
+             alt="Seção de pilares da página, em fundo azul-escuro: eficiência, confiança e segurança."
+             class="w-full h-auto rounded">
+        <div class="flex flex-col md:flex-row gap-4 w-full items-start">
+            <img src="assets/case-ciatrans/servicos.jpg" width="1728" height="1003" loading="lazy" decoding="async"
+                 alt="Grade dos seis serviços da empresa, com ícones de contorno e numeração."
+                 class="md:flex-1 min-w-0 w-full h-auto rounded border border-[#e5e5e5]">
+            <img src="assets/case-ciatrans/frota.jpg" width="1728" height="725" loading="lazy" decoding="async"
+                 alt="Tabela da frota, com categoria de veículo, aplicação e tag."
+                 class="md:flex-1 min-w-0 w-full h-auto rounded border border-[#e5e5e5] self-start">
+        </div>
+    </section>
+
+    <!-- Faixa escura: números do sistema -->
+    <section class="w-full rounded-lg px-8 py-10 md:px-12 md:py-14 flex flex-col gap-10" style="background:#081330;" aria-labelledby="sistema-numeros-heading">
+        <div class="flex flex-col gap-3">
+            <h2 id="sistema-numeros-heading" class="text-[12px] font-medium uppercase tracking-[2px] m-0" style="color:#A9C735;">O sistema em números</h2>
+            <p class="text-[22px] md:text-[28px] font-light leading-[1.25] max-w-[620px] m-0" style="color:#FFFFFF;">
+                Cada papel visual tem um único valor. Se duas opções servem ao mesmo papel, uma delas sai.
+            </p>
+        </div>
+        <dl class="grid grid-cols-2 md:grid-cols-4 gap-8 m-0">
+            <div class="flex flex-col gap-1">
+                <dd class="text-[32px] font-light m-0" style="color:#FFFFFF;">4 → 1</dd>
+                <dt class="text-[13px] font-light" style="color:#C3C9D4;">famílias tipográficas</dt>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dd class="text-[32px] font-light m-0" style="color:#FFFFFF;">4 → 2</dd>
+                <dt class="text-[13px] font-light" style="color:#C3C9D4;">pesos</dt>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dd class="text-[32px] font-light m-0" style="color:#FFFFFF;">30 → 5</dd>
+                <dt class="text-[13px] font-light" style="color:#C3C9D4;">tamanhos de fonte</dt>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dd class="text-[32px] font-light m-0" style="color:#FFFFFF;">46 → 10</dd>
+                <dt class="text-[13px] font-light" style="color:#C3C9D4;">valores de cor</dt>
+            </div>
+        </dl>
+    </section>
+
+    <!-- Cor por função -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="cor-heading">
+        <h2 id="cor-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Cor por função</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>Em vez de uma paleta com dez valores soltos, cinco papéis: título, corpo, acento, linha e fundo. Cada papel tem um valor na superfície clara e outro na escura, e nenhum componente define cor própria. Os blocos escuros da página só trocam os valores dos papéis — o resto se ajusta sozinho, como um tema.</p>
+            <p>O verde-limão é decorativo no claro e só vira texto sobre o azul-escuro, onde alcança 9,5:1 de contraste. O hover das listas não é uma cor nova: é o acento a 5% sobre o fundo, calculado em tempo de render.</p>
+        </div>
+        <img src="assets/case-ciatrans/ds-papeis.jpg" width="1728" height="581" loading="lazy" decoding="async"
+             alt="Os cinco papéis de cor nas duas superfícies, com token, hex e razão de contraste de cada um."
+             class="w-full h-auto rounded border border-[#e5e5e5]">
+    </section>
+
+    <!-- Tipografia -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="tipo-heading">
+        <h2 id="tipo-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Uma família, um eixo</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>A primeira versão usava quatro famílias e trinta tamanhos diferentes. A final usa uma só: Archivo, variável, com dois pesos e cinco tamanhos. A personalidade não veio de uma segunda fonte, veio do eixo de largura da própria Archivo — 118% nos títulos, que dá o ar de sinalização e pintura de frota, e 100% no texto, que preserva a leitura.</p>
+            <p>É a decisão de que mais gosto no projeto, porque ela cabe numa frase: a largura virou uma decisão de sistema, não mais uma opção à mesa.</p>
+        </div>
+        <img src="assets/case-ciatrans/ds-largura.jpg" width="1400" height="688" loading="lazy" decoding="async"
+             alt="A palavra 'Confiável' repetida nas larguras 100%, 108% e 118% da mesma fonte."
+             class="w-full h-auto rounded border border-[#e5e5e5]">
+        <img src="assets/case-ciatrans/ds-escala.jpg" width="1728" height="668" loading="lazy" decoding="async"
+             alt="A escala tipográfica completa: cinco tokens com amostra, tamanho, entrelinha, peso e largura."
+             class="w-full h-auto rounded border border-[#e5e5e5]">
+        <p class="text-[13px] font-light text-[#6E6E6E] m-0">A documentação completa do sistema — papéis, escala, componentes e checagens — vive num único frame no Figma, com as cores como variáveis e os modos Claro e Escuro.</p>
+    </section>
+
+    <!-- Divisor -->
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
+    <!-- Acessibilidade -->
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="a11y-heading">
+        <div class="flex flex-col gap-1">
+            <h2 id="a11y-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Acessibilidade</h2>
+            <p class="text-[14px] font-light text-[#6E6E6E] m-0">Validado com axe-core (WCAG 2.2 A, AA e boas práticas), em 1440px e em 320px.</p>
+        </div>
+
+        <ul class="flex flex-col gap-6 w-full list-none m-0 p-0">
+            <li class="flex flex-col gap-0.5 w-full">
+                <h3 class="text-[16px] font-medium text-[#111] m-0">Contraste como regra do sistema, não como ajuste final</h3>
+                <p class="text-[15px] font-light text-[#525252] pt-0.5 max-w-[680px]">
+                    Cada papel de cor nasceu com a razão de contraste medida. O menor valor de texto da página é 6,5:1, acima dos 4,5:1 exigidos, e as bordas de campo chegam a 6,5:1 — contra 1,2:1 da primeira versão, praticamente invisíveis.
+                </p>
+            </li>
+            <li class="flex flex-col gap-0.5 w-full">
+                <h3 class="text-[16px] font-medium text-[#111] m-0">Movimento que o usuário controla</h3>
+                <p class="text-[15px] font-light text-[#525252] pt-0.5 max-w-[680px]">
+                    O diagrama do topo anima em loop, então ganhou um botão de pausa (WCAG 2.2.2) e já começa parado para quem pede menos movimento no sistema.
+                </p>
+            </li>
+            <li class="flex flex-col gap-0.5 w-full">
+                <h3 class="text-[16px] font-medium text-[#111] m-0">Formulário que explica o erro</h3>
+                <p class="text-[15px] font-light text-[#525252] pt-0.5 max-w-[680px]">
+                    O erro deixou de ser só uma borda vermelha: virou mensagem em texto, anunciada por leitor de tela. Os campos opcionais são marcados e os serviços viraram um grupo com título próprio.
+                </p>
+            </li>
+            <li class="flex flex-col gap-0.5 w-full">
+                <h3 class="text-[16px] font-medium text-[#111] m-0">Teclado do começo ao fim</h3>
+                <p class="text-[15px] font-light text-[#525252] pt-0.5 max-w-[680px]">
+                    Link para pular ao conteúdo, anel de foco visível em todos os controles — azul no claro, limão no escuro —, Esc fechando o menu e nenhum elemento focável escondido fora da tela.
+                </p>
+            </li>
+        </ul>
+
+        <div class="flex flex-col sm:flex-row gap-8 sm:gap-12 pt-2 border-t border-[#e5e5e5]">
+            <div class="flex flex-col gap-1 pt-6">
+                <p class="text-[28px] font-light text-[#111] m-0">0</p>
+                <p class="text-[13px] font-light text-[#6E6E6E] m-0">violações no axe-core</p>
+            </div>
+            <div class="flex flex-col gap-1 pt-6">
+                <p class="text-[28px] font-light text-[#111] m-0">6,5:1</p>
+                <p class="text-[13px] font-light text-[#6E6E6E] m-0">menor contraste de texto</p>
+            </div>
+            <div class="flex flex-col gap-1 pt-6">
+                <p class="text-[28px] font-light text-[#111] m-0">320px</p>
+                <p class="text-[13px] font-light text-[#6E6E6E] m-0">sem rolagem lateral</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultado -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="resultado-heading">
+        <h2 id="resultado-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Resultado</h2>
+        <div class="font-light text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>A CIATRANS saiu de nenhum material para três peças que conversam entre si: a landing page no ar, uma apresentação comercial para enviar a clientes e a documentação do design system que sustenta as duas.</p>
+            <p>O contato acontece pelo WhatsApp do time, que é por onde a operação realmente responde. O formulário monta a mensagem já organizada — nome, empresa, serviços e detalhes da operação — para que o pedido chegue qualificado em vez de um "olá" solto às três da manhã.</p>
+        </div>
+        <img src="assets/case-ciatrans/contato.jpg" width="1728" height="1214" loading="lazy" decoding="async"
+             alt="Bloco de contato: dados da empresa em fundo azul e, ao lado, o formulário que monta a mensagem do WhatsApp."
+             class="w-full h-auto rounded">
+        <a href="https://projeto-ciatrans.netlify.app/" target="_blank" rel="noopener noreferrer" class="ext-link w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 mt-2 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">
+            Visitar o site <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            <span class="sr-only">(abre em nova aba)</span>
+        </a>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full pt-4 border-t border-[#e5e5e5]">
+        <a href="index.html" class="ext-link text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
+            <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
+            voltar pro portfólio
+        </a>
+        <div class="flex items-center gap-6 flex-wrap">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link text-[18px] font-medium text-[#525252] hover:text-[#111]">
+                e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link text-[18px] font-medium text-[#525252] hover:text-[#111]">
+                linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+                <span class="sr-only">(abre em nova aba)</span>
+            </a>
+        </div>
+    </footer>
+
+</main>
+</body>
+</html>
