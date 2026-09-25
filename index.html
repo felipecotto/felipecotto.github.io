@@ -39,8 +39,20 @@
     }
     .hero-fade:nth-child(1) { animation-delay: 0.05s; }
     .hero-fade:nth-child(2) { animation-delay: 0.3s; }
+    .hero-fade:nth-child(3) { animation-delay: 0.55s; }
+    .hero-fade:nth-child(4) { animation-delay: 0.7s; }
     @keyframes heroFade {
         to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* fotos da tira "em campo": tom neutro por padrão, cor ao passar o mouse */
+    .photo-tone {
+        filter: grayscale(1) contrast(1.02);
+        transition: filter 0.4s ease;
+    }
+    .photo-tone:hover,
+    .photo-tone:focus-visible {
+        filter: grayscale(0);
     }
 
     .ext-link {
@@ -135,6 +147,31 @@
                     <p>Não basta desenhar produtos: precisamos desenhar produtos para serem construídos.</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Em campo: fotos de palestras, workshops e mentoria -->
+        <div class="hero-fade flex flex-col sm:flex-row gap-4 w-full">
+            <img src="assets/sobre/estrategia.jpg" width="1000" height="666" loading="lazy" decoding="async"
+                 alt="Felipe conduzindo uma dinâmica de priorização com o time, apontando para post-its organizados na parede."
+                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
+            <img src="assets/sobre/interface.jpg" width="1000" height="666" loading="lazy" decoding="async"
+                 alt="Felipe apresentando um grid de opacidade e brilho para explicar um princípio de interface."
+                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
+            <img src="assets/sobre/implementacao.jpg" width="1000" height="562" loading="lazy" decoding="async"
+                 alt="Felipe ensinando CSS e media queries, apontando para um trecho de código projetado."
+                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
+        </div>
+
+        <div class="hero-fade flex flex-col sm:flex-row gap-4 w-full">
+            <img src="assets/sobre/palestra.jpg" width="960" height="640" loading="lazy" decoding="async"
+                 alt="Felipe em pé no palco, com um microfone, apresentando um gráfico do Design Value Index."
+                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover bg-[#d9d9d9]">
+            <img src="assets/sobre/pesquisa.jpg" width="750" height="500" loading="lazy" decoding="async"
+                 alt="Felipe apresentando um slide sobre pesquisa contínua documentada, num evento com mural colorido ao fundo."
+                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
+            <img src="assets/sobre/equipe.jpg" width="1440" height="960" loading="lazy" decoding="async"
+                 alt="Felipe sentado numa poltrona, conversando com o time, com colegas trabalhando ao fundo e o logo da Inventa na parede."
+                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover bg-[#d9d9d9]">
         </div>
     </section>
 
