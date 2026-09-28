@@ -148,12 +148,40 @@
         </div>
     </section>
 
+    <!-- Princípios do sistema -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="decisoes-heading">
+        <h2 id="decisoes-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Quatro decisões</h2>
+        <p class="font-normal text-[16px] text-[#525252] max-w-[720px] m-0">O design system cabe em quatro regras. As seções abaixo mostram cada uma aplicada.</p>
+        <ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 list-none m-0 p-0">
+            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
+                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]" aria-hidden="true">01</span>
+                <h3 class="text-[16px] font-medium text-[#111] m-0">Menos é mais</h3>
+                <p class="text-[15px] font-normal text-[#525252] m-0">Cada papel visual tem um único valor. Se duas opções servem ao mesmo papel, uma delas sai.</p>
+            </li>
+            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
+                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]" aria-hidden="true">02</span>
+                <h3 class="text-[16px] font-medium text-[#111] m-0">O fundo troca, o componente não</h3>
+                <p class="text-[15px] font-normal text-[#525252] m-0">Título, corpo, acento, linha e fundo mudam de valor nos blocos escuros. Nenhum componente tem cor própria.</p>
+            </li>
+            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
+                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]" aria-hidden="true">03</span>
+                <h3 class="text-[16px] font-medium text-[#111] m-0">Personalidade na largura, não em outra fonte</h3>
+                <p class="text-[15px] font-normal text-[#525252] m-0">Uma família só, a Archivo. A largura vira decisão de sistema: 118% nos títulos, 108% nos rótulos.</p>
+            </li>
+            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
+                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]" aria-hidden="true">04</span>
+                <h3 class="text-[16px] font-medium text-[#111] m-0">Acessível por padrão</h3>
+                <p class="text-[15px] font-normal text-[#525252] m-0">Contraste mínimo de 6,5:1 no texto, foco visível e animação que pode ser pausada, desde o primeiro componente.</p>
+            </li>
+        </ol>
+    </section>
+
     <!-- Faixa escura: números do sistema -->
     <section class="w-full rounded-lg px-8 py-10 md:px-12 md:py-14 flex flex-col gap-10" style="background:#081330;" aria-labelledby="sistema-numeros-heading">
         <div class="flex flex-col gap-3">
             <h2 id="sistema-numeros-heading" class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] m-0" style="color:#A9C735;">O sistema em números</h2>
             <p class="text-[22px] md:text-[28px] font-normal leading-[1.25] max-w-[620px] m-0" style="color:#FFFFFF;">
-                Cada papel visual tem um único valor. Se duas opções servem ao mesmo papel, uma delas sai.
+                Da primeira versão para a final, o sistema perdeu tudo o que sobrava.
             </p>
         </div>
         <dl class="grid grid-cols-2 md:grid-cols-4 gap-8 m-0">
@@ -182,10 +210,28 @@
         <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
             <p>Em vez de uma paleta com dez valores soltos, cinco papéis: título, corpo, acento, linha e fundo. Cada papel tem um valor na superfície clara e outro na escura, e nenhum componente define cor própria. Os blocos escuros da página só trocam os valores dos papéis — o resto se ajusta sozinho, como um tema.</p>
             <p>O verde-limão é decorativo no claro e só vira texto sobre o azul-escuro, onde alcança 9,5:1 de contraste. O destaque que aparece ao passar o mouse nas listas também não é uma cor nova: é o próprio azul de acento, bem transparente sobre o fundo.</p>
+            <p>Fora dos papéis existe uma única cor: o vermelho de erro, que só aparece na validação do formulário e sempre acompanhado de uma mensagem em texto.</p>
         </div>
         <img src="assets/case-ciatrans/ds-papeis.jpg" width="1728" height="581" loading="lazy" decoding="async"
              alt="Os cinco papéis de cor nas duas superfícies, com token, hex e razão de contraste de cada um."
              class="w-full h-auto rounded border border-[#e5e5e5]">
+        <div class="flex flex-col gap-3">
+            <h3 class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Como a cor chega ao componente</h3>
+            <ol class="grid grid-cols-1 md:grid-cols-3 gap-4 list-none m-0 p-0">
+                <li class="flex flex-col gap-1 rounded border border-[#e5e5e5] p-5">
+                    <p class="text-[16px] font-medium text-[#111] m-0"><span aria-hidden="true">1 · </span>Valores</p>
+                    <p class="text-[15px] font-normal text-[#525252] m-0">Os dez valores de cor do sistema, nomeados pelo que são.</p>
+                </li>
+                <li class="flex flex-col gap-1 rounded border border-[#e5e5e5] p-5">
+                    <p class="text-[16px] font-medium text-[#111] m-0"><span aria-hidden="true">2 · </span>Papéis</p>
+                    <p class="text-[15px] font-normal text-[#525252] m-0">Título, corpo, acento, linha e fundo, com um valor no modo Claro e outro no Escuro.</p>
+                </li>
+                <li class="flex flex-col gap-1 rounded border border-[#e5e5e5] p-5">
+                    <p class="text-[16px] font-medium text-[#111] m-0"><span aria-hidden="true">3 · </span>Componentes</p>
+                    <p class="text-[15px] font-normal text-[#525252] m-0">Usam só os papéis, nunca um valor direto. Por isso nenhum precisa de uma versão escura.</p>
+                </li>
+            </ol>
+        </div>
     </section>
 
     <!-- Tipografia -->
@@ -201,7 +247,19 @@
         <img src="assets/case-ciatrans/ds-escala.jpg" width="1728" height="668" loading="lazy" decoding="async"
              alt="A escala tipográfica completa: cinco tokens com amostra, tamanho, entrelinha, peso e largura."
              class="w-full h-auto rounded border border-[#e5e5e5]">
-        <p class="font-['Geist'] text-[13px] font-light text-[#6E6E6E] m-0">A documentação completa do sistema — papéis, escala, componentes e checagens — vive num único frame no Figma, com as cores como variáveis e os modos Claro e Escuro.</p>
+    </section>
+
+    <!-- Componentes -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="componentes-heading">
+        <h2 id="componentes-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Componentes</h2>
+        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
+            <p>Poucos componentes, todos feitos só com os papéis. Como nenhum tem cor própria, funcionam iguais no fundo claro e no escuro.</p>
+            <p>O botão tem um tamanho e dois estilos, e ao passar o mouse sobe 2px com sombra em vez de ganhar uma cor nova. O chip selecionado muda de cor e ganha um check, para não depender só da cor. O campo com erro sempre mostra a mensagem em texto, e o destaque das linhas da frota é o acento a 5% sobre o fundo, sem mexer no conteúdo.</p>
+        </div>
+        <img src="assets/case-ciatrans/ds-componentes.webp" width="1728" height="1145" loading="lazy" decoding="async"
+             alt="Documentação dos componentes: botões, rótulo, tag, chips de seleção, campo nos estados padrão, foco e erro, anel de foco nas duas superfícies e linha da tabela da frota com o hover."
+             class="w-full h-auto rounded border border-[#e5e5e5]">
+        <p class="font-['Geist'] text-[13px] font-light text-[#6E6E6E] m-0">A documentação completa do sistema — princípios, cor, tipografia, componentes e acessibilidade — vive num único frame no Figma, com as cores como variáveis e os modos Claro e Escuro.</p>
     </section>
 
     <!-- Divisor -->
@@ -217,26 +275,37 @@
         <ul class="flex flex-col gap-6 w-full list-none m-0 p-0">
             <li class="flex flex-col gap-0.5 w-full">
                 <h3 class="text-[16px] font-medium text-[#111] m-0">Contraste como regra do sistema, não como ajuste final</h3>
+                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[1.5px] text-[#6E6E6E] m-0">WCAG 1.4.3 · 1.4.11</p>
                 <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
                     Cada papel de cor nasceu com a razão de contraste medida. O menor valor de texto da página é 6,5:1, acima dos 4,5:1 exigidos, e as bordas de campo chegam a 6,5:1 — contra 1,2:1 da primeira versão, praticamente invisíveis.
                 </p>
             </li>
             <li class="flex flex-col gap-0.5 w-full">
                 <h3 class="text-[16px] font-medium text-[#111] m-0">Movimento que o usuário controla</h3>
+                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[1.5px] text-[#6E6E6E] m-0">WCAG 2.2.2</p>
                 <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    O diagrama do topo anima em loop, então ganhou um botão de pausa (WCAG 2.2.2) e já começa parado para quem pede menos movimento no sistema.
+                    O diagrama do topo anima em loop, então ganhou um botão de pausa e já começa parado para quem pede menos movimento no sistema.
                 </p>
             </li>
             <li class="flex flex-col gap-0.5 w-full">
                 <h3 class="text-[16px] font-medium text-[#111] m-0">Formulário que explica o erro</h3>
+                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[1.5px] text-[#6E6E6E] m-0">WCAG 3.3.1 · 3.3.2</p>
                 <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
                     O erro deixou de ser só uma borda vermelha: virou mensagem em texto, anunciada por leitor de tela. Os campos opcionais são marcados e os serviços viraram um grupo com título próprio.
                 </p>
             </li>
             <li class="flex flex-col gap-0.5 w-full">
                 <h3 class="text-[16px] font-medium text-[#111] m-0">Teclado do começo ao fim</h3>
+                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[1.5px] text-[#6E6E6E] m-0">WCAG 2.4.1 · 2.4.7</p>
                 <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
                     Link para pular ao conteúdo, anel de foco visível em todos os controles — azul no claro, limão no escuro —, Esc fechando o menu e nenhum elemento focável escondido fora da tela.
+                </p>
+            </li>
+            <li class="flex flex-col gap-0.5 w-full">
+                <h3 class="text-[16px] font-medium text-[#111] m-0">Cabe em qualquer tela, funciona no dedo</h3>
+                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[1.5px] text-[#6E6E6E] m-0">WCAG 1.4.10 · 2.5.8</p>
+                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
+                    Nada de rolagem lateral mesmo numa tela de 320px, e todo alvo de toque tem pelo menos 36px.
                 </p>
             </li>
         </ul>
