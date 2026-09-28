@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="motion-safe:scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,84 +8,15 @@
 <meta property="og:title" content="Nathália Geraldo — Felipe Oliveira">
 <meta property="og:description" content="Case de produto: portfólio editorial para uma jornalista com 15 anos de carreira.">
 <meta property="og:type" content="article">
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 <style>
-    body {
-        font-family: 'Instrument Sans', sans-serif;
-        background-color: #FAFAFA;
-        color: #111111;
-    }
-    ::selection {
-        background-color: #E5E5E5;
-        color: #000;
-    }
-    .editorial-text {
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-    }
-    :focus-visible {
-        outline: 1px solid #111111;
-        outline-offset: 3px;
-    }
-
-    .hero-fade {
-        opacity: 0;
-        transform: translateY(6px);
-        animation: heroFade 0.9s ease forwards;
-    }
-    .hero-fade:nth-child(1) { animation-delay: 0.05s; }
-    .hero-fade:nth-child(2) { animation-delay: 0.3s; }
-    @keyframes heroFade {
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .ext-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        transition: opacity 0.2s ease;
-    }
-    .ext-link:hover { opacity: 0.65; }
-
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-    }
-
-    .skip-link {
-        position: absolute;
-        left: 1rem;
-        top: -3rem;
-        background: #111111;
-        color: #FAFAFA;
-        padding: 8px 16px;
-        border-radius: 4px;
-        font-size: 14px;
-        z-index: 50;
-        transition: top 0.2s ease;
-    }
-    .skip-link:focus {
-        top: 1rem;
-    }
-
     /* recriação em miniatura da identidade visual do site da Nathália,
        usada só dentro dos frames de preview abaixo */
     .ng-font-serif { font-family: 'Playfair Display', serif; }
     .ng-font-sans { font-family: 'DM Sans', sans-serif; }
-
-    @media (prefers-reduced-motion: reduce) {
-        .hero-fade { opacity: 1; transform: none; animation: none; }
-    }
 </style>
 </head>
 <body class="editorial-text font-normal antialiased">
@@ -107,7 +38,7 @@
     <div class="hero-fade flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 w-full">
         <a href="index.html" class="ext-link font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            felipe oliveira
+            felipe oliveira<span class="sr-only">, voltar ao portfólio</span>
         </a>
         <div class="flex items-center gap-6 flex-wrap">
             <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
@@ -123,7 +54,7 @@
     <!-- Abertura do case -->
     <section class="hero-fade flex flex-col gap-6 w-full" aria-label="Apresentação do projeto">
         <div class="flex items-center gap-3 flex-wrap">
-            <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">side project · case de produto</p>
+            <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">portfólio editorial · site no ar</p>
         </div>
 
         <h1 class="font-bold text-[clamp(32px,6vw,48px)] leading-[1.1] tracking-[-0.96px] text-[#111] m-0">
@@ -158,12 +89,9 @@
     <!-- Hero visual: retrato real do site -->
     <section class="w-full" aria-label="Retrato de Nathália Geraldo, do site no ar">
         <div class="w-full rounded-lg overflow-hidden bg-[#F2EFEA]">
-            <img
-                src="https://nathaliageraldo.com.br/assets/img/nathalia.png"
-                alt="Retrato de Nathália Geraldo, jornalista e editora em São Paulo — foto do site no ar"
-                class="w-full h-[280px] md:h-[420px] object-cover object-top"
-                loading="lazy"
-            >
+            <img src="assets/case-nathalia/retrato.jpg" width="1414" height="1458" fetchpriority="high" decoding="async"
+                 alt="Retrato de Nathália Geraldo, jornalista e editora em São Paulo, usado no site."
+                 class="w-full h-[280px] md:h-[420px] object-cover object-[center_20%]">
         </div>
     </section>
 
@@ -172,7 +100,7 @@
 
     <!-- Contexto -->
     <section class="flex flex-col gap-4 w-full" aria-labelledby="contexto-heading">
-        <h2 id="contexto-heading" class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Contexto</h2>
+        <h2 id="contexto-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Contexto</h2>
         <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
             <p>A Nathália é jornalista e editora com 15 anos de carreira — passou por veículos como UOL Universa e Marie Claire, foi coordenadora de podcasts na Obvious e tem uma trajetória forte em pautas sociais, culturais e de direitos das mulheres. O desafio não era falta de conteúdo: era o oposto. Reportagens especiais, perfis, roteiros de podcast, cortes para redes sociais, um artigo acadêmico de pós-graduação — um portfólio extenso e de naturezas bem diferentes, que precisava caber num site só sem virar um currículo denso ou uma lista cansativa de links.</p>
             <p>O site também precisava sustentar duas coisas ao mesmo tempo: a autoridade profissional dela (formação, trajetória em veículos reconhecidos, competências) e a experiência de navegar pelo trabalho publicado — pra quem chega ali é RH avaliando currículo, é marca buscando uma redatora, ou é leitor curioso sobre uma matéria específica.</p>
@@ -181,7 +109,7 @@
 
     <!-- Direção de design -->
     <section class="flex flex-col gap-6 w-full" aria-labelledby="direcao-heading">
-        <h2 id="direcao-heading" class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Direção de design</h2>
+        <h2 id="direcao-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Direção de design</h2>
         <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
             <p>O princípio que guiou todas as decisões foi simples: na dúvida, o caminho mais limpo. Testamos uma versão com seções escuras e uma segunda versão com tipografia em escada (títulos de tamanhos crescentes, meio editorial de revista) — as duas foram descartadas por ficarem "desorganizadas" diante do resto do site. O que ficou foi uma composição serifada (Playfair Display para títulos, DM Sans para o corpo do texto), paleta quente e clara (bege #F2EFEA de fundo, terracota #9E7C5C como único acento), com uma textura de grain sutil e um cursor customizado — os únicos dois excessos permitidos, porque reforçam a assinatura autoral sem competir com o conteúdo.</p>
             <p>Pro portfólio extenso, a solução foi um sistema de filtro por categoria — Todos, Reportagem, Podcast &amp; Roteiro, Redes &amp; Vídeo, Acadêmico — em vez de uma grade única e infinita. Cada card carrega o essencial pra escanear rápido: o veículo, o tipo de peça e uma linha de contexto, sem obrigar quem visita a abrir tudo pra entender do que se trata.</p>
@@ -249,10 +177,10 @@
 
     <!-- Implementação e SEO -->
     <section class="flex flex-col gap-4 w-full" aria-labelledby="implementacao-heading">
-        <h2 id="implementacao-heading" class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Implementação e SEO</h2>
+        <h2 id="implementacao-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Implementação e SEO</h2>
         <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
             <p>O design nasceu no Figma e foi implementado em HTML, CSS e JavaScript puros — sem framework. Essa escolha teve dois motivos: o site é pequeno o bastante pra não precisar da complexidade extra, e um HTML enxuto carrega mais rápido, o que pesa direto no SEO de um site que existe justamente pra ser encontrado por quem procura o trabalho da Nathália.</p>
-            <p>Isso significou cuidar de metadados completos (title, description, Open Graph) pensados pra cada tipo de busca, hierarquia semântica de verdade (header, main, section, footer, headings em ordem), e interações leves em vanilla JS — o próprio filtro de categoria do portfólio e o scroll-reveal dos elementos via IntersectionObserver — sem dependência de bibliotecas pesadas de animação.</p>
+            <p>Isso significou cuidar dos textos que aparecem no Google e nas prévias de link compartilhadas, de uma estrutura de página que buscadores e leitores de tela entendem, e de interações leves — o filtro de categorias do portfólio e as animações de entrada ao rolar a página — sem bibliotecas pesadas.</p>
         </div>
     </section>
 
@@ -261,13 +189,13 @@
 
     <!-- Resultado -->
     <section class="flex flex-col gap-6 w-full" aria-labelledby="resultado-heading">
-        <h2 id="resultado-heading" class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Resultado</h2>
+        <h2 id="resultado-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Resultado</h2>
         <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
             <p>O site está no ar em nathaliageraldo.com.br, reunindo mais de uma dezena de peças de portfólio organizadas em quatro categorias, a trajetória profissional completa e a formação acadêmica da Nathália — tudo isso sem abrir mão da leitura leve e editorial que guiou o projeto desde a primeira decisão de design.</p>
         </div>
 
         <div class="relative w-full rounded-lg overflow-hidden" style="aspect-ratio: 21/9; background:#F2EFEA; border:1px solid #e2ded6;">
-            <img src="assets/case-nathalia/screenshot-site-portfolio.jpg" alt="Screenshot real da secao de portfolio do site, mostrando os filtros de categoria e parte dos materiais publicados" class="absolute inset-0 w-full h-full object-cover" style="object-position: top;" loading="lazy">
+            <img src="assets/case-nathalia/screenshot-site-portfolio.jpg" alt="Seção de portfólio do site, com os filtros de categoria e parte dos materiais publicados." class="absolute inset-0 w-full h-full object-cover" style="object-position: top;" loading="lazy">
         </div>
 
         <a href="https://nathaliageraldo.com.br" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">
@@ -276,11 +204,20 @@
         </a>
     </section>
 
+    <!-- Próximo case -->
+    <nav class="card group w-full border-t border-[#e5e5e5] pt-10" aria-label="Próximo case">
+        <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Próximo case</p>
+        <p class="font-bold text-[28px] sm:text-[36px] tracking-[-0.5px] text-[#111] pt-2 m-0">
+            <a href="ciatrans.html" class="card-link">CIATRANS</a>
+        </p>
+        <p class="font-normal text-[16px] text-[#525252] pt-2 m-0">Site e design system para uma empresa de logística do Porto de Santos. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
+    </nav>
+
     <!-- Rodapé -->
     <footer class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full pt-4 border-t border-[#e5e5e5]">
         <a href="index.html" class="ext-link font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            voltar pro portfólio
+            voltar ao portfólio
         </a>
         <div class="flex items-center gap-6 flex-wrap">
             <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">

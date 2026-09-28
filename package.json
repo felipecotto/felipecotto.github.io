@@ -1,0 +1,12 @@
+{
+  "name": "felipecotto.github.io",
+  "private": true,
+  "description": "Portfólio de Felipe Oliveira. O CSS é gerado localmente e versionado, porque o GitHub Pages serve os arquivos estáticos sem build.",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/site.css -o ./css/site.css --minify",
+    "watch:css": "tailwindcss -i ./src/site.css -o ./css/site.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  }
+}

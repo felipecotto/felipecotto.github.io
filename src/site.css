@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        /* compensa o header fixo da home ao navegar por âncoras */
+        scroll-padding-top: 6rem;
+    }
+    body {
+        font-family: 'Instrument Sans', sans-serif;
+        background-color: #FAFAFA;
+        color: #111111;
+    }
+    ::selection {
+        background-color: #E5E5E5;
+        color: #000;
+    }
+    :focus-visible {
+        outline: 2px solid #111111;
+        outline-offset: 3px;
+    }
+}
+
+@layer components {
+    .editorial-text {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .hero-fade {
+        opacity: 0;
+        transform: translateY(6px);
+        animation: heroFade 0.9s ease forwards;
+    }
+    .hero-fade:nth-child(2) { animation-delay: 0.15s; }
+
+    .ext-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: opacity 0.2s ease;
+    }
+    .ext-link:hover { opacity: 0.65; }
+
+    /* pular para o conteúdo principal, visível só ao ganhar foco (navegação por teclado) */
+    .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -3rem;
+        background: #111111;
+        color: #FAFAFA;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        z-index: 50;
+        transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* card clicável inteiro, mas com um único link (o título) para leitores de tela */
+    .card { position: relative; }
+    .card-link::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+    .card-link:focus-visible { outline: none; }
+    .card:has(.card-link:focus-visible) {
+        outline: 2px solid #111111;
+        outline-offset: 4px;
+    }
+}
+
+@keyframes heroFade {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-fade { opacity: 1; transform: none; animation: none; }
+}
