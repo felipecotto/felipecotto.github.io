@@ -11,10 +11,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
     body {
-        font-family: 'Geist', sans-serif;
+        font-family: 'Instrument Sans', sans-serif;
         background-color: #FAFAFA;
         color: #111111;
     }
@@ -34,13 +34,9 @@
     /* entrada única do hero — sem reveal-on-scroll, só o carregamento */
     .hero-fade {
         opacity: 0;
-        transform: translateY(6px);
-        animation: heroFade 0.9s ease forwards;
+        transform: translateY(8px);
+        animation: heroFade 0.8s ease forwards;
     }
-    .hero-fade:nth-child(1) { animation-delay: 0.05s; }
-    .hero-fade:nth-child(2) { animation-delay: 0.3s; }
-    .hero-fade:nth-child(3) { animation-delay: 0.55s; }
-    .hero-fade:nth-child(4) { animation-delay: 0.7s; }
     @keyframes heroFade {
         to { opacity: 1; transform: translateY(0); }
     }
@@ -93,12 +89,17 @@
         top: 1rem;
     }
 
+    /* parallax bem sutil no hero — aplicado via JS, desativado com prefers-reduced-motion */
+    [data-parallax] {
+        will-change: transform;
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .hero-fade { opacity: 1; transform: none; animation: none; }
     }
 </style>
 </head>
-<body class="editorial-text font-light antialiased">
+<body class="editorial-text font-normal antialiased">
 
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
@@ -109,69 +110,85 @@
     </symbol>
 </svg>
 
-<main id="conteudo" class="max-w-[1200px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-10">
+<!-- Navegação fixa -->
+<header class="sticky top-0 z-40 w-full bg-[rgba(250,250,250,0.88)] backdrop-blur-[14px] border-b border-[#e5e5e5]">
+    <nav class="w-full max-w-[1920px] mx-auto px-6 py-4 flex items-start justify-between" aria-label="Navegação principal">
+        <p class="font-['Geist'] font-normal text-[16px] sm:text-[18px] text-[#111] m-0">Felipe Oliveira</p>
+        <div class="flex flex-col items-end gap-2">
+            <a href="#trajetoria-heading" class="font-['Geist'] font-normal text-[16px] sm:text-[18px] text-[#111] hover:opacity-60">Trajetória</a>
+            <a href="#side-projects-heading" class="font-['Geist'] font-normal text-[16px] sm:text-[18px] text-[#111] hover:opacity-60">Projetos</a>
+            <a href="#contato" class="font-['Geist'] font-normal text-[16px] sm:text-[18px] text-[#111] hover:opacity-60">Contato</a>
+        </div>
+    </nav>
+</header>
+
+<main id="conteudo" class="w-full max-w-[1920px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16 md:gap-24">
+
+    <h1 class="sr-only">Felipe Oliveira — Product Designer</h1>
 
     <!-- Abertura -->
-    <section class="flex flex-col gap-4 w-full" aria-label="Apresentação">
+    <section class="hero-fade flex flex-col w-full" aria-label="Apresentação">
 
-        <div class="hero-fade flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 w-full">
-            <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] sm:whitespace-nowrap">
-                Felipe Oliveira / product designer / São Paulo
-            </p>
-            <div class="flex items-center gap-6 flex-wrap">
-                <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link text-[18px] font-medium text-[#525252] hover:text-[#111]">
-                    e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                </a>
-                <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link text-[18px] font-medium text-[#525252] hover:text-[#111]">
-                    linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                    <span class="sr-only">(abre em nova aba)</span>
-                </a>
+        <!-- composição desktop: PRODUCT / foto / DESIGNER sobrepostos -->
+        <div class="hidden sm:block relative w-full" style="min-height: clamp(320px, 42vw, 802px);">
+            <p class="absolute left-[13%] top-[35%] w-[80%] font-['Instrument_Sans'] font-bold uppercase text-[clamp(40px,11.5vw,220px)] leading-none tracking-[0.08em] text-[#111] m-0" data-parallax="title" aria-hidden="true">Product</p>
+            <p class="absolute left-[18%] top-[67%] w-[82%] font-['Instrument_Sans'] font-bold uppercase text-[clamp(40px,11.5vw,220px)] leading-none tracking-[0.08em] text-[#111] m-0" data-parallax="title" aria-hidden="true">Designer</p>
+            <div class="absolute left-[33%] top-0 w-[35%] aspect-[530/471] overflow-hidden bg-[#d9d9d9]" data-parallax="photo">
+                <img src="assets/sobre/corrida-comemoracao.jpg" width="1200" height="800" loading="eager" decoding="async"
+                     alt="Felipe Oliveira sorrindo após uma corrida."
+                     class="w-full h-full object-cover">
             </div>
         </div>
 
-        <div class="hero-fade flex flex-col gap-6 w-full">
-            <h1 class="font-light text-[clamp(28px,5vw,40px)] leading-[1.15] tracking-[-0.96px] text-[#111]">
-                Projeto produtos digitais entre estratégia, interface e implementação.
-            </h1>
-
-            <div class="flex flex-col gap-4 text-[16px] w-full">
-                <p class="font-normal text-[#111]">Senior Product Designer focado em Design Systems e estratégia.</p>
-
-                <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E]">
-                    8+ anos em produto&nbsp;&nbsp;·&nbsp;&nbsp;ex-front-end&nbsp;&nbsp;·&nbsp;&nbsp;design systems em escala
-                </p>
-
-                <div class="font-light text-[#525252] flex flex-col gap-4">
-                    <p>Minha jornada com tecnologia começou em 2010, no suporte técnico de uma fábrica de software em Sorocaba. Foi lá que descobri o que era programação. De lá pra cá, passei por social media, design e desenvolvimento front-end (saudades, jQuery), até me achar como Product Designer em 2019, numa startup. Foi ali que vi que poderia usar toda essa bagagem pra criar produtos digitais relevantes e de impacto.</p>
-                    <p>Atuar com design systems sempre foi um caminho natural. Minha vivência com front-end me mostrou cedo que componentes bem organizados e decisões claras de design são o que sustentam a escala.</p>
-                    <p>Não basta desenhar produtos: precisamos desenhar produtos para serem construídos.</p>
-                </div>
+        <!-- composição mobile: empilhada, sem sobreposição -->
+        <div class="sm:hidden flex flex-col items-center gap-6 py-6 text-center">
+            <p class="font-['Instrument_Sans'] font-bold uppercase text-[16vw] leading-[0.9] tracking-[0.03em] text-[#111] m-0" aria-hidden="true">Product</p>
+            <div class="w-full max-w-[320px] aspect-[530/471] overflow-hidden bg-[#d9d9d9]">
+                <img src="assets/sobre/corrida-comemoracao.jpg" width="1200" height="800" loading="eager" decoding="async"
+                     alt="Felipe Oliveira sorrindo após uma corrida."
+                     class="w-full h-full object-cover">
             </div>
+            <p class="font-['Instrument_Sans'] font-bold uppercase text-[16vw] leading-[0.9] tracking-[0.03em] text-[#111] m-0" aria-hidden="true">Designer</p>
+        </div>
+    </section>
+
+    <!-- Citação -->
+    <section class="flex flex-col items-start w-full" aria-label="Resumo">
+        <p class="font-['Plus_Jakarta_Sans'] font-normal text-[clamp(28px,5vw,56px)] leading-[1.15] text-[#464646] max-w-[900px] m-0">
+            Projeto produtos digitais entre estratégia, interface e implementação.
+        </p>
+    </section>
+
+    <!-- Divisor -->
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
+    <!-- Sobre -->
+    <section class="flex flex-col gap-10 w-full" aria-label="Sobre">
+        <div class="font-['Instrument_Sans'] font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4 m-0">
+            <p class="m-0">Minha jornada com tecnologia começou em 2010, no suporte técnico de uma fábrica de software em Sorocaba. Foi lá que descobri o que era programação. De lá pra cá, passei por social media, design e desenvolvimento front-end (saudades, jQuery), até me achar como Product Designer em 2019, numa startup. Foi ali que vi que poderia usar toda essa bagagem pra criar produtos digitais relevantes e de impacto.</p>
+            <p class="m-0">Atuar com design systems sempre foi um caminho natural. Minha vivência com front-end me mostrou cedo que componentes bem organizados e decisões claras de design são o que sustentam a escala.</p>
+            <p class="m-0">Não basta desenhar produtos: precisamos desenhar produtos para serem construídos.</p>
         </div>
 
-        <!-- Em campo: fotos de palestras, workshops e mentoria -->
-        <div class="hero-fade flex flex-col sm:flex-row gap-4 w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-px gap-y-px bg-[#e5e5e5] w-full">
             <img src="assets/sobre/estrategia.jpg" width="1000" height="666" loading="lazy" decoding="async"
                  alt="Felipe conduzindo uma dinâmica de priorização com o time, apontando para post-its organizados na parede."
-                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
+                 class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
             <img src="assets/sobre/interface.jpg" width="1000" height="666" loading="lazy" decoding="async"
                  alt="Felipe apresentando um grid de opacidade e brilho para explicar um princípio de interface."
-                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
+                 class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
             <img src="assets/sobre/implementacao.jpg" width="1000" height="562" loading="lazy" decoding="async"
                  alt="Felipe ensinando CSS e media queries, apontando para um trecho de código projetado."
-                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
-        </div>
-
-        <div class="hero-fade flex flex-col sm:flex-row gap-4 w-full">
+                 class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
             <img src="assets/sobre/palestra.jpg" width="960" height="640" loading="lazy" decoding="async"
                  alt="Felipe em pé no palco, com um microfone, apresentando um gráfico do Design Value Index."
-                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover bg-[#d9d9d9]">
+                 class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover bg-[#d9d9d9]">
             <img src="assets/sobre/pesquisa.jpg" width="750" height="500" loading="lazy" decoding="async"
                  alt="Felipe apresentando um slide sobre pesquisa contínua documentada, num evento com mural colorido ao fundo."
-                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
+                 class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
             <img src="assets/sobre/equipe.jpg" width="1440" height="960" loading="lazy" decoding="async"
                  alt="Felipe sentado numa poltrona, conversando com o time, com colegas trabalhando ao fundo e o logo da Inventa na parede."
-                 class="photo-tone h-[180px] md:h-[240px] w-full sm:flex-1 min-w-0 rounded object-cover bg-[#d9d9d9]">
+                 class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover bg-[#d9d9d9]">
         </div>
     </section>
 
@@ -180,295 +197,234 @@
 
     <!-- Trajetória -->
     <section class="flex flex-col gap-10 w-full" aria-labelledby="trajetoria-heading">
-        <h2 id="trajetoria-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Trajetória</h2>
+        <h2 id="trajetoria-heading" class="font-['Instrument_Sans'] font-medium text-[20px] text-[#111] m-0 scroll-mt-24">Trajetória</h2>
 
-        <ul class="flex flex-col gap-6 w-full list-none m-0 p-0">
+        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#e5e5e5]">
 
             <!-- Tivita -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <!-- TODO Felipe: sem link confirmado ainda; trocar por <a href="URL real"> quando tiver -->
-                    <h3 class="text-[18px] font-medium text-[#111] m-0">Tivita</h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">Jun 2024 - Set 2026</p>
+            <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-['Instrument_Sans'] font-medium text-[16px] text-[#111] m-0">Tivita</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Jun 2024 – Set 2026</p>
                 </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    <span class="font-medium text-[#525252]">Fintech + Health care.</span>
-                    Fui o primeiro designer contratado na startup, atuei nas features iniciais ponta a ponta e na fundação do design system. Depois, atuei no módulo de automação de guias médicas, do atendimento ao fechamento de lotes, prototipando com apoio do Claude Code.
+                <p class="font-['Instrument_Sans'] text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
+                    <span class="font-medium">Fintech + Health care.</span>
+                    <span class="font-normal"> Fui o primeiro designer contratado na startup, atuei nas features iniciais ponta a ponta e na fundação do design system. Depois, atuei no módulo de automação de guias médicas, do atendimento ao fechamento de lotes, prototipando com apoio do Claude Code.</span>
                 </p>
             </li>
 
             <!-- Inventa -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <!-- TODO Felipe: sem link confirmado ainda; trocar por <a href="URL real"> quando tiver -->
-                    <h3 class="text-[18px] font-medium text-[#111] m-0">Inventa</h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">Jul 2023 - Jun 2024</p>
+            <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-['Instrument_Sans'] font-medium text-[16px] text-[#111] m-0">Inventa</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Jul 2023 – Jun 2024</p>
                 </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    <span class="font-medium text-[#525252]">Retail tech + Marketplace B2B.</span>
-                    Atuei no marketplace e em produtos internos de gestão de clientes, do discovery presencial com vendedores até a interface final.
-                </p>
-                <a href="cases/case-inventa.pdf" target="_blank" rel="noopener noreferrer" class="text-[14px] font-normal tracking-[1.65px] uppercase text-[#6E6E6E] hover:text-[#111] border-b border-[#c9c9c9] hover:border-[#111] w-fit mt-1 transition-colors">
-                    Baixar case (PDF)
-                    <span class="sr-only">(abre em nova aba)</span>
-                </a>
+                <div class="flex flex-col gap-2 max-w-[720px]">
+                    <p class="font-['Instrument_Sans'] text-[16px] leading-[1.6] text-[#525252] m-0">
+                        <span class="font-medium">Retail tech + Marketplace B2B.</span>
+                        <span class="font-normal"> Atuei no marketplace e em produtos internos de gestão de clientes, do discovery presencial com vendedores até a interface final.</span>
+                    </p>
+                    <a href="cases/case-inventa.pdf" target="_blank" rel="noopener noreferrer" class="font-['Geist'] font-medium text-[13px] text-[#525252] hover:text-[#111] underline underline-offset-2 w-fit">
+                        Baixar case (PDF) ↗
+                        <span class="sr-only">(abre em nova aba)</span>
+                    </a>
+                </div>
             </li>
 
             <!-- Olist -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <!-- TODO Felipe: sem link confirmado ainda; trocar por <a href="URL real"> quando tiver -->
-                    <h3 class="text-[18px] font-medium text-[#111] m-0">Olist</h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">Ago 2021 - Jul 2023</p>
+            <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-['Instrument_Sans'] font-medium text-[16px] text-[#111] m-0">Olist</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Ago 2021 – Jul 2023</p>
                 </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    <span class="font-medium text-[#525252]">E-commerce + Retail tech.</span>
-                    Atuei no app do lojista, com notificações e ajustes rápidos de preço e estoque, e depois na integração com a Tiny, unificando onboarding e seleção de planos entre os dois ecossistemas.
-                </p>
-                <a href="cases/case-olist.pdf" target="_blank" rel="noopener noreferrer" class="text-[14px] font-normal tracking-[1.65px] uppercase text-[#6E6E6E] hover:text-[#111] border-b border-[#c9c9c9] hover:border-[#111] w-fit mt-1 transition-colors">
-                    Baixar case (PDF)
-                    <span class="sr-only">(abre em nova aba)</span>
-                </a>
+                <div class="flex flex-col gap-2 max-w-[720px]">
+                    <p class="font-['Instrument_Sans'] text-[16px] leading-[1.6] text-[#525252] m-0">
+                        <span class="font-medium">E-commerce + Retail tech.</span>
+                        <span class="font-normal"> Atuei no app do lojista, com notificações e ajustes rápidos de preço e estoque, e depois na integração com a Tiny, unificando onboarding e seleção de planos entre os dois ecossistemas.</span>
+                    </p>
+                    <a href="cases/case-olist.pdf" target="_blank" rel="noopener noreferrer" class="font-['Geist'] font-medium text-[13px] text-[#525252] hover:text-[#111] underline underline-offset-2 w-fit">
+                        Baixar case (PDF) ↗
+                        <span class="sr-only">(abre em nova aba)</span>
+                    </a>
+                </div>
             </li>
 
             <!-- Stone -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <!-- TODO Felipe: sem link confirmado ainda; trocar por <a href="URL real"> quando tiver -->
-                    <h3 class="text-[18px] font-medium text-[#111] m-0">Stone</h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">Dez 2020 - Ago 2021</p>
+            <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-['Instrument_Sans'] font-medium text-[16px] text-[#111] m-0">Stone</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Dez 2020 – Ago 2021</p>
                 </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    <span class="font-medium text-[#525252]">Fintech.</span>
-                    Atuei no design system e nas primeiras versões da dashboard da conta, Web e Mobile, onde lojistas gerenciavam cartões, Pix e contratação de seguros e empréstimos.
+                <p class="font-['Instrument_Sans'] text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
+                    <span class="font-medium">Fintech.</span>
+                    <span class="font-normal"> Atuei no design system e nas primeiras versões da dashboard da conta, Web e Mobile, onde lojistas gerenciavam cartões, Pix e contratação de seguros e empréstimos.</span>
                 </p>
             </li>
 
             <!-- Meiuca -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <!-- TODO Felipe: sem link confirmado ainda; trocar por <a href="URL real"> quando tiver -->
-                    <h3 class="text-[18px] font-medium text-[#111] m-0">Meiuca</h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">Out 2019 - Jun 2020</p>
+            <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-['Instrument_Sans'] font-medium text-[16px] text-[#111] m-0">Meiuca</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Out 2019 – Jun 2020</p>
                 </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    <span class="font-medium text-[#525252]">Design studio.</span>
-                    Meu projeto principal foi o design system da XP Investimentos: 6 meses mapeando inconsistências entre produtos e construindo foundations e primeiros componentes para toda a companhia.
+                <p class="font-['Instrument_Sans'] text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
+                    <span class="font-medium">Design studio.</span>
+                    <span class="font-normal"> Meu projeto principal foi o design system da XP Investimentos: 6 meses mapeando inconsistências entre produtos e construindo foundations e primeiros componentes para toda a companhia.</span>
                 </p>
             </li>
 
             <!-- Goomer -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <!-- TODO Felipe: sem link confirmado ainda; trocar por <a href="URL real"> quando tiver -->
-                    <h3 class="text-[18px] font-medium text-[#111] m-0">Goomer</h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">Out 2018 - Out 2019</p>
+            <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-8 w-full py-8">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-['Instrument_Sans'] font-medium text-[16px] text-[#111] m-0">Goomer</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Out 2018 – Out 2019</p>
                 </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    <span class="font-medium text-[#525252]">Foodtech + Retail tech.</span>
-                    Atuei na ferramenta de gestão de cardápios digitais e na primeira fase dos totens de autoatendimento, com bastante discovery de campo para mapear a jornada dos restaurantes.
+                <p class="font-['Instrument_Sans'] text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
+                    <span class="font-medium">Foodtech + Retail tech.</span>
+                    <span class="font-normal"> Atuei na ferramenta de gestão de cardápios digitais e na primeira fase dos totens de autoatendimento, com bastante discovery de campo para mapear a jornada dos restaurantes.</span>
                 </p>
             </li>
         </ul>
 
-        <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="text-[13px] font-light text-[#6E6E6E] hover:text-[#111] w-fit">
-            Ver mais experiências no LinkedIn ↗
+        <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="font-['Geist'] font-medium text-[13px] text-[#525252] hover:text-[#111] w-fit">
+            Ver currículo completo no LinkedIn ↗
             <span class="sr-only">(abre em nova aba)</span>
         </a>
     </section>
 
+    <!-- Divisor -->
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
     <!-- Side projects -->
     <section class="flex flex-col gap-10 w-full" aria-labelledby="side-projects-heading">
-        <div class="flex flex-col gap-1">
-            <h2 id="side-projects-heading" class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">side projects</h2>
-            <p class="text-[14px] font-light text-[#6E6E6E] m-0">Projetos pessoais, fora do expediente.</p>
+        <div class="flex flex-col gap-2">
+            <h2 id="side-projects-heading" class="font-['Instrument_Sans'] font-medium text-[20px] text-[#111] m-0 scroll-mt-24">Side projects</h2>
+            <p class="font-['Geist'] font-light text-[14px] text-[#6E6E6E] m-0">Explorações de produto, UI e tecnologia. Fora do expediente.</p>
         </div>
 
-        <ul class="flex flex-col gap-10 w-full list-none m-0 p-0">
+        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#e5e5e5]">
 
-            <!-- CSS Zen Garden — o "← Portfólio" da vitrine volta para esta âncora -->
-            <li id="css-zen-garden" class="flex flex-col gap-0.5 w-full scroll-mt-8">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <h3 class="text-[18px] font-medium text-[#111] m-0">CSS Zen Garden</h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">2 versões</p>
-                </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    Minha versão do <a href="https://www.csszengarden.com/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 decoration-[#c9c9c9] hover:text-[#111]">CSS Zen Garden<span class="sr-only"> (abre em nova aba)</span></a>: o HTML original, sem tocar na estrutura, reestilizado só com CSS como uma landing page de startup. Duas direções, uma editorial e outra mais ousada, ambas com tema claro e escuro e validadas contra a WCAG.
-                </p>
-                <div class="flex flex-wrap gap-x-6 gap-y-1 mt-1">
-                    <a href="css-zen-garden/index.html?design=v1" class="text-[13px] font-light text-[#6E6E6E] hover:text-[#111] w-fit">
-                        Versão 1 · Quiet Light ↗
-                    </a>
-                    <a href="css-zen-garden/index.html?design=v2" class="text-[13px] font-light text-[#6E6E6E] hover:text-[#111] w-fit">
-                        Versão 2 · Signal ↗
-                    </a>
-                </div>
-                <div class="flex flex-col md:flex-row gap-4 w-full mt-4">
-                    <img src="assets/case-zengarden/zen-light.jpg" width="700" height="493" loading="lazy" decoding="async"
-                         alt="Versão 1 no tema claro: página original do CSS Zen Garden restilizada como uma landing page editorial, com o texto 'The Road to Enlightenment' e a lista de designs à direita."
-                         class="h-[260px] md:h-[400px] w-full md:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
-                    <img src="assets/case-zengarden/zen-dark.jpg" width="700" height="493" loading="lazy" decoding="async"
-                         alt="Versão 2 no tema escuro: título CSS Zen Garden em gradiente lavanda e ciano, com o card de download da versão HTML e CSS."
-                         class="h-[260px] md:h-[400px] w-full md:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
-                </div>
+            <!-- CiaTrans -->
+            <li class="border-b border-[#e5e5e5]">
+                <a href="ciatrans.html" class="group flex flex-col gap-6 py-10 w-full">
+                    <div class="flex gap-6 sm:gap-10 items-start w-full">
+                        <span class="font-['Geist'] font-medium text-[11px] text-[#d9d9d9] pt-1 w-5 shrink-0" aria-hidden="true">01</span>
+                        <div class="flex-1 min-w-0 flex flex-col">
+                            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Case em destaque</p>
+                            <h3 class="font-['Instrument_Sans'] font-bold text-[24px] sm:text-[28px] tracking-[-0.3px] text-[#111] pt-2 m-0">CiaTrans</h3>
+                            <p class="font-['Instrument_Sans'] font-normal text-[15px] leading-[1.6] text-[#525252] max-w-[620px] pt-2 pb-4 m-0">Redesenhando a presença digital de uma das maiores transportadoras portuárias do Brasil.</p>
+                            <p class="font-['Geist'] font-medium text-[13px] text-[#525252] group-hover:text-[#111] transition-colors m-0">Ver case completo ↗</p>
+                        </div>
+                    </div>
+                    <img src="assets/case-ciatrans/depois.jpg" width="1728" height="1080" loading="lazy" decoding="async"
+                         alt="Home do site CiaTrans depois do redesign, com diagrama animado da operação portuária."
+                         class="w-full h-[300px] sm:h-[439px] object-cover bg-[#d9d9d9]">
+                </a>
             </li>
 
             <!-- nosso+ -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <h3 class="text-[18px] font-medium m-0">
-                        <a href="nosso-plus.html" class="ext-link text-[#111] hover:opacity-70">
-                            nosso+ <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                        </a>
-                    </h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">🚧 WIP</p>
-                </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    Nasceu da evolução de um projeto de curso sobre a conexão Figma + Cursor, que começou como uma dashboard financeira simples. Desenvolvi a landing page, a direção de arte das fotos com IA e o storytelling do nosso+, um conceito de gestão financeira para casais alcançarem objetivos em conjunto.
-                </p>
-                <a href="nosso-plus.html" class="text-[13px] font-light text-[#6E6E6E] hover:text-[#111] w-fit mt-1">
-                    Ver case completo ↗
+            <li class="border-b border-[#e5e5e5]">
+                <a href="nosso-plus.html" class="group flex flex-col gap-6 py-10 w-full">
+                    <div class="flex gap-6 sm:gap-10 items-start w-full">
+                        <span class="font-['Geist'] font-medium text-[11px] text-[#d9d9d9] pt-1 w-5 shrink-0" aria-hidden="true">02</span>
+                        <div class="flex-1 min-w-0 flex flex-col">
+                            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Case em destaque · Em desenvolvimento</p>
+                            <h3 class="font-['Instrument_Sans'] font-bold text-[24px] sm:text-[28px] tracking-[-0.3px] text-[#111] pt-2 m-0">nosso+</h3>
+                            <p class="font-['Instrument_Sans'] font-normal text-[15px] leading-[1.6] text-[#525252] max-w-[620px] pt-2 pb-4 m-0">Um app para casais construírem metas financeiras juntos. Em desenvolvimento.</p>
+                            <p class="font-['Geist'] font-medium text-[13px] text-[#525252] group-hover:text-[#111] transition-colors m-0">Ver case completo ↗</p>
+                        </div>
+                    </div>
                 </a>
-                <div class="flex flex-col md:flex-row gap-4 w-full mt-4" aria-hidden="true">
-                    <div class="h-[260px] md:h-[400px] md:flex-1 rounded bg-[#d9d9d9]"></div>
-                    <div class="flex flex-col gap-4 h-[260px] md:h-[400px] md:flex-1">
-                        <div class="flex-1 rounded bg-[#d9d9d9]"></div>
-                        <div class="flex-1 flex gap-4">
-                            <div class="flex-1 rounded bg-[#d9d9d9]"></div>
-                            <div class="flex-1 rounded bg-[#d9d9d9]"></div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <!-- usectt -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <h3 class="text-[18px] font-medium m-0">
-                        <a href="https://usectt.com.br" target="_blank" rel="noopener noreferrer" class="ext-link text-[#111] hover:opacity-70">
-                            usectt <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                            <span class="sr-only">(abre em nova aba)</span>
-                        </a>
-                    </h3>
-                    <p class="text-[14px] font-light text-[#6E6E6E] whitespace-nowrap m-0">🚧 WIP</p>
-                </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    Dashboard pessoal de corrida, construída com meus próprios dados de treino (sou maratonista). Ainda em refinamento, a ideia é uma leitura mais direta e visual da minha performance ao longo do tempo.
-                </p>
-                <div class="flex flex-col md:flex-row gap-4 w-full mt-4" aria-hidden="true">
-                    <div class="h-[260px] md:h-[400px] md:flex-1 rounded bg-[#d9d9d9]"></div>
-                    <div class="flex flex-col gap-4 h-[260px] md:h-[400px] md:flex-1">
-                        <div class="flex-1 rounded bg-[#d9d9d9]"></div>
-                        <div class="flex-1 flex gap-4">
-                            <div class="flex-1 rounded bg-[#d9d9d9]"></div>
-                            <div class="flex-1 rounded bg-[#d9d9d9]"></div>
-                        </div>
-                    </div>
-                </div>
             </li>
 
             <!-- Nathalia Geraldo -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <h3 class="text-[18px] font-medium m-0">
-                        <a href="https://nathaliageraldo.com.br" target="_blank" rel="noopener noreferrer" class="ext-link text-[#111] hover:opacity-70">
-                            Nathalia Geraldo <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                            <span class="sr-only">(abre em nova aba)</span>
-                        </a>
-                    </h3>
-                </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    Portfólio para uma jornalista com mais de 10 anos de carreira, organizado em torno da própria assinatura editorial dela.
-                </p>
-                <a href="nathalia-geraldo.html" class="text-[13px] font-light text-[#6E6E6E] hover:text-[#111] w-fit mt-1">
-                    Ver case completo ↗
-                </a>
-                <div class="flex flex-col md:flex-row gap-4 w-full mt-4">
-                    <img src="assets/case-nathalia/screenshot-site-desktop.jpg" width="800" height="540" loading="lazy" decoding="async"
-                         alt="Home do site: título 'Oi, sou Nathália Geraldo' sobre um fundo bege com gradiente suave."
-                         class="h-[260px] md:h-[400px] w-full md:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
-                    <div class="flex gap-4 h-[260px] md:h-[400px] md:flex-1 min-w-0">
-                        <img src="assets/case-nathalia/screenshot-site-portfolio.jpg" width="400" height="400" loading="lazy" decoding="async"
-                             alt="Página de portfólio: grade de cards com as reportagens e projetos dela."
-                             class="flex-1 min-w-0 h-full rounded object-cover object-top bg-[#d9d9d9]">
-                        <img src="assets/case-nathalia/screenshot-site-mobile.jpg" width="400" height="400" loading="lazy" decoding="async"
-                             alt="Home do site em versão mobile, com o mesmo título centralizado."
-                             class="flex-1 min-w-0 h-full rounded object-cover object-top bg-[#d9d9d9]">
-                    </div>
-                </div>
-            </li>
-
-            <!-- CiaTrans -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <h3 class="text-[18px] font-medium m-0">
-                        <a href="https://projeto-ciatrans.netlify.app/" target="_blank" rel="noopener noreferrer" class="ext-link text-[#111] hover:opacity-70">
-                            CiaTrans <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                            <span class="sr-only">(abre em nova aba)</span>
-                        </a>
-                    </h3>
-                </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    Logística portuária no Porto de Santos: a primeira peça de comunicação de uma empresa com décadas de operação e nenhum material próprio. Landing page e design system completos.
-                </p>
-                <a href="ciatrans.html" class="text-[13px] font-light text-[#6E6E6E] hover:text-[#111] w-fit mt-1">
-                    Ver case completo ↗
-                </a>
-                <div class="flex flex-col md:flex-row gap-4 w-full mt-4">
-                    <img src="assets/case-ciatrans/depois.jpg" width="1728" height="1080" loading="lazy" decoding="async"
-                         alt="Home do site depois do redesign: headline 'Infraestrutura logística confiável' com diagrama animado da operação portuária."
-                         class="h-[260px] md:h-[400px] w-full md:flex-1 min-w-0 rounded object-cover object-top bg-[#d9d9d9]">
-                    <div class="flex flex-col gap-4 h-[260px] md:h-[400px] md:flex-1 min-w-0">
-                        <img src="assets/case-ciatrans/mobile.jpg" width="720" height="1558" loading="lazy" decoding="async"
-                             alt="Versão mobile da home, com o mesmo hero e botões de contato empilhados."
-                             class="flex-1 min-w-0 min-h-0 h-full w-full rounded object-cover object-top bg-[#d9d9d9]">
-                        <div class="flex-1 flex gap-4 min-w-0 min-h-0">
-                            <img src="assets/case-ciatrans/pilares.jpg" width="1728" height="1007" loading="lazy" decoding="async"
-                                 alt="Seção Pilares, com os cards Eficiência, Confiança e Segurança sobre fundo azul-marinho."
-                                 class="flex-1 min-w-0 min-h-0 h-full rounded object-cover object-top bg-[#d9d9d9]">
-                            <img src="assets/case-ciatrans/servicos.jpg" width="1728" height="1003" loading="lazy" decoding="async"
-                                 alt="Grade de serviços com seis cards, de atendimento 24/7 a integração logística."
-                                 class="flex-1 min-w-0 min-h-0 h-full rounded object-cover object-top bg-[#d9d9d9]">
+            <li class="border-b border-[#e5e5e5]">
+                <a href="nathalia-geraldo.html" class="group flex flex-col gap-6 py-10 w-full">
+                    <div class="flex gap-6 sm:gap-10 items-start w-full">
+                        <span class="font-['Geist'] font-medium text-[11px] text-[#d9d9d9] pt-1 w-5 shrink-0" aria-hidden="true">03</span>
+                        <div class="flex-1 min-w-0 flex flex-col">
+                            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Portfólio pessoal</p>
+                            <h3 class="font-['Instrument_Sans'] font-bold text-[24px] sm:text-[28px] tracking-[-0.3px] text-[#111] pt-2 m-0">Nathalia Geraldo</h3>
+                            <p class="font-['Instrument_Sans'] font-normal text-[15px] leading-[1.6] text-[#525252] max-w-[620px] pt-2 pb-4 m-0">Portfólio pessoal para uma UX Designer com foco em pesquisa e sistemas.</p>
+                            <p class="font-['Geist'] font-medium text-[13px] text-[#525252] group-hover:text-[#111] transition-colors m-0">Ver case completo ↗</p>
                         </div>
                     </div>
-                </div>
+                    <img src="assets/case-nathalia/screenshot-site-desktop.jpg" width="800" height="540" loading="lazy" decoding="async"
+                         alt="Home do site de Nathália Geraldo, com o título 'Oi, sou Nathália Geraldo' sobre um fundo bege."
+                         class="w-full h-[300px] sm:h-[439px] object-cover bg-[#d9d9d9]">
+                </a>
+            </li>
+
+            <!-- CSS Zen Garden -->
+            <li class="border-b border-[#e5e5e5]">
+                <a href="css-zen-garden/index.html?design=v2" class="group flex flex-col gap-6 py-10 w-full">
+                    <div class="flex gap-6 sm:gap-10 items-start w-full">
+                        <span class="font-['Geist'] font-medium text-[11px] text-[#d9d9d9] pt-1 w-5 shrink-0" aria-hidden="true">04</span>
+                        <div class="flex-1 min-w-0 flex flex-col">
+                            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">2 versões</p>
+                            <h3 class="font-['Instrument_Sans'] font-bold text-[24px] sm:text-[28px] tracking-[-0.3px] text-[#111] pt-2 m-0">CSS Zen Garden</h3>
+                            <p class="font-['Instrument_Sans'] font-normal text-[15px] leading-[1.6] text-[#525252] max-w-[620px] pt-2 pb-4 m-0">Duas interpretações visuais completamente diferentes para um clássico exercício de CSS puro.</p>
+                            <p class="font-['Geist'] font-medium text-[13px] text-[#525252] group-hover:text-[#111] transition-colors m-0">Ver as duas versões ↗</p>
+                        </div>
+                    </div>
+                    <img src="assets/case-zengarden/zen-dark.jpg" width="700" height="493" loading="lazy" decoding="async"
+                         alt="Versão Signal do CSS Zen Garden, tema escuro, com o título em gradiente lavanda e ciano."
+                         class="w-full h-[300px] sm:h-[439px] object-cover bg-[#d9d9d9]">
+                </a>
+            </li>
+
+            <!-- usectt -->
+            <li class="border-b border-[#e5e5e5]">
+                <a href="https://usectt.com.br" target="_blank" rel="noopener noreferrer" class="group flex flex-col gap-6 py-10 w-full">
+                    <div class="flex gap-6 sm:gap-10 items-start w-full">
+                        <span class="font-['Geist'] font-medium text-[11px] text-[#d9d9d9] pt-1 w-5 shrink-0" aria-hidden="true">05</span>
+                        <div class="flex-1 min-w-0 flex flex-col">
+                            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Em desenvolvimento</p>
+                            <h3 class="font-['Instrument_Sans'] font-bold text-[24px] sm:text-[28px] tracking-[-0.3px] text-[#111] pt-2 m-0">usectt</h3>
+                            <p class="font-['Instrument_Sans'] font-normal text-[15px] leading-[1.6] text-[#525252] max-w-[620px] pt-2 pb-4 m-0">Dashboard de gestão para profissionais de CTT. Em desenvolvimento.</p>
+                            <p class="font-['Geist'] font-medium text-[13px] text-[#525252] group-hover:text-[#111] transition-colors m-0">Ver dashboard ↗</p>
+                        </div>
+                    </div>
+                    <span class="sr-only">(abre em nova aba)</span>
+            </a>
             </li>
 
             <!-- Onze -->
-            <li class="flex flex-col gap-0.5 w-full">
-                <div class="flex items-center justify-between gap-4 w-full">
-                    <h3 class="text-[18px] font-medium m-0">
-                        <a href="https://onze.work" target="_blank" rel="noopener noreferrer" class="ext-link text-[#111] hover:opacity-70">
-                            Onze <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                            <span class="sr-only">(abre em nova aba)</span>
-                        </a>
-                    </h3>
-                </div>
-                <p class="text-[16px] font-light text-[#525252] pt-0.5">
-                    Implementação em Framer de um design assinado pelo Estúdio Bruma. Parceria em que cuidei só da parte técnica, levando a interface ao ar.
-                </p>
-                <div class="flex flex-col md:flex-row gap-4 w-full mt-4">
+            <li>
+                <a href="https://onze.work" target="_blank" rel="noopener noreferrer" class="group flex flex-col gap-6 py-10 w-full">
+                    <div class="flex gap-6 sm:gap-10 items-start w-full">
+                        <span class="font-['Geist'] font-medium text-[11px] text-[#d9d9d9] pt-1 w-5 shrink-0" aria-hidden="true">06</span>
+                        <div class="flex-1 min-w-0 flex flex-col">
+                            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Implementação Framer</p>
+                            <h3 class="font-['Instrument_Sans'] font-bold text-[24px] sm:text-[28px] tracking-[-0.3px] text-[#111] pt-2 m-0">Onze</h3>
+                            <p class="font-['Instrument_Sans'] font-normal text-[15px] leading-[1.6] text-[#525252] max-w-[620px] pt-2 pb-4 m-0">Site institucional para uma fintech de previdência privada, implementado em Framer.</p>
+                            <p class="font-['Geist'] font-medium text-[13px] text-[#525252] group-hover:text-[#111] transition-colors m-0">Ver site ↗</p>
+                        </div>
+                    </div>
                     <img src="assets/case-onze/onze-hero.jpg" width="700" height="345" loading="lazy" decoding="async"
-                         alt="Home do site: headline 'Desbloqueie o potencial do seu CRM' sobre um carro de corrida em movimento num túnel."
-                         class="aspect-[700/345] w-full md:flex-1 min-w-0 rounded object-contain bg-[#d9d9d9]">
-                    <img src="assets/case-onze/onze-crm.jpg" width="700" height="345" loading="lazy" decoding="async"
-                         alt="Seção CRM de Vendas, com quatro cards de benefícios ao lado de uma foto."
-                         class="aspect-[700/345] w-full md:flex-1 min-w-0 rounded object-contain bg-[#d9d9d9]">
-                </div>
+                         alt="Home do site da Onze, com um carro de corrida em movimento num túnel."
+                         class="w-full h-[300px] sm:h-[439px] object-cover bg-[#d9d9d9]">
+                </a>
             </li>
+
         </ul>
     </section>
 
     <!-- Rodapé -->
-    <footer class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full pt-4">
-        <p class="text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] sm:whitespace-nowrap m-0">
-            felipe oliveira / product designer
-        </p>
+    <footer id="contato" class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 w-full pt-4 scroll-mt-24">
+        <div class="flex flex-col gap-1">
+            <p class="font-['Plus_Jakarta_Sans'] text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] m-0">
+                Felipe Oliveira
+            </p>
+            <p class="font-['Geist'] font-light text-[11px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">
+                Product designer · São Paulo
+            </p>
+        </div>
         <div class="flex items-center gap-6 flex-wrap">
-            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link text-[18px] font-medium text-[#525252] hover:text-[#111]">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link font-['Geist'] font-medium text-[16px] text-[#525252] hover:text-[#111]">
                 e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
             </a>
-            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link text-[18px] font-medium text-[#525252] hover:text-[#111]">
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[16px] text-[#525252] hover:text-[#111]">
                 linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
                 <span class="sr-only">(abre em nova aba)</span>
             </a>
@@ -476,5 +432,37 @@
     </footer>
 
 </main>
+
+<script>
+(function () {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    var titles = document.querySelectorAll('[data-parallax="title"]');
+    var photo = document.querySelector('[data-parallax="photo"]');
+    if (!titles.length && !photo) return;
+
+    var ticking = false;
+
+    function update() {
+        var y = window.scrollY || window.pageYOffset;
+        var photoOffset = Math.min(y * 0.12, 40);
+        var titleOffset = Math.min(y * 0.045, 16);
+        if (photo) photo.style.transform = 'translateY(' + photoOffset + 'px)';
+        titles.forEach(function (el) {
+            el.style.transform = 'translateY(' + titleOffset + 'px)';
+        });
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            window.requestAnimationFrame(update);
+            ticking = true;
+        }
+    }, { passive: true });
+})();
+</script>
+
 </body>
 </html>
