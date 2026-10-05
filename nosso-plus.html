@@ -3,14 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nosso+ — Felipe Oliveira</title>
-<meta name="description" content="nosso+ — case de produto: gestão financeira para casais alcançarem objetivos em conjunto. Por Felipe Oliveira, Senior Product Designer.">
-<meta property="og:title" content="nosso+ — Felipe Oliveira">
-<meta property="og:description" content="Case de produto: gestão financeira para casais alcançarem objetivos em conjunto.">
+<title>nosso+ | Felipe Oliveira</title>
+<meta name="description" content="nosso+, case de produto: landing page e app de gestão financeira para casais alcançarem metas em conjunto, do simples ao complexo. Por Felipe Oliveira, Product Designer sênior.">
+<meta property="og:title" content="nosso+ | Felipe Oliveira">
+<meta property="og:description" content="Case de produto: landing page e app para casais alcançarem metas financeiras em conjunto.">
 <meta property="og:type" content="article">
-<meta name="robots" content="noindex">
-<!-- fora da home até ter as telas finais no lugar das caixas cinza -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,181 +26,239 @@
     </symbol>
 </svg>
 
-<main id="conteudo" class="max-w-[864px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16">
-
-    <!-- Topo: voltar + contato -->
-    <div class="hero-fade flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 w-full">
-        <a href="index.html" class="ext-link font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
+<header class="sticky top-0 z-40 w-full bg-[rgba(250,250,250,0.88)] backdrop-blur-[14px] border-b border-[#e5e5e5]">
+    <nav class="w-full max-w-[1920px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2" aria-label="Navegação principal">
+        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            felipe oliveira<span class="sr-only">, voltar ao portfólio</span>
+            Felipe Oliveira<span class="sr-only">, voltar ao portfólio</span>
         </a>
-        <div class="flex items-center gap-6 flex-wrap">
-            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
-                e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
-                linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                <span class="sr-only">(abre em nova aba)</span>
-            </a>
-        </div>
-    </div>
+        <ul class="flex items-center gap-4 sm:gap-6 list-none m-0 p-0">
+            <li><a href="index.html#trajetoria-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Trajetória</a></li>
+            <li><a href="index.html#projetos-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Projetos</a></li>
+            <li><a href="index.html#contato-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Contato</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Abertura do case -->
-    <section class="hero-fade flex flex-col gap-6 w-full" aria-label="Apresentação do projeto">
+<main id="conteudo" class="w-full max-w-[1920px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16 md:gap-24">
+
+    <!-- Abertura -->
+    <section class="hero-fade flex flex-col gap-10 w-full" aria-label="Apresentação do projeto">
+        <div class="flex flex-col gap-6">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Produto próprio · Landing page e app</p>
+            <h1 class="font-bold text-[clamp(44px,9vw,168px)] leading-[0.95] tracking-[-0.03em] text-[#111] m-0 break-words">nosso+</h1>
+            <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">Gestão financeira para casais alcançarem objetivos em conjunto, do simples ao complexo, sempre a dois.</p>
+        </div>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#e5e5e5] pt-6 m-0">
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Papel</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Product design ponta a ponta e implementação</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Ferramentas</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Figma, Figma Make, Claude Code, Next.js, Tailwind</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Entrega</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Landing page com lista de espera, dashboard e design system</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Status</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Em desenvolvimento</dd>
+            </div>
+        </dl>
         <div class="flex items-center gap-3 flex-wrap">
-            <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">side project · case de produto</p>
-            <span class="font-['Geist'] text-[12px] font-light text-[#6E6E6E]">🚧 em desenvolvimento</span>
-        </div>
-
-        <h1 class="font-bold text-[clamp(32px,6vw,48px)] leading-[1.1] tracking-[-0.96px] text-[#111] m-0">
-            nosso+
-        </h1>
-
-        <p class="text-[18px] font-normal text-[#111] max-w-[620px]">
-            Gestão financeira para casais alcançarem objetivos em conjunto — do simples ao complexo, sempre a dois.
-        </p>
-
-        <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-12 pt-2 text-[14px]">
-            <div class="flex flex-col gap-1">
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">papel</p>
-                <p class="font-normal text-[#111] m-0">Product design ponta a ponta + implementação</p>
-            </div>
-            <div class="flex flex-col gap-1">
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">ferramentas</p>
-                <p class="font-normal text-[#111] m-0">Figma, Claude Code, Next.js, Tailwind</p>
-            </div>
-            <div class="flex flex-col gap-1">
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">origem</p>
-                <p class="font-normal text-[#111] m-0">Projeto de curso (Figma + Cursor)</p>
-            </div>
+            <a href="https://www.figma.com/design/RBX4gj4yzI0tAUm4JvGohL/MyCash?node-id=2095-2" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">Ver a landing no Figma <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg><span class="sr-only">(abre em nova aba)</span></a>
         </div>
     </section>
 
-    <!-- Hero visual -->
-    <section class="w-full" aria-label="Tela principal do produto">
-        <div class="w-full h-[280px] md:h-[440px] rounded bg-[#d9d9d9] flex items-center justify-center" aria-hidden="true">
-            <span class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#525252]">home — metas do casal</span>
-        </div>
+    <!-- Visual principal -->
+    <section class="w-full" aria-label="Tela principal do projeto">
+<img src="assets/case-nosso-plus/hero.webp" width="2880" height="1780" fetchpriority="high" decoding="async"
+             alt="Hero da landing page do nosso+: o título Alcancem suas metas a dois de um jeito mais rápido, o botão Entrar na Lista de Espera e o card da meta compartilhada Cozinha Nova com 68% no prazo e os aportes de Ana e Bruno."
+             class="w-full h-auto rounded bg-[#F2F2F2]">
     </section>
 
-    <!-- Divisor -->
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
-
-    <!-- Contexto -->
-    <section class="flex flex-col gap-4 w-full" aria-labelledby="contexto-heading">
-        <h2 id="contexto-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Contexto</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>O nosso+ nasceu da evolução de um projeto de curso sobre a conexão Figma + Cursor, que começou como uma dashboard financeira genérica — saldo, receitas, despesas, extrato. Um produto correto, mas sem ponto de vista.</p>
-            <p>Ao revisar o resultado, o ponto de vista apareceu: e se esse dinheiro não fosse de uma pessoa só, mas de um casal construindo algo junto? A partir daí, reformulei o produto em torno de metas compartilhadas — reserva de emergência, cozinha nova, viagem, carro novo — em vez de tratar o casal como um detalhe de "membros da família" dentro de uma dashboard pessoal.</p>
-        </div>
-    </section>
-
-    <!-- Direção de design -->
-    <section class="flex flex-col gap-4 w-full" aria-labelledby="direcao-heading">
-        <h2 id="direcao-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Direção de design</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>A primeira mudança foi de tom: menos "sistema de gestão", mais "vocês dois, no mesmo objetivo". Isso significou reescrever toda a copy pra soar mais próxima e menos corporativa, remover os elementos de UI escura que passavam uma atmosfera fria, e — o mais importante — inverter a hierarquia visual do dashboard. Os cards de total, receita e despesa deixaram de ser o centro da tela; as caixinhas de metas assumiram esse lugar.</p>
-            <p>A segunda camada de refinamento veio de duas referências que sigo de perto em design: Stripe e Airbnb. Usei os dois como parâmetro pra revisar colunas, containers e espaçamento do dashboard inteiro — largura de leitura consistente entre telas, respiro vertical generoso, nada esticado de ponta a ponta em telas largas. A mesma contenção elegante que gosto nesses produtos, aplicada aqui num contexto bem mais informal.</p>
-        </div>
-    </section>
-
-    <!-- Componente em destaque -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="componente-heading">
-        <h2 id="componente-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Componente em destaque — ritmo de aportes</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>O componente que mais gosto de ter desenhado neste projeto é o card de ritmo de cada meta. Ele cruza o progresso atual com o prazo definido e calcula, de verdade, se o casal está adiantado, no ritmo certo ou precisa de atenção — nada de status decorativo. O card mostra um painel de progresso, um painel de status com a leitura em linguagem simples, um gráfico do histórico de aportes mês a mês, e uma sugestão concreta de quanto cada pessoa precisaria contribuir pra chegar no prazo.</p>
-            <p>Pra metas de viagem, existe uma camada a mais: um alerta de bom momento pra comprar a passagem, cruzando o saldo já guardado com uma simulação de variação de preço. É a feature que diferencia o produto de uma dashboard financeira genérica — ele não só mostra o dinheiro, sugere a próxima ação certa.</p>
-        </div>
-        <div class="w-full h-[240px] md:h-[320px] rounded bg-[#d9d9d9] flex items-center justify-center" aria-hidden="true">
-            <span class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#525252]">card de ritmo de aportes</span>
-        </div>
-    </section>
-
-    <!-- Sistema de componentes -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="sistema-heading">
-        <h2 id="sistema-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Sistema de componentes</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>Discutindo Atomic Design com o mesmo rigor crítico que aplico a qualquer decisão de produto, optei por não seguir a taxonomia literal de átomos/moléculas/organismos. Na prática, ela cria mais fricção do que clareza num time pequeno. Em vez disso, organizei os componentes por domínio (dashboard, modais, layout) e apliquei uma regra simples pra decidir o que vira componente compartilhado: tudo que se repete em três ou mais lugares vai pra uma camada única de primitivos.</p>
-            <p>Foi assim que Avatar, Badge e EmptyState nasceram — extraídos de seis, dois e sete pontos de duplicação reais no código, respectivamente. E como o objetivo é que design e código nunca percam sincronia, montei os três também no Figma, com as mesmas variantes e os mesmos tokens de cor usados no código (as mesmas variáveis que já alimentavam o componente de botão do design system).</p>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4 w-full" aria-hidden="true">
-            <div class="h-[200px] md:flex-1 rounded bg-[#d9d9d9] flex items-center justify-center">
-                <span class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#525252]">avatar</span>
-            </div>
-            <div class="h-[200px] md:flex-1 rounded bg-[#d9d9d9] flex items-center justify-center">
-                <span class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#525252]">badge</span>
-            </div>
-            <div class="h-[200px] md:flex-1 rounded bg-[#d9d9d9] flex items-center justify-center">
-                <span class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#525252]">empty state</span>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="contexto-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="contexto-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Contexto</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">O nosso+ nasceu da evolução de um projeto de curso sobre a conexão Figma + Cursor, que começou como uma dashboard financeira genérica: saldo, receitas, despesas, extrato. Um produto correto, mas sem ponto de vista.</p>
+            <p class="m-0">Ao revisar o resultado, o ponto de vista apareceu: e se esse dinheiro não fosse de uma pessoa só, mas de um casal construindo algo junto? A partir daí, reformulei o produto em torno de metas compartilhadas (reserva de emergência, cozinha nova, viagem, carro novo) em vez de tratar o casal como um detalhe de "membros da família" dentro de uma dashboard pessoal.</p>
             </div>
         </div>
     </section>
+<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="problema-heading">
+        <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24">
+            <h2 id="problema-heading" class="font-medium text-[20px] text-[#111] m-0">Por que ele existe</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">A landing parte de três frases que todo casal já ouviu: "Você guardou alguma coisa esse mês?", "Achei que você ia cuidar disso." e "A gente combina amanhã."</p>
+            <p class="m-0">A conclusão vem logo abaixo, e é a tese do produto: nenhum desses momentos é falta de amor, é falta de um lugar em comum. É esse lugar que o nosso+ oferece.</p>
+            </div>
+        </div>
+        <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
+        <img src="assets/case-nosso-plus/problema.webp" width="1440" height="852" loading="lazy" decoding="async"
+             alt="Seção Por que o nosso+ existe, com três frases que todo casal já ouviu: no fim do mês, na divisão das contas e na hora de decidir."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        </div>
+    </section>
 
-    <!-- Divisor -->
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="direcao-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="direcao-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Direção de design</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">A primeira mudança foi de tom: menos "sistema de gestão", mais "vocês dois, no mesmo objetivo". Isso significou reescrever toda a copy para soar mais próxima e menos corporativa, remover os elementos de UI escura que passavam uma atmosfera fria e, o mais importante, inverter a hierarquia visual do dashboard. Os cards de total, receita e despesa deixaram de ser o centro da tela; as caixinhas de metas assumiram esse lugar.</p>
+            <p class="m-0">A segunda camada de refinamento veio de duas referências que sigo de perto em design: Stripe e Airbnb. Usei os dois como parâmetro para revisar colunas, containers e espaçamento do dashboard inteiro: largura de leitura consistente entre telas, respiro vertical generoso, nada esticado de ponta a ponta em telas largas. A mesma contenção elegante que gosto nesses produtos, aplicada aqui num contexto bem mais informal.</p>
+            </div>
+        </div>
 
-    <!-- Roadmap -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
+    <img src="assets/case-nosso-plus/metas.webp" width="1440" height="784" loading="lazy" decoding="async"
+             alt="Seção de metas: De uma viagem dos sonhos à reserva para o imóvel, com seis cards: viagem, reforma, quitar dívida, reserva de emergência, comprar imóvel e investimento conjunto."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+    <img src="assets/case-nosso-plus/storytelling.webp" width="1440" height="897" loading="lazy" decoding="async"
+             alt="Seção de storytelling: o progresso da meta Passagens Lisboa e os três passos do método, definir o objetivo, organizar os valores e celebrar cada avanço."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+    </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="componente-heading">
+        <div class="lg:col-span-4 lg:order-2 flex flex-col gap-6 lg:sticky lg:top-24">
+            <h2 id="componente-heading" class="font-medium text-[20px] text-[#111] m-0">Ritmo de aportes</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">O componente que mais gosto de ter desenhado neste projeto é o card de ritmo de cada meta. Ele cruza o progresso atual com o prazo definido e calcula, de verdade, se o casal está adiantado, no ritmo certo ou precisa de atenção. Nada de status decorativo. O card mostra um painel de progresso, um painel de status com a leitura em linguagem simples, um gráfico do histórico de aportes mês a mês e uma sugestão concreta de quanto cada pessoa precisaria contribuir para chegar no prazo.</p>
+            <p class="m-0">Para metas de viagem, existe uma camada a mais: um alerta de bom momento para comprar a passagem, cruzando o saldo já guardado com uma simulação de variação de preço. É a feature que diferencia o produto de uma dashboard financeira genérica: ele não só mostra o dinheiro, sugere a próxima ação certa.</p>
+            </div>
+        </div>
+        <div class="lg:col-span-8 lg:order-1 flex flex-col gap-6 min-w-0">
+        <img src="assets/case-nosso-plus/painel.webp" width="1440" height="1056" loading="lazy" decoding="async"
+             alt="Painel de acompanhamento em bento: objetivo em comum com 68% no prazo, conquistas, evolução dos dois, lembrete de ritmo e próxima contribuição."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="historia-heading">
+        <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24">
+            <h2 id="historia-heading" class="font-medium text-[20px] text-[#111] m-0">Uma história, não um depoimento</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">A seção final mostra uma história ilustrativa: um casal que atinge a meta da cozinha nova em oito meses. As fotos foram criadas com direção de arte assistida por IA e a história é rotulada como ilustrativa, para ninguém confundir com um depoimento real.</p>
+            <p class="m-0">A frase do casal resume a tese do produto: o momento em que a ansiedade de guardar dinheiro vira empolgação de realizar.</p>
+            </div>
+        </div>
+        <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
+        <img src="assets/case-nosso-plus/historia.webp" width="1926" height="735" loading="lazy" decoding="async"
+             alt="História ilustrativa: foto de um casal sorrindo no sofá, olhando o celular, com o selo Meta atingida: Cozinha Nova em 8 meses, e a frase de Lucas e Beatriz, um casal em São Paulo, sobre trocar a ansiedade de guardar dinheiro pela empolgação de realizar."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        </div>
+    </section>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="faq-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="faq-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Sem overclaim</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">As dúvidas frequentes foram escritas com respostas diretas, inclusive sobre o que o nosso+ não é. Os dois precisam ter conta desde o primeiro dia? Não. O produto lê a conta bancária automaticamente? A resposta aparece sem rodeio. Serve para namoro recente? Serve para metas complexas, como quitar dívida? Cada pergunta é uma objeção real, respondida no tom do resto da página.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
+    <img src="assets/case-nosso-plus/faq.webp" width="1440" height="929" loading="lazy" decoding="async"
+             alt="Seção de dúvidas frequentes, com seis perguntas numeradas e a primeira aberta: Os dois precisam ter conta desde o primeiro dia? Não. Um entra na lista com o e-mail pessoal."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+    <img src="assets/case-nosso-plus/chamada.webp" width="1440" height="595" loading="lazy" decoding="async"
+             alt="Chamada final: Deem o primeiro passo para a próxima conquista, Juntos, com o botão Quero acelerar nossas metas e a foto de um casal abraçado numa cozinha verde."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+    </div>
+    </section>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="sistema-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="sistema-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Sistema de componentes</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">Discutindo Atomic Design com o mesmo rigor crítico que aplico a qualquer decisão de produto, optei por não seguir a taxonomia literal de átomos, moléculas e organismos. Na prática, ela cria mais fricção do que clareza num time pequeno. Em vez disso, organizei os componentes por domínio (dashboard, modais, layout) e apliquei uma regra simples para decidir o que vira componente compartilhado: tudo que se repete em três ou mais lugares vai para uma camada única de primitivos.</p>
+            <p class="m-0">Foi assim que Avatar, Badge e EmptyState nasceram, extraídos de seis, dois e sete pontos de duplicação reais no código, respectivamente. E como o objetivo é que design e código nunca percam sincronia, montei os três também no Figma, com as mesmas variantes e os mesmos tokens de cor usados no código, as mesmas variáveis que já alimentavam o componente de botão do design system.</p>
+            </div>
+        </div>
+    </section>
+<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
     <section class="flex flex-col gap-10 w-full" aria-labelledby="roadmap-heading">
-        <div class="flex flex-col gap-1">
-            <h2 id="roadmap-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Roadmap de próximos passos</h2>
-            <p class="font-['Geist'] text-[14px] font-light text-[#6E6E6E] m-0">O que vem depois desta primeira versão.</p>
+        <div class="flex flex-col gap-2">
+            <h2 id="roadmap-heading" class="font-medium text-[20px] text-[#111] m-0">Próximos passos</h2>
+        <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">O que vem depois desta primeira versão.</p>
         </div>
-
-        <ul class="flex flex-col gap-6 w-full list-none m-0 p-0">
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">Backend real e persistência</h3>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    Hoje todo o estado vive em memória, no front-end. O próximo passo é sair do mock e ter uma base de dados de verdade, com as metas e aportes de cada casal persistidos entre sessões.
-                </p>
+        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Backend real e persistência</h3>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">Hoje todo o estado vive em memória, no front-end. O próximo passo é sair do mock e ter uma base de dados de verdade, com as metas e aportes de cada casal persistidos entre sessões.</p>
             </li>
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">Autenticação e convite do parceiro(a)</h3>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    Um fluxo de login e de convite que vincula duas contas ao mesmo espaço de metas — hoje os dois membros do casal são só dados mockados, sem conta real por trás.
-                </p>
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Autenticação e convite do parceiro(a)</h3>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">Um fluxo de login e de convite que vincula duas contas ao mesmo espaço de metas. Hoje os dois membros do casal são só dados mockados, sem conta real por trás.</p>
             </li>
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">Preço de passagem de verdade</h3>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    O alerta de "bom momento pra comprar" hoje roda sobre uma simulação. O próximo passo é integrar com uma API real de preços de voos e transformar o alerta em notificação (push ou e-mail), não só um aviso na tela.
-                </p>
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Preço de passagem de verdade</h3>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">O alerta de bom momento para comprar hoje roda sobre uma simulação. O próximo passo é integrar com uma API real de preços de voos e transformar o alerta em notificação (push ou e-mail), não só um aviso na tela.</p>
             </li>
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">Metas e categorias customizáveis</h3>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    As categorias de meta hoje são fixas (viagem, casa, veículo, emergência, outro). Dar ao casal a liberdade de criar categorias e ícones próprios é um passo natural pra um produto pensado pra qualquer tipo de objetivo.
-                </p>
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Metas e categorias customizáveis</h3>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">As categorias de meta hoje são fixas (viagem, casa, veículo, emergência, outro). Dar ao casal a liberdade de criar categorias e ícones próprios é um passo natural para um produto pensado para qualquer tipo de objetivo.</p>
             </li>
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">PWA instalável</h3>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    O produto já é responsivo, mas o uso real — casal acompanhando metas no dia a dia — pede algo instalável no celular, com ícone na tela inicial e, futuramente, notificações locais.
-                </p>
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">PWA instalável</h3>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">O produto já é responsivo, mas o uso real, com o casal acompanhando metas no dia a dia, pede algo instalável no celular, com ícone na tela inicial e, futuramente, notificações locais.</p>
             </li>
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">Storybook conectado ao Figma</h3>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    Com Avatar, Badge, EmptyState e Button já espelhados no Figma, o passo natural é documentá-los num Storybook com Code Connect, garantindo que design e código continuem nascendo e evoluindo juntos.
-                </p>
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Storybook conectado ao Figma</h3>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">Com Avatar, Badge, EmptyState e Button já espelhados no Figma, o passo natural é documentá-los num Storybook com Code Connect, garantindo que design e código continuem nascendo e evoluindo juntos.</p>
             </li>
         </ul>
     </section>
 
-    <!-- Rodapé -->
-    <footer class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full pt-4 border-t border-[#e5e5e5]">
-        <a href="index.html" class="ext-link font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
-            <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            voltar ao portfólio
-        </a>
-        <div class="flex items-center gap-6 flex-wrap">
-            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
-                e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
-                linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+    <!-- Próximo case -->
+    <nav class="card group w-full border-t border-[#e5e5e5] pt-10" aria-label="Próximo case">
+        <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Próximo case</p>
+        <p class="font-bold text-[clamp(32px,5vw,72px)] leading-[1.05] tracking-[-0.5px] text-[#111] pt-3 m-0">
+            <a href="ciatrans.html" class="card-link">CiaTrans</a>
+        </p>
+        <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[620px] pt-3 m-0">Site, apresentação e design system para uma empresa do Porto de Santos. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
+    </nav>
+
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
+    <!-- Contato -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
+        <h2 id="contato-heading" class="font-medium text-[20px] text-[#111] m-0">Contato</h2>
+        <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">
+            Gostou do que viu? Vamos conversar.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 flex-wrap">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#111] underline underline-offset-4 w-fit break-all">felipeoliveira.contato@gmail.com</a>
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#525252] hover:text-[#111] w-fit">
+                LinkedIn <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
                 <span class="sr-only">(abre em nova aba)</span>
             </a>
+            <a href="index.html" class="ext-link font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#525252] hover:text-[#111] w-fit">
+                <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
+                Voltar ao portfólio
+            </a>
         </div>
+    </section>
+
+    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#e5e5e5]">
+        <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
+        <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
     </footer>
 
 </main>

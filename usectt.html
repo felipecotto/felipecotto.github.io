@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UseCtt — Felipe Oliveira</title>
-<meta name="description" content="UseCtt — case de produto: um report editorial que transforma o histórico do Strava numa maratona, do design system no Figma ao produto no ar com dados reais. Por Felipe Oliveira, Senior Product Designer.">
-<meta property="og:title" content="UseCtt — Felipe Oliveira">
+<title>UseCtt | Felipe Oliveira</title>
+<meta name="description" content="UseCtt, case de produto: um report editorial que transforma o histórico do Strava numa maratona, do design system no Figma ao produto no ar com dados reais. Por Felipe Oliveira, Product Designer sênior.">
+<meta property="og:title" content="UseCtt | Felipe Oliveira">
 <meta property="og:description" content="Case de produto: o histórico do Strava contado como uma maratona, do KM 0 à chegada. Design system no Figma, Next.js e dados reais.">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,338 +26,347 @@
     </symbol>
 </svg>
 
-<main id="conteudo" class="max-w-[864px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16">
-
-    <!-- Topo: voltar + contato -->
-    <div class="hero-fade flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 w-full">
-        <a href="index.html" class="ext-link font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
+<header class="sticky top-0 z-40 w-full bg-[rgba(250,250,250,0.88)] backdrop-blur-[14px] border-b border-[#e5e5e5]">
+    <nav class="w-full max-w-[1920px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2" aria-label="Navegação principal">
+        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            felipe oliveira<span class="sr-only">, voltar ao portfólio</span>
+            Felipe Oliveira<span class="sr-only">, voltar ao portfólio</span>
         </a>
-        <div class="flex items-center gap-6 flex-wrap">
-            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
-                e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
-                linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                <span class="sr-only">(abre em nova aba)</span>
-            </a>
-        </div>
-    </div>
+        <ul class="flex items-center gap-4 sm:gap-6 list-none m-0 p-0">
+            <li><a href="index.html#trajetoria-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Trajetória</a></li>
+            <li><a href="index.html#projetos-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Projetos</a></li>
+            <li><a href="index.html#contato-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Contato</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Abertura do case -->
-    <section class="hero-fade flex flex-col gap-6 w-full" aria-label="Apresentação do projeto">
+<main id="conteudo" class="w-full max-w-[1920px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16 md:gap-24">
+
+    <!-- Abertura -->
+    <section class="hero-fade flex flex-col gap-10 w-full" aria-label="Apresentação do projeto">
+        <div class="flex flex-col gap-6">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Produto próprio · Design e código</p>
+            <h1 class="font-bold text-[clamp(44px,9vw,168px)] leading-[0.95] tracking-[-0.03em] text-[#111] m-0 break-words">UseCtt</h1>
+            <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">Um report editorial que transforma o histórico de treinos do Strava numa maratona, do KM 0 à chegada.</p>
+        </div>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#e5e5e5] pt-6 m-0">
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Papel</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Produto ponta a ponta: conceito, design system e código</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Ferramentas</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Figma, Figma Make, Claude, Next.js, Supabase, API do Strava</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Entrega</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Landing, página do atleta, card do Stories e design system</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Status</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">No ar, em beta</dd>
+            </div>
+        </dl>
         <div class="flex items-center gap-3 flex-wrap">
-            <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">produto próprio · design e código</p>
-            <span class="font-['Geist'] text-[12px] font-light text-[#6E6E6E]">no ar, em beta</span>
-        </div>
-
-        <h1 class="font-bold text-[clamp(32px,6vw,48px)] leading-[1.1] tracking-[-0.96px] text-[#111] m-0">
-            UseCtt
-        </h1>
-
-        <p class="text-[18px] font-normal text-[#111] max-w-[620px]">
-            Um report editorial que transforma o histórico de treinos do Strava numa maratona, do KM 0 à chegada. Qualquer corredor conecta a conta e recebe a própria história, com dados reais.
-        </p>
-
-        <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-12 pt-2 text-[14px]">
-            <div class="flex flex-col gap-1">
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">papel</p>
-                <p class="font-normal text-[#111] m-0">Produto ponta a ponta: conceito, design system e código</p>
-            </div>
-            <div class="flex flex-col gap-1">
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">ferramentas</p>
-                <p class="font-normal text-[#111] m-0">Figma, Figma Make, Claude, Next.js, Supabase, API do Strava</p>
-            </div>
-            <div class="flex flex-col gap-1">
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">entrega</p>
-                <p class="font-normal text-[#111] m-0">Landing, página do atleta, card do Stories e design system</p>
-            </div>
-        </div>
-
-        <div class="flex items-center gap-3 flex-wrap mt-2">
-            <a href="https://usectt.com.br" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">
-                Visitar o site <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                <span class="sr-only">(abre em nova aba)</span>
-            </a>
-            <a href="https://www.figma.com/design/OKBtDcovBIYQKVBqxihnrm/UseCtt" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#525252] hover:text-[#111] px-2 py-3">
-                Ver no Figma <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                <span class="sr-only">(abre em nova aba)</span>
-            </a>
+            <a href="https://usectt.com.br" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">Visitar o site <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg><span class="sr-only">(abre em nova aba)</span></a>
+            <a href="https://www.figma.com/design/OKBtDcovBIYQKVBqxihnrm/UseCtt?node-id=3-91" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#525252] hover:text-[#111] px-2 py-3">Ver no Figma <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg><span class="sr-only">(abre em nova aba)</span></a>
         </div>
     </section>
 
-    <!-- Hero visual -->
-    <section class="w-full" aria-label="Capa do projeto">
-        <img src="assets/case-usectt/cover.webp" width="1728" height="972" fetchpriority="high" decoding="async"
+    <!-- Visual principal -->
+    <section class="w-full" aria-label="Tela principal do projeto">
+<img src="assets/case-usectt/cover.webp" width="1728" height="972" fetchpriority="high" decoding="async"
              alt="Capa do projeto: a marca CTT com a stack Strava API, Supabase, Next e Figma, e ao lado o site no celular com o título Seu Strava, editado em 42 km."
-             class="w-full h-auto rounded">
+             class="w-full h-auto rounded bg-[#F2F2F2]">
     </section>
 
-    <!-- Divisor -->
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
-
-    <!-- Contexto -->
-    <section class="flex flex-col gap-4 w-full" aria-labelledby="contexto-heading">
-        <h2 id="contexto-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Contexto</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>O CTT nasceu como um painel pessoal ligado ao Strava: gráfico de volume, gráfico de ritmo, tabela de recordes. Funcionava, mas não dizia nada que o próprio Strava já não dissesse. Era mais um dashboard.</p>
-            <p>A pergunta que mudou o projeto foi o que seria útil para um corredor que gosta de dados. A resposta não era mais um gráfico: era contexto. Quando o hábito começou, quando o volume subiu, onde a forma caiu e quanto tempo levou para voltar. Coisas que ficam espalhadas num feed que ninguém relê.</p>
-            <p>O projeto também tinha um segundo objetivo: pôr em prática o fluxo entre Figma e Claude para gerar código e levar um produto até produção com dados reais, não com uma API de exemplo.</p>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="contexto-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="contexto-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Contexto</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">O CTT nasceu como um painel pessoal ligado ao Strava: gráfico de volume, gráfico de ritmo, tabela de recordes. Funcionava, mas não dizia nada que o próprio Strava já não dissesse. Era mais um dashboard.</p>
+            <p class="m-0">A pergunta que mudou o projeto foi o que seria útil para um corredor que gosta de dados. A resposta não era mais um gráfico: era contexto. Quando o hábito começou, quando o volume subiu, onde a forma caiu e quanto tempo levou para voltar. Coisas que ficam espalhadas num feed que ninguém relê.</p>
+            <p class="m-0">O projeto também tinha um segundo objetivo: pôr em prática o fluxo entre Figma e Claude para gerar código e levar um produto até produção com dados reais, não com uma API de exemplo.</p>
+            </div>
         </div>
     </section>
+<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="antes-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="antes-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Do painel à edição</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">O primeiro protótipo no Figma Make já tinha uma boa direção visual, mas continuava organizado por tipo de gráfico: um bloco de volume, um de forma, um de recordes. A versão final é organizada pela história. Cada seção é um trecho da prova, e o gráfico só aparece quando ajuda a contar aquele trecho.</p>
+            </div>
+        </div>
 
-    <!-- Antes e depois -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="antes-heading">
-        <h2 id="antes-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Do painel à edição</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>O primeiro protótipo no Figma Make já tinha uma boa direção visual, mas continuava organizado por tipo de gráfico: um bloco de volume, um de forma, um de recordes. A versão final é organizada pela história. Cada seção é um trecho da prova, e o gráfico só aparece quando ajuda a contar aquele trecho.</p>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4 w-full">
-            <figure class="md:flex-1 flex flex-col gap-2 m-0">
-                <img src="assets/case-usectt/antes.webp" width="958" height="950" loading="lazy" decoding="async"
-                     alt="Primeiro protótipo: título Seu Strava, editado, seguido de um número gigante de quilômetros e um gráfico de barras semanais."
-                     class="w-full h-auto rounded border border-[#e5e5e5]">
-                <figcaption class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E]">antes — organizado por gráfico</figcaption>
-            </figure>
-            <figure class="md:flex-1 flex flex-col gap-2 m-0">
-                <img src="assets/case-usectt/depois.webp" width="1182" height="578" loading="lazy" decoding="async"
-                     alt="Versão final: título Seu Strava, editado em 42 km, com uma foto de corrida anotada com horário, quilometragem e tempo da maratona."
-                     class="w-full h-auto rounded border border-[#e5e5e5]">
-                <figcaption class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E]">depois — organizado pela história</figcaption>
-            </figure>
-        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
+    <figure class="flex flex-col gap-3 m-0 min-w-0">
+        <img src="assets/case-usectt/antes.webp" width="958" height="950" loading="lazy" decoding="async"
+             alt="Primeiro protótipo: título Seu Strava, editado, seguido de um número gigante de quilômetros e um gráfico de barras semanais."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Antes: organizado por gráfico</figcaption>
+    </figure>
+    <figure class="flex flex-col gap-3 m-0 min-w-0">
+        <img src="assets/case-usectt/depois.webp" width="1182" height="578" loading="lazy" decoding="async"
+             alt="Versão final: título Seu Strava, editado em 42 km, com uma foto de corrida anotada com horário, quilometragem e tempo da maratona."
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Depois: organizado pela história</figcaption>
+    </figure>
+    </div>
     </section>
 
-    <!-- Conceito -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="conceito-heading">
-        <h2 id="conceito-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">A página é uma maratona</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>A leitura acompanha uma prova de 42 km. Uma barra no topo mostra em que quilômetro você está, e cada capítulo abre com um marcador de KM. Só dois capítulos saem do fundo claro: o muro, em preto, e a chegada, em ultramar.</p>
-            <p>Os textos não foram escritos para mim: saem dos dados. Cada capítulo escolhe o próprio fato a partir dos dados de quem conectou: o ano em que o hábito começou, o ano de maior volume, a maior queda de forma e a melhor maratona. Se um atleta não tem dado suficiente para um capítulo, ele simplesmente não aparece.</p>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="conceito-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="conceito-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">A página é uma maratona</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">A leitura acompanha uma prova de 42 km. Uma barra no topo mostra em que quilômetro você está, e cada capítulo abre com um marcador de KM. Só dois capítulos saem do fundo claro: o muro, em preto, e a chegada, em ultramar.</p>
+            <p class="m-0">Os textos não foram escritos para mim: saem dos dados. Cada capítulo escolhe o próprio fato a partir dos dados de quem conectou: o ano em que o hábito começou, o ano de maior volume, a maior queda de forma e a melhor maratona. Se um atleta não tem dado suficiente para um capítulo, ele simplesmente não aparece.</p>
+            </div>
         </div>
-        <ol class="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-6 list-none m-0 p-0">
-            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
-                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 0</span>
-                <p class="text-[15px] font-medium text-[#111] m-0">Largada</p>
-            </li>
-            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
-                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 5</span>
-                <p class="text-[15px] font-medium text-[#111] m-0">A primeira corrida</p>
-            </li>
-            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
-                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 10</span>
-                <p class="text-[15px] font-medium text-[#111] m-0">O hábito</p>
-            </li>
-            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
-                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 21</span>
-                <p class="text-[15px] font-medium text-[#111] m-0">O volume</p>
-            </li>
-            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
-                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 21,1</span>
-                <p class="text-[15px] font-medium text-[#111] m-0">Os recordes</p>
-            </li>
-            <li class="flex flex-col gap-1 border-t border-[#111] pt-4">
-                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 30</span>
-                <p class="text-[15px] font-medium text-[#111] m-0">O muro</p>
-            </li>
-            <li class="flex flex-col gap-1 border-t border-[#2B34F5] pt-4">
-                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 42</span>
-                <p class="text-[15px] font-medium text-[#111] m-0">A chegada</p>
-            </li>
-            <li class="flex flex-col gap-1 border-t border-[#e5e5e5] pt-4">
-                <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 42,2</span>
-                <p class="text-[15px] font-medium text-[#111] m-0">Pós-prova</p>
-            </li>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start">
+        <ol class="lg:col-span-4 flex flex-col gap-4 list-none m-0 p-0" aria-label="Capítulos da página">
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                    <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 0</span>
+                    <span class="text-[16px] font-medium text-[#111]">Largada</span>
+                </li>
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                    <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 5</span>
+                    <span class="text-[16px] font-medium text-[#111]">A primeira corrida</span>
+                </li>
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                    <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 10</span>
+                    <span class="text-[16px] font-medium text-[#111]">O hábito</span>
+                </li>
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                    <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 21</span>
+                    <span class="text-[16px] font-medium text-[#111]">O volume</span>
+                </li>
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                    <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 21,1</span>
+                    <span class="text-[16px] font-medium text-[#111]">Os recordes</span>
+                </li>
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#111">
+                    <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 30</span>
+                    <span class="text-[16px] font-medium text-[#111]">O muro</span>
+                </li>
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#2B34F5">
+                    <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 42</span>
+                    <span class="text-[16px] font-medium text-[#111]">A chegada</span>
+                </li>
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                    <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 42,2</span>
+                    <span class="text-[16px] font-medium text-[#111]">Pós-prova</span>
+                </li>
         </ol>
+        <div class="lg:col-span-8 min-w-0">
         <img src="assets/case-usectt/marcador.webp" width="1336" height="1528" loading="lazy" decoding="async"
              alt="Documentação do marcador de KM nos três tons: claro, tinta e ultramar, com o título Três recordes em oito semanas."
-             class="w-full h-auto rounded border border-[#e5e5e5]">
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        </div>
+    </div>
     </section>
 
-    <!-- O muro -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="muro-heading">
-        <h2 id="muro-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">O muro dos 30</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>Na maratona, o muro é aquele quilômetro, perto do 30, em que o corpo cansa e quase todo mundo pensa "será que vai dar?". No report, ele é o trecho em que a forma mais caiu. No meu caso, a lesão de 2025 que me tirou da Maratona do Rio.</p>
-            <p>Para achar esse trecho sem depender de ninguém marcar nada, a forma é calculada a partir da frequência cardíaca de cada treino: a média da carga de 42 dias vira a forma, a de 7 dias vira a fadiga. O capítulo procura a maior queda de forma dentro de 12 semanas, mostra de quanto para quanto ela caiu e quanto tempo levou para voltar.</p>
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="muro-heading">
+        <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24">
+            <h2 id="muro-heading" class="font-medium text-[20px] text-[#111] m-0">O muro dos 30</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">Na maratona, o muro é aquele quilômetro, perto do 30, em que o corpo cansa e quase todo mundo pensa "será que vai dar?". No report, ele é o trecho em que a forma mais caiu. No meu caso, a lesão de 2025 que me tirou da Maratona do Rio.</p>
+            <p class="m-0">Para achar esse trecho sem depender de ninguém marcar nada, a forma é calculada a partir da frequência cardíaca de cada treino: a média da carga de 42 dias vira a forma, a de 7 dias vira a fadiga. O capítulo procura a maior queda de forma dentro de 12 semanas, mostra de quanto para quanto ela caiu e quanto tempo levou para voltar.</p>
+            </div>
         </div>
+        <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
         <img src="assets/case-usectt/muro.webp" width="1182" height="750" loading="lazy" decoding="async"
              alt="Capítulo KM 30 em fundo preto: Todo ciclo tem um muro, a forma caindo de 95 para 38 e o gráfico de forma e fadiga."
-             class="w-full h-auto rounded">
+             class="w-full h-auto rounded bg-[#F2F2F2]">
         <img src="assets/case-usectt/forma.webp" width="1440" height="600" loading="lazy" decoding="async"
              alt="Padrão do gráfico de forma e fadiga no Figma, com as maratonas marcadas, a pausa em faixa cinza e a anotação à mão aqui no ponto mais baixo."
-             class="w-full h-auto rounded border border-[#e5e5e5]">
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        </div>
     </section>
 
-    <!-- Faixa escura: números -->
     <section class="w-full rounded-lg px-8 py-10 md:px-12 md:py-14 flex flex-col gap-10" style="background:#111210;" aria-labelledby="numeros-heading">
         <div class="flex flex-col gap-3">
             <h2 id="numeros-heading" class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] m-0" style="color:#8A90FF;">O projeto em números</h2>
-            <p class="text-[22px] md:text-[28px] font-normal leading-[1.25] max-w-[620px] m-0" style="color:#F2F2EE;">
-                Um sistema pequeno o bastante para caber na cabeça, e todo documentado antes de virar código.
-            </p>
+            <p class="text-[22px] md:text-[28px] font-normal leading-[1.25] max-w-[620px] m-0" style="color:#F2F2EE;">Um sistema pequeno o bastante para caber na cabeça, e todo documentado antes de virar código.</p>
         </div>
         <dl class="grid grid-cols-2 md:grid-cols-4 gap-8 m-0">
             <div class="flex flex-col-reverse justify-end gap-1">
                 <dt class="font-['Geist'] text-[13px] font-light" style="color:#C3C9D4;">capítulos gerados por dados</dt>
-                <dd class="text-[32px] font-normal m-0" style="color:#F2F2EE;">7</dd>
+                <dd class="text-[clamp(32px,4vw,56px)] leading-[1.1] font-normal m-0" style="color:#F2F2EE;">7</dd>
             </div>
             <div class="flex flex-col-reverse justify-end gap-1">
                 <dt class="font-['Geist'] text-[13px] font-light" style="color:#C3C9D4;">cor de acento</dt>
-                <dd class="text-[32px] font-normal m-0" style="color:#F2F2EE;">1</dd>
+                <dd class="text-[clamp(32px,4vw,56px)] leading-[1.1] font-normal m-0" style="color:#F2F2EE;">1</dd>
             </div>
             <div class="flex flex-col-reverse justify-end gap-1">
                 <dt class="font-['Geist'] text-[13px] font-light" style="color:#C3C9D4;">componentes documentados</dt>
-                <dd class="text-[32px] font-normal m-0" style="color:#F2F2EE;">16</dd>
+                <dd class="text-[clamp(32px,4vw,56px)] leading-[1.1] font-normal m-0" style="color:#F2F2EE;">16</dd>
             </div>
             <div class="flex flex-col-reverse justify-end gap-1">
                 <dt class="font-['Geist'] text-[13px] font-light" style="color:#C3C9D4;">vagas no beta</dt>
-                <dd class="text-[32px] font-normal m-0" style="color:#F2F2EE;">10</dd>
+                <dd class="text-[clamp(32px,4vw,56px)] leading-[1.1] font-normal m-0" style="color:#F2F2EE;">10</dd>
             </div>
         </dl>
     </section>
 
-    <!-- Cor -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="cor-heading">
-        <h2 id="cor-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Papel, tinta e um ultramar</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>A referência veio de marcas de corrida como Bandit e On: muito fundo claro, texto quase preto e um único acento. A primeira versão era laranja, e foi a primeira coisa que saiu, porque laranja lembra o próprio Strava. O ultramar ficou no lugar e ganhou uma regra: ele marca o que importa (recorde, pico, prova, estado ativo) e nunca decora.</p>
-            <p>As cores são tokens por função, como fundo, texto, borda e gráfico. Por isso o mesmo componente funciona no capítulo claro, no preto do muro e no ultramar da chegada sem precisar de uma versão para cada um.</p>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="sistema-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="sistema-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Cor e tipografia</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0"><strong class="font-medium text-[#111]">Papel, tinta e um ultramar.</strong> A referência veio de marcas de corrida como Bandit e On: muito fundo claro, texto quase preto e um único acento. A primeira versão era laranja, e foi a primeira coisa que saiu, porque laranja lembra o próprio Strava. O ultramar ficou no lugar e ganhou uma regra: ele marca o que importa (recorde, pico, prova, estado ativo) e nunca decora.</p>
+            <p class="m-0">As cores são tokens por função, como fundo, texto, borda e gráfico. Por isso o mesmo componente funciona no capítulo claro, no preto do muro e no ultramar da chegada sem precisar de uma versão para cada um.</p>
+            <p class="m-0"><strong class="font-medium text-[#111]">Números grandes, texto calmo.</strong> Barlow Condensed em caixa alta para números e títulos: é a imagem da página, como um número de peito. Archivo para ler, Geist Mono para rótulos e eixos, e Caveat só nas anotações à mão, como "quase todo dia" escrito sobre a foto.</p>
+            <p class="m-0">A ideia inicial era usar a própria Archivo mais estreita nos títulos, pelo eixo de largura. Só que esse ajuste não passava do Figma para o código com fidelidade, e o sistema precisava ser o mesmo nos dois lados. A troca pela Barlow Condensed resolveu isso sem perder o caráter.</p>
+            </div>
         </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
+    <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/ds-cor.webp" width="1440" height="1534" loading="lazy" decoding="async"
              alt="Documentação de cor no Figma: tokens de fundo, texto, borda, gráfico e calendário, cada um com hex e valor de origem."
-             class="w-full h-auto rounded border border-[#e5e5e5]">
-    </section>
-
-    <!-- Tipografia -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="tipo-heading">
-        <h2 id="tipo-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Números grandes, texto calmo</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>Barlow Condensed em caixa alta para números e títulos: é a imagem da página, como um número de peito. Archivo para ler, Geist Mono para rótulos e eixos, e Caveat só nas anotações à mão, como "quase todo dia" escrito sobre a foto.</p>
-            <p>A ideia inicial era usar a própria Archivo mais estreita nos títulos, pelo eixo de largura. Só que esse ajuste não passava do Figma para o código com fidelidade, e o sistema precisava ser o mesmo nos dois lados. A troca pela Barlow Condensed resolveu isso sem perder o caráter.</p>
-        </div>
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Tokens de cor por função</figcaption>
+    </figure>
+    <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/ds-tipo.webp" width="1292" height="1728" loading="lazy" decoding="async"
              alt="Escala tipográfica no Figma, do Display/Hero com 7.727 até a nota manuscrita quase todo dia, com fonte, tamanho e entrelinha de cada estilo."
-             class="w-full h-auto rounded border border-[#e5e5e5]">
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Escala tipográfica</figcaption>
+    </figure>
+    </div>
     </section>
 
-    <!-- Recordes e chegada -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="dados-heading">
-        <h2 id="dados-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">O dado no centro</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>Os recordes dividem uma mesma escala de ritmo, então dá para comparar as quatro distâncias de relance. O recorde mais recente ganha o bloco em ultramar, com o tempo anterior riscado logo acima.</p>
-            <p>A chegada é o único capítulo inteiro em ultramar: o tempo da maratona em tamanho de pôster, as 16 semanas de preparação em barras e a diferença para a prova anterior.</p>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="dados-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="dados-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">O dado no centro</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">Os recordes dividem uma mesma escala de ritmo, então dá para comparar as quatro distâncias de relance. O recorde mais recente ganha o bloco em ultramar, com o tempo anterior riscado logo acima.</p>
+            <p class="m-0">A chegada é o único capítulo inteiro em ultramar: o tempo da maratona em tamanho de pôster, as 16 semanas de preparação em barras e a diferença para a prova anterior.</p>
+            </div>
         </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
+    <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/recordes.webp" width="1182" height="680" loading="lazy" decoding="async"
              alt="Capítulo dos recordes: a maratona em destaque em ultramar, com 3:26:47 e o tempo anterior riscado, ao lado de 5K, 10K e 21K."
-             class="w-full h-auto rounded border border-[#e5e5e5]">
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+    </figure>
+    <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/chegada.webp" width="1182" height="640" loading="lazy" decoding="async"
              alt="Capítulo KM 42 em ultramar: o tempo 3:26:47 em tamanho grande, as barras das 16 semanas de preparação e a foto da chegada."
-             class="w-full h-auto rounded">
+             class="w-full h-auto rounded bg-[#F2F2F2]">
+    </figure>
+    </div>
     </section>
 
-    <!-- Restrição que virou produto -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="vagas-heading">
-        <h2 id="vagas-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Uma restrição que virou produto</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>No modo atual, a API do Strava permite só 10 atletas conectados ao app. Em vez de esconder o limite atrás de um erro, ele virou parte da página: um contador de vagas que mostra quantas pessoas estão testando, com os estados de beta aberto, últimas vagas e lotado.</p>
-            <p>Quando as dez vagas estão ocupadas, a conexão abre uma fila de espera por e-mail. O número vem do banco em tempo real, e quem desconecta a conta libera a vaga para o próximo.</p>
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="vagas-heading">
+        <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24">
+            <h2 id="vagas-heading" class="font-medium text-[20px] text-[#111] m-0">Uma restrição que virou produto</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">No modo atual, a API do Strava permite só 10 atletas conectados ao app. Em vez de esconder o limite atrás de um erro, ele virou parte da página: um contador de vagas que mostra quantas pessoas estão testando, com os estados de beta aberto, últimas vagas e lotado.</p>
+            <p class="m-0">Quando as dez vagas estão ocupadas, a conexão abre uma fila de espera por e-mail. O número vem do banco em tempo real, e quem desconecta a conta libera a vaga para o próximo.</p>
+            </div>
         </div>
+        <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
         <img src="assets/case-usectt/vagas.webp" width="1312" height="1016" loading="lazy" decoding="async"
              alt="Os quatro estados do componente de vagas: beta aberto com 9 vagas, últimas vagas com 2, lotado com 23 na fila e a confirmação você é o número 24."
-             class="w-full h-auto rounded border border-[#e5e5e5]">
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+        </div>
     </section>
 
-    <!-- Card do Stories -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="card-heading">
-        <h2 id="card-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Um treino vira uma capa</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>Depois da prova, o atleta gera um card 9:16 para o Instagram, em papel, tinta ou ultramar. Os números ficam entre 12% e 88% da altura, longe das áreas que o próprio Instagram cobre com a interface.</p>
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="card-heading">
+        <div class="lg:col-span-4 lg:order-2 flex flex-col gap-6 lg:sticky lg:top-24">
+            <h2 id="card-heading" class="font-medium text-[20px] text-[#111] m-0">Um treino vira uma capa</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">Depois da prova, o atleta gera um card 9:16 para o Instagram, em papel, tinta ou ultramar. Os números ficam entre 12% e 88% da altura, longe das áreas que o próprio Instagram cobre com a interface.</p>
+            </div>
         </div>
+        <div class="lg:col-span-8 lg:order-1 flex flex-col gap-6 min-w-0">
         <img src="assets/case-usectt/stories.webp" width="1320" height="930" loading="lazy" decoding="async"
              alt="Três versões do card do Stories, em papel, tinta e ultramar, com o tempo da maratona 3:26:47 e as barras das semanas de preparação."
-             class="w-full h-auto rounded border border-[#e5e5e5]">
-    </section>
-
-    <!-- Divisor -->
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
-
-    <!-- Do Figma ao código -->
-    <section class="flex flex-col gap-10 w-full" aria-labelledby="codigo-heading">
-        <div class="flex flex-col gap-1">
-            <h2 id="codigo-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Do Figma ao código</h2>
-            <p class="font-['Geist'] text-[14px] font-light text-[#6E6E6E] m-0">Figma e Claude trabalhando juntos, com o design system como fonte da verdade.</p>
+             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
         </div>
-
-        <ul class="flex flex-col gap-6 w-full list-none m-0 p-0">
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">Protótipo rápido, sistema documentado</h3>
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[1.5px] text-[#6E6E6E] m-0">Figma Make · Figma</p>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    O Figma Make serviu para testar direções de página em horas. O que sobreviveu foi documentado no Figma como design system: fundamentos, 16 componentes e os padrões de gráfico, cada um com as regras de uso.
-                </p>
+    </section>
+<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="codigo-heading">
+        <div class="flex flex-col gap-2">
+            <h2 id="codigo-heading" class="font-medium text-[20px] text-[#111] m-0">Do Figma ao código</h2>
+        <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">Figma e Claude trabalhando juntos, com o design system como fonte da verdade.</p>
+        </div>
+        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Protótipo rápido, sistema documentado</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Figma Make · Figma</p>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">O Figma Make serviu para testar direções de página em horas. O que sobreviveu foi documentado no Figma como design system: fundamentos, 16 componentes e os padrões de gráfico, cada um com as regras de uso.</p>
             </li>
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">Código a partir do sistema, não do print</h3>
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[1.5px] text-[#6E6E6E] m-0">Claude · Next.js · Tailwind · shadcn/ui</p>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    Com o Claude, os tokens e componentes do Figma viraram código em Next.js, com Tailwind e componentes shadcn/ui. Os textos de cada capítulo são funções testadas: dado um histórico, elas escolhem o fato e escrevem a frase.
-                </p>
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Código a partir do sistema, não do print</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Claude · Next.js · Tailwind · shadcn/ui</p>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">Com o Claude, os tokens e componentes do Figma viraram código em Next.js, com Tailwind e componentes shadcn/ui. Os textos de cada capítulo são funções testadas: dado um histórico, elas escolhem o fato e escrevem a frase.</p>
             </li>
-            <li class="flex flex-col gap-0.5 w-full">
-                <h3 class="text-[16px] font-medium text-[#111] m-0">Dados reais desde o primeiro dia</h3>
-                <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[1.5px] text-[#6E6E6E] m-0">API do Strava · Supabase · Vercel</p>
-                <p class="text-[15px] font-normal text-[#525252] pt-0.5 max-w-[680px]">
-                    O login é feito pelo Strava, os treinos são importados para o Supabase e a página de cada atleta ganha um endereço próprio, como usectt.com.br/felipe-oliveira. Tudo publicado na Vercel, no domínio do projeto.
-                </p>
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+                <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Dados reais desde o primeiro dia</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">API do Strava · Supabase · Vercel</p>
+                </div>
+                <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">O login é feito pelo Strava, os treinos são importados para o Supabase e a página de cada atleta ganha um endereço próprio, como usectt.com.br/felipe-oliveira. Tudo publicado na Vercel, no domínio do projeto.</p>
             </li>
         </ul>
     </section>
 
-    <!-- Resultado -->
-    <section class="flex flex-col gap-6 w-full" aria-labelledby="resultado-heading">
-        <h2 id="resultado-heading" class="font-medium text-[22px] sm:text-[24px] leading-[1.25] tracking-[-0.2px] text-[#111] m-0">Resultado</h2>
-        <div class="font-normal text-[16px] text-[#525252] flex flex-col gap-4 max-w-[720px]">
-            <p>O CTT deixou de ser um painel genérico e virou um produto com ponto de vista: qualquer corredor conecta o Strava e recebe a própria história, contada como uma prova, com um card pronto para compartilhar.</p>
-            <p>Está no ar em beta, com dez vagas. Se você corre, conecte sua conta e me conte o que achou.</p>
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="resultado-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="resultado-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Resultado</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">O CTT deixou de ser um painel genérico e virou um produto com ponto de vista: qualquer corredor conecta o Strava e recebe a própria história, contada como uma prova, com um card pronto para compartilhar.</p>
+            <p class="m-0">Está no ar em beta, com dez vagas. Se você corre, conecte sua conta e me conte o que achou.</p>
+            </div>
         </div>
+
         <div class="flex items-center gap-3 flex-wrap">
-            <a href="https://usectt.com.br" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">
-                Visitar o site <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                <span class="sr-only">(abre em nova aba)</span>
-            </a>
-            <a href="https://www.figma.com/design/OKBtDcovBIYQKVBqxihnrm/UseCtt" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#525252] hover:text-[#111] px-2 py-3">
-                Ver no Figma <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                <span class="sr-only">(abre em nova aba)</span>
-            </a>
+            <a href="https://usectt.com.br" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">Visitar o site <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg><span class="sr-only">(abre em nova aba)</span></a>
+            <a href="https://www.figma.com/design/OKBtDcovBIYQKVBqxihnrm/UseCtt?node-id=3-91" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#525252] hover:text-[#111] px-2 py-3">Ver no Figma <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg><span class="sr-only">(abre em nova aba)</span></a>
         </div>
     </section>
 
     <!-- Próximo case -->
     <nav class="card group w-full border-t border-[#e5e5e5] pt-10" aria-label="Próximo case">
-        <p class="font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] m-0">Próximo case</p>
-        <p class="font-bold text-[28px] sm:text-[36px] tracking-[-0.5px] text-[#111] pt-2 m-0">
-            <a href="ciatrans.html" class="card-link">CiaTrans</a>
+        <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Próximo case</p>
+        <p class="font-bold text-[clamp(32px,5vw,72px)] leading-[1.05] tracking-[-0.5px] text-[#111] pt-3 m-0">
+            <a href="nosso-plus.html" class="card-link">nosso+</a>
         </p>
-        <p class="font-normal text-[16px] text-[#525252] pt-2 m-0">Site, apresentação e design system para uma empresa do Porto de Santos. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
+        <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[620px] pt-3 m-0">Landing page e produto para casais alcançarem metas financeiras juntos. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
     </nav>
 
-    <!-- Rodapé -->
-    <footer class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full pt-4 border-t border-[#e5e5e5]">
-        <a href="index.html" class="ext-link font-['Geist'] text-[12px] font-medium uppercase tracking-[2px] text-[#6E6E6E] hover:text-[#111] w-fit">
-            <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            voltar ao portfólio
-        </a>
-        <div class="flex items-center gap-6 flex-wrap">
-            <a href="mailto:felipeoliveira.contato@gmail.com" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
-                e-mail <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] text-[16px] font-medium text-[#525252] hover:text-[#111]">
-                linkedin <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
+    <!-- Contato -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
+        <h2 id="contato-heading" class="font-medium text-[20px] text-[#111] m-0">Contato</h2>
+        <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">
+            Gostou do que viu? Vamos conversar.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 flex-wrap">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#111] underline underline-offset-4 w-fit break-all">felipeoliveira.contato@gmail.com</a>
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#525252] hover:text-[#111] w-fit">
+                LinkedIn <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
                 <span class="sr-only">(abre em nova aba)</span>
             </a>
+            <a href="index.html" class="ext-link font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#525252] hover:text-[#111] w-fit">
+                <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
+                Voltar ao portfólio
+            </a>
         </div>
+    </section>
+
+    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#e5e5e5]">
+        <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
+        <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
     </footer>
 
 </main>
