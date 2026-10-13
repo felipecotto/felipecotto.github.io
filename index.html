@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Felipe Oliveira | Product Designer sênior em São Paulo</title>
-<meta name="description" content="Felipe Oliveira, Product Designer sênior em São Paulo. Design systems, produto de ponta a ponta e passado em front-end. Tivita, Inventa, Olist e Stone.">
+<meta name="description" content="Felipe Oliveira, Product Designer sênior em São Paulo. Produto de ponta a ponta, pesquisa e dados, design systems e passado em front-end. Tivita, Inventa, Olist e Stone.">
 <meta property="og:title" content="Felipe Oliveira | Product Designer sênior em São Paulo">
-<meta property="og:description" content="Desenho produtos para serem construídos. Design systems, produto de ponta a ponta e passado em front-end.">
+<meta property="og:description" content="Desenho produtos para serem construídos. Ticket médio 28% maior na Inventa e +16 p.p. na conversão para o teste grátis do Tiny.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://felipecotto.github.io/">
 <meta property="og:site_name" content="Felipe Oliveira">
@@ -33,7 +33,7 @@
       "alternateName": "Cotto",
       "jobTitle": "Product Designer sênior",
       "url": "https://felipecotto.github.io/",
-      "description": "Product designer sênior em São Paulo. Design systems, produto de ponta a ponta e passado em front-end.",
+      "description": "Product designer sênior em São Paulo. Produto de ponta a ponta, pesquisa e dados, design systems e passado em front-end.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "São Paulo",
@@ -44,9 +44,10 @@
       ],
       "knowsAbout": [
         "Product design",
-        "Design systems",
         "UX research",
-        "Front-end"
+        "Design systems",
+        "Front-end",
+        "IA aplicada ao design"
       ]
     },
     {
@@ -78,6 +79,9 @@
     }
 
     [data-parallax] { will-change: transform; }
+    .status-dot { box-shadow: 0 0 0 0 rgba(22,163,74,.5); animation: pulse 2.4s ease-out infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(22,163,74,.45); } 70% { box-shadow: 0 0 0 7px rgba(22,163,74,0); } 100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); } }
+    @media (prefers-reduced-motion: reduce) { .status-dot { animation: none; } }
 </style>
 </head>
 <body id="topo" class="editorial-text font-normal antialiased">
@@ -94,8 +98,8 @@
     <nav class="w-full max-w-[1920px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2" aria-label="Navegação principal">
         <a href="#topo" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Felipe Oliveira</a>
         <ul class="flex items-center gap-4 sm:gap-6 list-none m-0 p-0">
-            <li><a href="#trajetoria-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Trajetória</a></li>
-            <li><a href="#projetos-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Projetos</a></li>
+            <li><a href="#trabalho-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Trabalho</a></li>
+            <li><a href="#sobre-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Sobre</a></li>
             <li><a href="#contato-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Contato</a></li>
         </ul>
     </nav>
@@ -125,8 +129,12 @@
                 Desenho produtos para serem construídos.
             </p>
             <p class="font-normal text-[17px] sm:text-[18px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
-                Sou product designer sênior em São Paulo. Fui o primeiro designer da Tivita, trabalhei nos design systems da XP Investimentos e da Stone e, antes do design, programei front-end. Por isso penso cada decisão de interface junto com quem vai construí-la.
+                Sou product designer sênior em São Paulo, com 8 anos em produtos complexos: ERP, marketplace B2B, fintech e saúde. Começo pela pesquisa e pelos dados e meço depois. Antes do design, programei front-end, por isso penso cada decisão de interface junto com quem vai construí-la.
             </p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 flex-wrap font-['Geist'] text-[14px] text-[#525252]">
+            <p class="flex items-center gap-2 m-0 text-[#111]"><span class="status-dot inline-block w-2 h-2 rounded-full bg-[#16a34a]" aria-hidden="true"></span>Disponível para vagas de Product Design sênior</p>
+            <p class="m-0">São Paulo, <time id="hora-local" datetime="">--:--</time> <span class="sr-only">(horário local)</span></p>
         </div>
         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
             <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0 shrink-0">Onde trabalhei</p>
@@ -143,61 +151,9 @@
 
     <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
 
-    <!-- Sobre -->
-    <section class="flex flex-col gap-10 w-full" aria-labelledby="sobre-heading">
-        <h2 id="sobre-heading" class="font-medium text-[20px] text-[#111] m-0">Sobre</h2>
-
-        <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
-            <p class="m-0">Comecei em tecnologia em 2010, no suporte técnico de uma fábrica de software em Sorocaba. Passei por social media, design e desenvolvimento front-end (saudades, jQuery) antes de chegar a Product Design. Essa bagagem define como eu trabalho: penso a interface, o sistema por trás dela e como ela vai ser construída.</p>
-            <p class="m-0">Design system virou território natural. Quem já escreveu CSS sabe que componentes bem organizados e decisões claras são o que deixam um produto crescer sem virar uma colcha de retalhos.</p>
-            <p class="m-0">Fora das telas, conduzo dinâmicas com times, dou aulas e palestro sobre design.</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 w-full">
-            <figure class="flex flex-col gap-3 m-0">
-                <img src="assets/sobre/estrategia.jpg" width="1000" height="666" loading="lazy" decoding="async"
-                     alt="Felipe conduzindo uma dinâmica de priorização com o time, apontando para post-its organizados na parede."
-                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
-                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Priorização com o time</figcaption>
-            </figure>
-            <figure class="flex flex-col gap-3 m-0">
-                <img src="assets/sobre/interface.jpg" width="1000" height="666" loading="lazy" decoding="async"
-                     alt="Felipe apresentando um grid de opacidade e brilho para explicar um princípio de interface."
-                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
-                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Aula sobre princípios de interface</figcaption>
-            </figure>
-            <figure class="flex flex-col gap-3 m-0">
-                <img src="assets/sobre/implementacao.jpg" width="1000" height="562" loading="lazy" decoding="async"
-                     alt="Felipe ensinando CSS e media queries, apontando para um trecho de código projetado."
-                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
-                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Aula de CSS e layout responsivo</figcaption>
-            </figure>
-            <figure class="flex flex-col gap-3 m-0">
-                <img src="assets/sobre/palestra.jpg" width="960" height="640" loading="lazy" decoding="async"
-                     alt="Felipe em pé no palco, com um microfone, apresentando um gráfico do Design Value Index."
-                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover bg-[#d9d9d9]">
-                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Palestra sobre o valor de negócio do design</figcaption>
-            </figure>
-            <figure class="flex flex-col gap-3 m-0">
-                <img src="assets/sobre/pesquisa.jpg" width="750" height="500" loading="lazy" decoding="async"
-                     alt="Felipe apresentando um slide sobre pesquisa contínua documentada, num evento com mural colorido ao fundo."
-                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
-                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Palestra sobre pesquisa contínua</figcaption>
-            </figure>
-            <figure class="flex flex-col gap-3 m-0">
-                <img src="assets/sobre/equipe.jpg" width="1440" height="960" loading="lazy" decoding="async"
-                     alt="Felipe sentado numa poltrona, conversando com o time, com colegas trabalhando ao fundo e o logo da Inventa na parede."
-                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover bg-[#d9d9d9]">
-                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Com o time da Inventa</figcaption>
-            </figure>
-        </div>
-    </section>
-
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
-
     <!-- Trajetória -->
     <section class="flex flex-col gap-10 w-full" aria-labelledby="trajetoria-heading">
-        <h2 id="trajetoria-heading" class="font-medium text-[20px] text-[#111] m-0">Trajetória</h2>
+        <h2 id="trabalho-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">01</span>Trajetória</h2>
 
         <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#e5e5e5]">
 
@@ -217,15 +173,28 @@
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Inventa</h3>
                     <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Jul 2023 – Jun 2024</p>
                 </div>
-                <div class="flex flex-col gap-3 max-w-[720px]">
+                <div class="flex flex-col gap-3 max-w-[820px] w-full">
                     <p class="text-[16px] leading-[1.6] text-[#525252] m-0">
                         <span class="font-medium text-[#111]">Marketplace B2B para o varejo.</span>
-                        Desenhei o marketplace e ferramentas internas de gestão de clientes, da pesquisa presencial com vendedores até a interface final.
+                        Desenhei o fluxo de cotações do marketplace, para o lojista negociar com o fornecedor antes de pagar, e o MVP do Portal do Fornecedor. Da pesquisa com fornecedores ao teste A/B.
                     </p>
-                    <a href="cases/case-inventa.pdf" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">
-                        Ver case em PDF <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                        <span class="sr-only">(abre em nova aba)</span>
-                    </a>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 pt-3">
+                        <div class="flex flex-col gap-1 border-t border-[#111] pt-3">
+                            <p class="font-semibold text-[clamp(32px,4vw,52px)] leading-none tracking-[-0.03em] text-[#111] m-0 tabular-nums">+28%</p>
+                            <p class="text-[14px] leading-[1.45] text-[#525252] m-0">no ticket médio dos pedidos que passaram por cotação</p>
+                        </div>
+                        <div class="flex flex-col gap-1 border-t border-[#111] pt-3">
+                            <p class="font-semibold text-[clamp(32px,4vw,52px)] leading-none tracking-[-0.03em] text-[#111] m-0 tabular-nums">+9%</p>
+                            <p class="text-[14px] leading-[1.45] text-[#525252] m-0">em pedidos no grupo com cotação</p>
+                        </div>
+                        <div class="flex flex-col gap-1 border-t border-[#111] pt-3">
+                            <p class="font-semibold text-[clamp(32px,4vw,52px)] leading-none tracking-[-0.03em] text-[#111] m-0 tabular-nums">+6%</p>
+                            <p class="text-[14px] leading-[1.45] text-[#525252] m-0">em GMV, em teste A/B com cerca de 3 mil lojistas</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 pt-2">
+                        <a href="inventa.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">Ler o case da Inventa →</a>
+                    </div>
                 </div>
             </li>
 
@@ -234,15 +203,28 @@
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Olist</h3>
                     <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Ago 2021 – Jul 2023</p>
                 </div>
-                <div class="flex flex-col gap-3 max-w-[720px]">
+                <div class="flex flex-col gap-3 max-w-[820px] w-full">
                     <p class="text-[16px] leading-[1.6] text-[#525252] m-0">
                         <span class="font-medium text-[#111]">E-commerce.</span>
-                        Desenhei o app do lojista, com notificações e ajustes rápidos de preço e estoque. Depois, a integração com a Tiny, unificando cadastro e escolha de planos entre os dois produtos.
+                        Primeira pessoa de design dedicada ao Tiny. Redesenhei as jornadas de pagamento e de planos e a integração entre Olist e Tiny, unificando cadastro e escolha de planos. Também desenhei o app do lojista, com ajustes rápidos de preço e estoque.
                     </p>
-                    <a href="cases/case-olist.pdf" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">
-                        Ver case em PDF <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
-                        <span class="sr-only">(abre em nova aba)</span>
-                    </a>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 pt-3">
+                        <div class="flex flex-col gap-1 border-t border-[#111] pt-3">
+                            <p class="font-semibold text-[clamp(32px,4vw,52px)] leading-none tracking-[-0.03em] text-[#111] m-0 tabular-nums">95,3%</p>
+                            <p class="text-[14px] leading-[1.45] text-[#525252] m-0">de conversão para o teste grátis, antes 78,9%</p>
+                        </div>
+                        <div class="flex flex-col gap-1 border-t border-[#111] pt-3">
+                            <p class="font-semibold text-[clamp(32px,4vw,52px)] leading-none tracking-[-0.03em] text-[#111] m-0 tabular-nums">+16 p.p.</p>
+                            <p class="text-[14px] leading-[1.45] text-[#525252] m-0">nessa etapa do funil, em um mês</p>
+                        </div>
+                        <div class="flex flex-col gap-1 border-t border-[#111] pt-3">
+                            <p class="font-semibold text-[clamp(32px,4vw,52px)] leading-none tracking-[-0.03em] text-[#111] m-0 tabular-nums">+8,5 p.p.</p>
+                            <p class="text-[14px] leading-[1.45] text-[#525252] m-0">no funil completo, da tela de pagamento ao teste</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 pt-2">
+                        <a href="olist.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">Ler o case da Olist →</a>
+                    </div>
                 </div>
             </li>
 
@@ -297,7 +279,7 @@
     <!-- Projetos independentes -->
     <section class="flex flex-col gap-10 w-full" aria-labelledby="projetos-heading">
         <div class="flex flex-col gap-2">
-            <h2 id="projetos-heading" class="font-medium text-[20px] text-[#111] m-0">Projetos independentes</h2>
+            <h2 id="projetos-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">02</span>Projetos independentes</h2>
             <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">Projetos próprios e para clientes, do design à implementação.</p>
         </div>
 
@@ -377,7 +359,7 @@
     <!-- Explorações -->
     <section class="flex flex-col gap-6 w-full" aria-labelledby="exploracoes-heading">
         <div class="flex flex-col gap-2">
-            <h2 id="exploracoes-heading" class="font-medium text-[20px] text-[#111] m-0">Explorações</h2>
+            <h3 id="exploracoes-heading" class="font-medium text-[18px] text-[#111] m-0">Explorações</h3>
             <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">Experimentos de interface e implementação.</p>
         </div>
 
@@ -394,9 +376,62 @@
 
     <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
 
+    <!-- Sobre -->
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="sobre-heading">
+        <h2 id="sobre-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">03</span>Sobre</h2>
+
+        <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">Comecei em tecnologia em 2010, no suporte técnico de uma fábrica de software em Sorocaba. Passei por social media, design e desenvolvimento front-end (saudades, jQuery) antes de chegar a Product Design, em 2019. Essa bagagem define como eu trabalho: entendo o problema, desenho a interface e penso em como ela vai ser construída.</p>
+            <p class="m-0">Nos últimos anos trabalhei em produtos complexos e operacionais, de ERP e marketplace B2B a fintech e saúde. Gosto de começar pela pesquisa e pelos dados, testar cedo e medir depois. Foi assim que aumentamos a conversão do trial do Tiny e o ticket médio na Inventa. Design system entra como ferramenta para o produto crescer com consistência, não como fim.</p>
+            <p class="m-0">Hoje uso IA no dia a dia para pesquisar, prototipar em código e acelerar o que é repetitivo, sem abrir mão do critério.</p>
+            <p class="m-0">Fora das telas, conduzo dinâmicas com times, dou aulas e palestro sobre design.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 w-full">
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="assets/sobre/estrategia.jpg" width="1000" height="666" loading="lazy" decoding="async"
+                     alt="Felipe conduzindo uma dinâmica de priorização com o time, apontando para post-its organizados na parede."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Priorização com o time</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="assets/sobre/interface.jpg" width="1000" height="666" loading="lazy" decoding="async"
+                     alt="Felipe apresentando um grid de opacidade e brilho para explicar um princípio de interface."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Aula sobre princípios de interface</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="assets/sobre/implementacao.jpg" width="1000" height="562" loading="lazy" decoding="async"
+                     alt="Felipe ensinando CSS e media queries, apontando para um trecho de código projetado."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Aula de CSS e layout responsivo</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="assets/sobre/palestra.jpg" width="960" height="640" loading="lazy" decoding="async"
+                     alt="Felipe em pé no palco, com um microfone, apresentando um gráfico do Design Value Index."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Palestra sobre o valor de negócio do design</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="assets/sobre/pesquisa.jpg" width="750" height="500" loading="lazy" decoding="async"
+                     alt="Felipe apresentando um slide sobre pesquisa contínua documentada, num evento com mural colorido ao fundo."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Palestra sobre pesquisa contínua</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="assets/sobre/equipe.jpg" width="1440" height="960" loading="lazy" decoding="async"
+                     alt="Felipe sentado numa poltrona, conversando com o time, com colegas trabalhando ao fundo e o logo da Inventa na parede."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Com o time da Inventa</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+
     <!-- Contato -->
     <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
-        <h2 id="contato-heading" class="font-medium text-[20px] text-[#111] m-0">Contato</h2>
+        <h2 id="contato-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">04</span>Contato</h2>
         <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">
             Estou aberto a vagas de Product Design sênior.
         </p>
@@ -413,13 +448,30 @@
         </div>
     </section>
 
-    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#e5e5e5]">
-        <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
-        <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
+    <footer class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 w-full pt-8 border-t border-[#e5e5e5]">
+        <div class="flex flex-col gap-1">
+            <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
+            <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
+        </div>
+        <div class="flex flex-col gap-1 sm:items-end">
+            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0">Versão <span class="text-[#111]">v2026.2</span> · atualizada em <time datetime="2026-10-13">13 out 2026</time></p>
+            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0 flex gap-4">
+                <a href="changelog/index.html" class="underline underline-offset-4 hover:text-[#111]">Changelog</a>
+                <a href="versoes/index.html" class="underline underline-offset-4 hover:text-[#111]">Versões anteriores</a>
+            </p>
+        </div>
     </footer>
 
 </main>
-
+<script>
+(function () {
+    var el = document.getElementById('hora-local');
+    if (!el || !window.Intl) return;
+    var fmt = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
+    function tick() { var now = new Date(); el.textContent = fmt.format(now); el.setAttribute('datetime', now.toISOString()); }
+    tick(); setInterval(tick, 30000);
+})();
+</script>
 <script>
 (function () {
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

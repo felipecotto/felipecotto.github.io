@@ -1,0 +1,116 @@
+body {
+	background-color: #101010;
+}
+
+.main-bg {
+	background-image: url(../img/felipe-oliveira.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: #e3e3e3;
+}
+
+.yellow {
+	color: #f8af2c;
+}
+
+.bg-black {
+	background-color: #101010;
+	color: #fff;
+}
+
+.grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid-item {
+	width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+	display: grid;
+	padding: 30px;
+}
+
+.social {
+	margin: 0; 
+	padding: 0; 
+	list-style: none;
+}
+
+.social li {
+ display: inline-block;
+}
+
+.social li a {
+	color: #fff;
+    text-decoration: none;
+	padding: 8px 0;
+	padding-right: 12px;
+	display: block;
+	font-size: 18px;
+    letter-spacing: 0.5px;
+	font-weight: 400;
+	font-family: 'Lato', sans-serif;
+	border: solid 2px transparent;
+	-webkit-transition: all 0.3s ease-out; 
+	transition: all 0.3s ease-out; 
+}
+
+.social li a:hover {
+	color: #f8af2c;
+	border: solid 2px #f8af2c;
+}
+
+.title {
+	font-family: 'Arvo', serif;
+	font-size: 60px;
+}
+
+.sub-title {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 40px;
+}
+
+.mobile {
+	display: none;
+	opacity: 0;
+}
+
+@media only screen and (max-width: 850px)  {
+	.grid-container {
+		display: block;
+		text-align: center;
+	}
+
+	.grid-item { 
+		height: auto;
+	}
+
+	.main-bg {
+		display: none;
+		opacity: 0;
+	}
+
+	.social li {
+		display: block;
+	}
+
+	.title {
+		font-size: 32px;
+	}
+
+	.sub-title {
+		font-size: 24px;
+	}
+
+	.mobile {
+		display: block;
+		opacity: 1;
+		margin-bottom: 30px;
+	}
+}
