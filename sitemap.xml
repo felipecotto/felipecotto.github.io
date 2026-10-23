@@ -26,13 +26,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://felipecotto.github.io/tivita-lotes.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://felipecotto.github.io/usectt.html</loc>
     <lastmod>2026-10-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://felipecotto.github.io/nosso-plus.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -54,5 +59,10 @@
     <loc>https://felipecotto.github.io/css-zen-garden/index.html</loc>
     <lastmod>2026-10-05</lastmod>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://felipecotto.github.io/nosso-plus-app.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
