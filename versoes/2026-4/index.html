@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="motion-safe:scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Oliveira | Product Designer sênior em São Paulo</title>
+<meta name="description" content="Felipe Oliveira, Product Designer sênior em São Paulo. Produto de ponta a ponta, pesquisa e dados, design systems e passado em front-end. Tivita, Inventa, Olist e Stone.">
+<meta property="og:title" content="Felipe Oliveira | Product Designer sênior em São Paulo">
+<meta property="og:description" content="Desenho produtos para serem construídos. Ticket médio 28% maior na Inventa e +16 p.p. na conversão para o teste grátis do Tiny.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://felipecotto.github.io/">
+<meta property="og:site_name" content="Felipe Oliveira">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://felipecotto.github.io/assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Telas dos projetos de Felipe Oliveira: UseCtt, Onze e nosso+.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://felipecotto.github.io/versoes/2026-4/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta name="theme-color" content="#F7F6F3">
+<meta name="author" content="Felipe Oliveira">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://felipecotto.github.io/#felipe",
+      "name": "Felipe Oliveira",
+      "alternateName": "Cotto",
+      "jobTitle": "Product Designer sênior",
+      "url": "https://felipecotto.github.io/",
+      "description": "Product designer sênior em São Paulo. Produto de ponta a ponta, pesquisa e dados, design systems e passado em front-end.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/felipecotto"
+      ],
+      "knowsAbout": [
+        "Product design",
+        "UX research",
+        "Design systems",
+        "Front-end",
+        "IA aplicada ao design"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://felipecotto.github.io/#site",
+      "url": "https://felipecotto.github.io/",
+      "name": "Felipe Oliveira",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://felipecotto.github.io/#felipe"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+    /* fotos do Sobre: tom neutro por padrão, cor ao passar o mouse; em telas de toque, sempre em cor */
+    .photo-tone {
+        filter: grayscale(1) contrast(1.02);
+        transition: filter 0.4s ease;
+    }
+    figure:hover .photo-tone { filter: grayscale(0); }
+    @media (hover: none) {
+        .photo-tone { filter: none; }
+    }
+
+    [data-parallax] { will-change: transform; }
+    .status-dot { box-shadow: 0 0 0 0 rgba(63,107,79,.5); animation: pulse 2.4s ease-out infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(63,107,79,.45); } 70% { box-shadow: 0 0 0 7px rgba(63,107,79,0); } 100% { box-shadow: 0 0 0 0 rgba(63,107,79,0); } }
+    @media (prefers-reduced-motion: reduce) { .status-dot { animation: none; } }
+</style>
+</head>
+<body id="topo" class="editorial-text font-normal antialiased">
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-arrow-outward" viewBox="0 0 16 16">
+        <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+</svg>
+
+<header class="site-header" data-header>
+    <nav class="header-pill" aria-label="Navegação principal">
+        <a href="#topo" class="font-['Geist'] font-normal text-[15px] text-[#111] w-fit hover:opacity-60 transition-opacity">Felipe<span class="hidden sm:inline">&nbsp;Oliveira</span></a>
+        <p class="header-label m-0" data-section-label aria-hidden="true">Portfólio · 2026</p>
+        <ul class="flex items-center justify-end gap-0.5 list-none m-0 p-0 font-['Geist'] text-[14px]">
+            <li><a href="#trabalho-heading" class="nav-link" data-nav-link>Trabalho</a></li>
+            <li><a href="#sobre-heading" class="nav-link" data-nav-link>Sobre</a></li>
+            <li><a href="#contato-heading" class="nav-link" data-nav-link>Contato</a></li>
+        </ul>
+        <span class="header-progress" data-progress aria-hidden="true"></span>
+    </nav>
+</header>
+
+<main id="conteudo" class="w-full max-w-[1920px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16 md:gap-24">
+
+    <h1 class="sr-only">Felipe Oliveira, Product Designer sênior em São Paulo</h1>
+
+    <!-- Posicionamento curto, visível na primeira dobra -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 -mt-6 md:-mt-10 font-['Geist'] text-[14px] sm:text-[15px] text-[#525252]">
+        <p class="m-0"><span class="text-[#111] font-medium">Product Designer sênior</span> · produtos complexos em SaaS B2B, marketplace, fintech e saúde</p>
+        <p class="flex items-center gap-2 m-0 text-[#111]"><span class="status-dot inline-block w-2 h-2 rounded-full bg-[#3F6B4F]" aria-hidden="true"></span>Disponível</p>
+    </div>
+
+    <!-- Abertura: no desktop, PRODUCT / foto / DESIGNER sobrepostos; no mobile, empilhados -->
+    <section class="hero-fade w-full" aria-label="Apresentação">
+        <div class="flex flex-col items-center gap-6 py-6 text-center sm:block sm:relative sm:py-0 sm:text-left sm:min-h-[clamp(320px,42vw,802px)]">
+            <p class="font-bold uppercase text-[16vw] leading-[0.9] tracking-[0.03em] text-[#111] m-0 sm:absolute sm:left-[13%] sm:top-[35%] sm:w-[80%] sm:text-[clamp(40px,11.5vw,220px)] sm:leading-none sm:tracking-[0.08em]" data-parallax="title" aria-hidden="true">Product</p>
+            <div class="w-full max-w-[320px] aspect-[530/471] overflow-hidden bg-[#d9d9d9] sm:absolute sm:left-[33%] sm:top-0 sm:z-10 sm:w-[35%] sm:max-w-none" data-parallax="photo">
+                <img src="../../assets/sobre/corrida-comemoracao.jpg" width="1200" height="800" fetchpriority="high" decoding="async"
+                     alt="Felipe Oliveira sorrindo após uma corrida."
+                     class="w-full h-full object-cover">
+            </div>
+            <p class="font-bold uppercase text-[16vw] leading-[0.9] tracking-[0.03em] text-[#111] m-0 sm:absolute sm:left-[18%] sm:top-[67%] sm:w-[82%] sm:text-[clamp(40px,11.5vw,220px)] sm:leading-none sm:tracking-[0.08em]" data-parallax="title" aria-hidden="true">Designer</p>
+        </div>
+    </section>
+
+    <!-- Posicionamento -->
+    <section class="flex flex-col gap-8 w-full" aria-label="Resumo">
+        <div class="flex flex-col gap-6 max-w-[900px]">
+            <p class="font-normal text-[clamp(28px,5vw,56px)] leading-[1.15] tracking-[-0.5px] text-[#111] m-0">
+                Desenho produtos para serem construídos.
+            </p>
+            <p class="font-normal text-[17px] sm:text-[18px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
+                Sou product designer sênior em São Paulo, com 8 anos em produtos complexos: ERP, marketplace B2B, fintech e saúde. Começo pela pesquisa e pelos dados e meço depois. Antes do design, programei front-end, por isso penso cada decisão de interface junto com quem vai construí-la.
+            </p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 flex-wrap font-['Geist'] text-[14px] text-[#525252]">
+            <p class="m-0">São Paulo, <time id="hora-local" datetime="">--:--</time> <span class="sr-only">(horário local)</span></p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0 shrink-0">Onde trabalhei</p>
+            <p class="font-['Geist'] font-normal text-[15px] leading-[1.7] text-[#111] m-0">
+                Tivita <span class="text-[#6E6E6E]" aria-hidden="true">·</span>
+                Inventa <span class="text-[#6E6E6E]" aria-hidden="true">·</span>
+                Olist <span class="text-[#6E6E6E]" aria-hidden="true">·</span>
+                Stone <span class="text-[#6E6E6E]" aria-hidden="true">·</span>
+                XP Investimentos, pela Meiuca <span class="text-[#6E6E6E]" aria-hidden="true">·</span>
+                Goomer
+            </p>
+        </div>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <!-- Cases de produto -->
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="trabalho-heading">
+        <div class="flex flex-col gap-2">
+            <h2 id="trabalho-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">01</span>Cases</h2>
+            <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">Produtos em empresas, com pesquisa, decisões e resultados.</p>
+        </div>
+        <ul class="case-list flex flex-col w-full list-none m-0 p-0 border-t border-[#E6E4DF]" data-case-list>
+            <li class="case-row card group grid grid-cols-12 items-start md:items-center gap-x-4 md:gap-x-6 gap-y-3 py-6 md:py-8 px-3 md:px-4 -mx-3 md:-mx-4 border-b border-[#E6E4DF]" style="--row-tint: var(--tint-sage)" data-preview="../../assets/case-tivita-recorrencias/etapa2.webp" data-tint="var(--tint-sage)">
+                <p class="hidden md:block md:col-span-1 font-['Geist'] text-[13px] text-[#6E6E6E] tabular-nums m-0" aria-hidden="true">01</p>
+                <div class="col-span-8 md:col-span-4 flex flex-col gap-1.5 min-w-0">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[1.8px] text-[11px] text-[#6E6E6E] m-0">Tivita · Healthtech e fincare</p>
+                    <h3 class="case-title font-bold text-[clamp(22px,2.2vw,32px)] leading-[1.1] tracking-[-0.02em] text-[#111] m-0">
+                        <a href="../../tivita-recorrencias.html" class="card-link">Recorrências de convênio</a>
+                    </h3>
+                </div>
+                <img src="../../assets/case-tivita-recorrencias/etapa2.webp" width="1095" height="760" loading="lazy" decoding="async" alt=""
+                     class="md:hidden col-span-4 w-full aspect-[4/3] object-cover object-left-top rounded-[6px] border border-[#E6E4DF] bg-white">
+                <p class="col-span-12 md:col-span-4 text-[15px] leading-[1.55] text-[#525252] m-0">A configuração que ensina uma agente de IA a pedir autorizações e enviar guias sozinha. V1 no ar, iteração com clínicas e redesenho em três etapas.</p>
+                <div class="col-span-10 md:col-span-2 flex flex-col gap-1">
+                    <p class="font-medium text-[18px] leading-tight text-[#111] m-0">Agente de IA</p>
+                    <p class="text-[13px] leading-[1.4] text-[#6E6E6E] m-0">configurada pela própria clínica</p>
+                </div>
+                <span class="case-arrow col-span-2 md:col-span-1 justify-self-end self-center text-[#6E6E6E]" aria-hidden="true"><svg class="w-5 h-5"><use href="#icon-arrow-outward"/></svg></span>
+            </li>
+            <li class="case-row card group grid grid-cols-12 items-start md:items-center gap-x-4 md:gap-x-6 gap-y-3 py-6 md:py-8 px-3 md:px-4 -mx-3 md:-mx-4 border-b border-[#E6E4DF]" style="--row-tint: var(--tint-sand)" data-preview="../../assets/case-tivita-lotes/fakedoor-capa.webp" data-tint="var(--tint-sand)">
+                <p class="hidden md:block md:col-span-1 font-['Geist'] text-[13px] text-[#6E6E6E] tabular-nums m-0" aria-hidden="true">02</p>
+                <div class="col-span-8 md:col-span-4 flex flex-col gap-1.5 min-w-0">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[1.8px] text-[11px] text-[#6E6E6E] m-0">Tivita · Healthtech e fincare</p>
+                    <h3 class="case-title font-bold text-[clamp(22px,2.2vw,32px)] leading-[1.1] tracking-[-0.02em] text-[#111] m-0">
+                        <a href="../../tivita-lotes.html" class="card-link">Lotes de convênio</a>
+                    </h3>
+                </div>
+                <img src="../../assets/case-tivita-lotes/fakedoor-capa.webp" width="1902" height="1072" loading="lazy" decoding="async" alt=""
+                     class="md:hidden col-span-4 w-full aspect-[4/3] object-cover object-left-top rounded-[6px] border border-[#E6E4DF] bg-white">
+                <p class="col-span-12 md:col-span-4 text-[15px] leading-[1.55] text-[#525252] m-0">Faturamento de convênio dentro do produto, do zero: da pesquisa com clínicas ABA ao fluxo em produção, com fake door para escolher os beta testers.</p>
+                <div class="col-span-10 md:col-span-2 flex flex-col gap-1">
+                    <p class="font-medium text-[18px] leading-tight text-[#111] m-0">Em produção</p>
+                    <p class="text-[13px] leading-[1.4] text-[#6E6E6E] m-0">do discovery ao fluxo no ar</p>
+                </div>
+                <span class="case-arrow col-span-2 md:col-span-1 justify-self-end self-center text-[#6E6E6E]" aria-hidden="true"><svg class="w-5 h-5"><use href="#icon-arrow-outward"/></svg></span>
+            </li>
+            <li class="case-row card group grid grid-cols-12 items-start md:items-center gap-x-4 md:gap-x-6 gap-y-3 py-6 md:py-8 px-3 md:px-4 -mx-3 md:-mx-4 border-b border-[#E6E4DF]" style="--row-tint: var(--tint-clay)" data-preview="../../assets/case-inventa/cotacao.webp" data-tint="var(--tint-clay)">
+                <p class="hidden md:block md:col-span-1 font-['Geist'] text-[13px] text-[#6E6E6E] tabular-nums m-0" aria-hidden="true">03</p>
+                <div class="col-span-8 md:col-span-4 flex flex-col gap-1.5 min-w-0">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[1.8px] text-[11px] text-[#6E6E6E] m-0">Inventa · Marketplace B2B</p>
+                    <h3 class="case-title font-bold text-[clamp(22px,2.2vw,32px)] leading-[1.1] tracking-[-0.02em] text-[#111] m-0">
+                        <a href="../../inventa.html" class="card-link">Cotações no checkout</a>
+                    </h3>
+                </div>
+                <img src="../../assets/case-inventa/cotacao.webp" width="1577" height="900" loading="lazy" decoding="async" alt=""
+                     class="md:hidden col-span-4 w-full aspect-[4/3] object-cover object-left-top rounded-[6px] border border-[#E6E4DF] bg-white">
+                <p class="col-span-12 md:col-span-4 text-[15px] leading-[1.55] text-[#525252] m-0">Só metade dos pagamentos iniciados era concluída. Levei a negociação com o fornecedor para dentro do checkout e validamos em teste A/B.</p>
+                <div class="col-span-10 md:col-span-2 flex flex-col gap-1">
+                    <p class="font-semibold text-[clamp(26px,2.4vw,34px)] leading-none tracking-[-0.03em] tabular-nums text-[#111] m-0">+28%</p>
+                    <p class="text-[13px] leading-[1.4] text-[#6E6E6E] m-0">no ticket médio, em A/B com cerca de 3 mil lojistas</p>
+                </div>
+                <span class="case-arrow col-span-2 md:col-span-1 justify-self-end self-center text-[#6E6E6E]" aria-hidden="true"><svg class="w-5 h-5"><use href="#icon-arrow-outward"/></svg></span>
+            </li>
+            <li class="case-row card group grid grid-cols-12 items-start md:items-center gap-x-4 md:gap-x-6 gap-y-3 py-6 md:py-8 px-3 md:px-4 -mx-3 md:-mx-4 border-b border-[#E6E4DF]" style="--row-tint: var(--tint-slate)" data-preview="../../assets/case-olist/resumo-nova.webp" data-tint="var(--tint-slate)">
+                <p class="hidden md:block md:col-span-1 font-['Geist'] text-[13px] text-[#6E6E6E] tabular-nums m-0" aria-hidden="true">04</p>
+                <div class="col-span-8 md:col-span-4 flex flex-col gap-1.5 min-w-0">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[1.8px] text-[11px] text-[#6E6E6E] m-0">Olist · ERP Tiny</p>
+                    <h3 class="case-title font-bold text-[clamp(22px,2.2vw,32px)] leading-[1.1] tracking-[-0.02em] text-[#111] m-0">
+                        <a href="../../olist.html" class="card-link">Planos e pagamento do Tiny</a>
+                    </h3>
+                </div>
+                <img src="../../assets/case-olist/resumo-nova.webp" width="1600" height="911" loading="lazy" decoding="async" alt=""
+                     class="md:hidden col-span-4 w-full aspect-[4/3] object-cover object-left-top rounded-[6px] border border-[#E6E4DF] bg-white">
+                <p class="col-span-12 md:col-span-4 text-[15px] leading-[1.55] text-[#525252] m-0">Redesenhei a escolha de plano e o pagamento a partir de dados do Mixpanel e dos chamados de suporte sobre preços.</p>
+                <div class="col-span-10 md:col-span-2 flex flex-col gap-1">
+                    <p class="font-semibold text-[clamp(26px,2.4vw,34px)] leading-none tracking-[-0.03em] tabular-nums text-[#111] m-0">+16 p.p.</p>
+                    <p class="text-[13px] leading-[1.4] text-[#6E6E6E] m-0">na conversão para o teste grátis, de 78,9% para 95,3%</p>
+                </div>
+                <span class="case-arrow col-span-2 md:col-span-1 justify-self-end self-center text-[#6E6E6E]" aria-hidden="true"><svg class="w-5 h-5"><use href="#icon-arrow-outward"/></svg></span>
+            </li>
+        </ul>
+        <div class="case-preview" data-case-preview aria-hidden="true"><img src="../../assets/case-tivita-recorrencias/etapa2.webp" alt="" width="1600" height="1000"></div>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <!-- Trajetória -->
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="trajetoria-heading">
+        <h2 id="trajetoria-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">02</span>Trajetória</h2>
+
+        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#E6E4DF]">
+
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Tivita</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Jun 2024 – Set 2026</p>
+                </div>
+                <div class="flex flex-col gap-3 max-w-[720px]">
+                    <p class="text-[16px] leading-[1.6] text-[#525252] m-0">
+                    <span class="font-medium text-[#111]">Healthtech e fincare.</span>
+                    Primeiro designer contratado. Desenhei as primeiras funcionalidades de ponta a ponta e criei a base do design system. Depois, assumi o módulo de automação de guias médicas, do atendimento ao fechamento de lotes, prototipando em código com o Claude Code.
+                </p>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+                        <a href="../../tivita-recorrencias.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">Ver case: recorrências de convênio <span aria-hidden="true">→</span></a>
+                        <a href="../../tivita-lotes.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">Ver case: lotes de convênio <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Inventa</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Jul 2023 – Jun 2024</p>
+                </div>
+                <div class="flex flex-col gap-3 max-w-[820px] w-full">
+                    <p class="text-[16px] leading-[1.6] text-[#525252] m-0">
+                        <span class="font-medium text-[#111]">Marketplace B2B para o varejo.</span>
+                        Desenhei o fluxo de cotações do marketplace, para o lojista negociar com o fornecedor antes de pagar, e o MVP do Portal do Fornecedor. Da pesquisa com fornecedores ao teste A/B.
+                    </p>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 pt-2">
+                        <a href="../../inventa.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">Ler o case da Inventa →</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Olist</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Ago 2021 – Jul 2023</p>
+                </div>
+                <div class="flex flex-col gap-3 max-w-[820px] w-full">
+                    <p class="text-[16px] leading-[1.6] text-[#525252] m-0">
+                        <span class="font-medium text-[#111]">E-commerce.</span>
+                        Primeira pessoa de design dedicada ao Tiny. Redesenhei as jornadas de pagamento e de planos e a integração entre Olist e Tiny, unificando cadastro e escolha de planos. Também desenhei o app do lojista, com ajustes rápidos de preço e estoque.
+                    </p>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 pt-2">
+                        <a href="../../olist.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">Ler o case da Olist →</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Stone</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Dez 2020 – Ago 2021</p>
+                </div>
+                <p class="text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
+                    <span class="font-medium text-[#111]">Fintech.</span>
+                    Trabalhei no design system e nas primeiras versões da conta digital, na web e no app, onde lojistas gerenciavam cartões, Pix, seguros e empréstimos.
+                </p>
+            </li>
+
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Meiuca</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Out 2019 – Jun 2020</p>
+                </div>
+                <p class="text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
+                    <span class="font-medium text-[#111]">Consultoria de design.</span>
+                    Meu projeto principal foi o design system da XP Investimentos: seis meses mapeando inconsistências entre produtos e construindo os fundamentos visuais e os primeiros componentes para toda a companhia.
+                </p>
+            </li>
+
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8">
+                <div class="flex flex-col w-[192px] shrink-0 gap-0.5">
+                    <h3 class="font-medium text-[16px] text-[#111] m-0">Goomer</h3>
+                    <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Out 2018 – Out 2019</p>
+                </div>
+                <p class="text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">
+                    <span class="font-medium text-[#111]">Tecnologia para restaurantes.</span>
+                    Desenhei a gestão de cardápios digitais e a primeira fase dos totens de autoatendimento, com muita pesquisa em campo para entender a rotina dos restaurantes.
+                </p>
+            </li>
+        </ul>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 flex-wrap">
+        <a href="../../assets/Felipe-Oliveira-Curriculo.pdf" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">
+            Baixar currículo em PDF <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            <span class="sr-only">(PDF, abre em nova aba)</span>
+        </a>
+        <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[14px] text-[#525252] hover:text-[#111] w-fit">
+            Currículo completo no LinkedIn <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            <span class="sr-only">(abre em nova aba)</span>
+        </a>
+        </div>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <!-- Projetos -->
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="projetos-heading">
+        <div class="flex flex-col gap-2">
+            <h2 id="projetos-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">03</span>Projetos</h2>
+            <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">Projetos próprios e para clientes, do design à implementação.</p>
+        </div>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-14 w-full list-none m-0 p-0">
+            <li class="card group flex flex-col gap-5">
+                <img src="../../assets/case-usectt/cover.webp" width="1728" height="972" loading="lazy" decoding="async" alt=""
+                     class="w-full aspect-[16/10] object-cover object-top rounded border border-[#E6E4DF] bg-[#EFEDE8]">
+                <div class="flex flex-col gap-2">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Produto próprio · Design e código</p>
+                    <h3 class="font-bold text-[22px] tracking-[-0.3px] text-[#111] m-0">
+                        <a href="../../usectt.html" class="card-link">UseCtt</a>
+                    </h3>
+                    <p class="font-normal text-[16px] leading-[1.6] text-[#525252] m-0">Report editorial que transforma o histórico de treinos do Strava numa maratona, do KM 0 à chegada. Design system no Figma, código em Next.js e dados reais via API do Strava e Supabase.</p>
+                    <p class="font-['Geist'] font-medium text-[14px] text-[#525252] group-hover:text-[#111] transition-colors m-0 pt-1" aria-hidden="true">Ler o case →</p>
+                </div>
+            </li>
+            <li class="card group flex flex-col gap-5">
+                <img src="../../assets/case-nosso-plus/hero.webp" width="1360" height="730" loading="lazy" decoding="async" alt=""
+                     class="w-full aspect-[16/10] object-cover object-top rounded border border-[#E6E4DF] bg-[#EFEDE8]">
+                <div class="flex flex-col gap-2">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Produto próprio · Landing page e app</p>
+                    <h3 class="font-bold text-[22px] tracking-[-0.3px] text-[#111] m-0">
+                        <a href="../../nosso-plus.html" class="card-link">nosso+</a>
+                    </h3>
+                    <p class="font-normal text-[16px] leading-[1.6] text-[#525252] m-0">Landing page publicada para um app de casais que alcançam metas financeiras juntos. Da tese do produto à fotografia, com a landing desenhada no Figma e no ar.</p>
+                    <p class="font-['Geist'] font-medium text-[14px] text-[#525252] group-hover:text-[#111] transition-colors m-0 pt-1" aria-hidden="true">Ler o case →</p>
+                </div>
+            </li>
+            <li class="card group flex flex-col gap-5">
+                <img src="../../assets/case-nosso-plus-app/cover.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""
+                     class="w-full aspect-[16/10] object-cover object-top rounded border border-[#E6E4DF] bg-[#EFEDE8]">
+                <div class="flex flex-col gap-2">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Produto próprio · App mobile</p>
+                    <h3 class="font-bold text-[22px] tracking-[-0.3px] text-[#111] m-0">
+                        <a href="../../nosso-plus-app.html" class="card-link">nosso+ app</a>
+                    </h3>
+                    <p class="font-normal text-[16px] leading-[1.6] text-[#525252] m-0">Ritmo a dois: o fluxo mobile para quando um dos dois atrasa a parte dele da meta. Seis telas sobre convite, atraso, erro e sucesso, com o tom certo para um assunto delicado do casal.</p>
+                    <p class="font-['Geist'] font-medium text-[14px] text-[#525252] group-hover:text-[#111] transition-colors m-0 pt-1" aria-hidden="true">Ler o case →</p>
+                </div>
+            </li>
+            <li class="card group flex flex-col gap-5">
+                <img src="../../assets/case-ciatrans/cover-web.webp" width="1200" height="1100" loading="lazy" decoding="async" alt=""
+                     class="w-full aspect-[16/10] object-cover object-top rounded border border-[#E6E4DF] bg-[#EFEDE8]">
+                <div class="flex flex-col gap-2">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Cliente · Site e design system</p>
+                    <h3 class="font-bold text-[22px] tracking-[-0.3px] text-[#111] m-0">
+                        <a href="../../ciatrans.html" class="card-link">CiaTrans</a>
+                    </h3>
+                    <p class="font-normal text-[16px] leading-[1.6] text-[#525252] m-0">Site, apresentação comercial e design system para uma empresa de logística do Porto de Santos que não tinha nenhum material próprio.</p>
+                    <p class="font-['Geist'] font-medium text-[14px] text-[#525252] group-hover:text-[#111] transition-colors m-0 pt-1" aria-hidden="true">Ler o case →</p>
+                </div>
+            </li>
+            <li class="card group flex flex-col gap-5">
+                <img src="../../assets/case-onze/home-hero.webp" width="1440" height="955" loading="lazy" decoding="async" alt=""
+                     class="w-full aspect-[16/10] object-cover object-top rounded border border-[#E6E4DF] bg-[#EFEDE8]">
+                <div class="flex flex-col gap-2">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Estudo de redesign · Site e design system</p>
+                    <h3 class="font-bold text-[22px] tracking-[-0.3px] text-[#111] m-0">
+                        <a href="../../onze.html" class="card-link">Onze</a>
+                    </h3>
+                    <p class="font-normal text-[16px] leading-[1.6] text-[#525252] m-0">Redesign do site de uma consultoria de CRM parceira de Salesforce e monday.com, com sistema de componentes e guia de handoff para implementar no Framer.</p>
+                    <p class="font-['Geist'] font-medium text-[14px] text-[#525252] group-hover:text-[#111] transition-colors m-0 pt-1" aria-hidden="true">Ler o case →</p>
+                </div>
+            </li>
+            <li class="card group flex flex-col gap-5">
+                <img src="../../assets/case-nathalia/screenshot-site-desktop.jpg" width="800" height="540" loading="lazy" decoding="async" alt=""
+                     class="w-full aspect-[16/10] object-cover object-top rounded border border-[#E6E4DF] bg-[#EFEDE8]">
+                <div class="flex flex-col gap-2">
+                    <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Portfólio editorial</p>
+                    <h3 class="font-bold text-[22px] tracking-[-0.3px] text-[#111] m-0">
+                        <a href="../../nathalia-geraldo.html" class="card-link">Nathália Geraldo</a>
+                    </h3>
+                    <p class="font-normal text-[16px] leading-[1.6] text-[#525252] m-0">Portfólio para uma jornalista com 15 anos de carreira, organizado em torno da assinatura editorial dela.</p>
+                    <p class="font-['Geist'] font-medium text-[14px] text-[#525252] group-hover:text-[#111] transition-colors m-0 pt-1" aria-hidden="true">Ler o case →</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Explorações -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="exploracoes-heading">
+        <div class="flex flex-col gap-2">
+            <h3 id="exploracoes-heading" class="font-medium text-[18px] text-[#111] m-0">Explorações</h3>
+            <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">Experimentos de interface e implementação.</p>
+        </div>
+
+        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#E6E4DF]">
+            <li class="card group flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-8 py-5 border-b border-[#E6E4DF]">
+                <h3 class="font-medium text-[16px] text-[#111] m-0 sm:w-[192px] shrink-0">
+                    <a href="../../css-zen-garden/index.html?design=v2" class="card-link">CSS Zen Garden</a>
+                </h3>
+                <p class="text-[15px] leading-[1.6] text-[#525252] m-0 flex-1">Duas interpretações visuais para o clássico exercício de CSS puro.</p>
+                <p class="font-['Geist'] font-medium text-[14px] text-[#525252] group-hover:text-[#111] transition-colors m-0 shrink-0" aria-hidden="true">Ver as versões →</p>
+            </li>
+        </ul>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <!-- Sobre -->
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="sobre-heading">
+        <h2 id="sobre-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">04</span>Sobre</h2>
+
+        <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] flex flex-col gap-4">
+            <p class="m-0">Comecei em tecnologia em 2010, no suporte técnico de uma fábrica de software em Sorocaba. Passei por social media, design e desenvolvimento front-end (saudades, jQuery) antes de chegar a Product Design, em 2019. Essa bagagem define como eu trabalho: entendo o problema, desenho a interface e penso em como ela vai ser construída.</p>
+            <p class="m-0">Nos últimos anos trabalhei em produtos complexos e operacionais, de ERP e marketplace B2B a fintech e saúde. Gosto de começar pela pesquisa e pelos dados, testar cedo e medir depois. Foi assim que aumentamos a conversão do trial do Tiny e o ticket médio na Inventa. Design system entra como ferramenta para o produto crescer com consistência, não como fim.</p>
+            <p class="m-0">Hoje uso IA no dia a dia para pesquisar, prototipar em código e acelerar o que é repetitivo, sem abrir mão do critério.</p>
+            <p class="m-0">Fora das telas, conduzo dinâmicas com times, dou aulas e palestro sobre design.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 w-full">
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="../../assets/sobre/estrategia.jpg" width="1000" height="666" loading="lazy" decoding="async"
+                     alt="Felipe conduzindo uma dinâmica de priorização com o time, apontando para post-its organizados na parede."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Priorização com o time</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="../../assets/sobre/interface.jpg" width="1000" height="666" loading="lazy" decoding="async"
+                     alt="Felipe apresentando um grid de opacidade e brilho para explicar um princípio de interface."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Aula sobre princípios de interface</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="../../assets/sobre/implementacao.jpg" width="1000" height="562" loading="lazy" decoding="async"
+                     alt="Felipe ensinando CSS e media queries, apontando para um trecho de código projetado."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Aula de CSS e layout responsivo</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="../../assets/sobre/palestra.jpg" width="960" height="640" loading="lazy" decoding="async"
+                     alt="Felipe em pé no palco, com um microfone, apresentando um gráfico do Design Value Index."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Palestra sobre o valor de negócio do design</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="../../assets/sobre/pesquisa.jpg" width="750" height="500" loading="lazy" decoding="async"
+                     alt="Felipe apresentando um slide sobre pesquisa contínua documentada, num evento com mural colorido ao fundo."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover object-top bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Palestra sobre pesquisa contínua</figcaption>
+            </figure>
+            <figure class="flex flex-col gap-3 m-0">
+                <img src="../../assets/sobre/equipe.jpg" width="1440" height="960" loading="lazy" decoding="async"
+                     alt="Felipe sentado numa poltrona, conversando com o time, com colegas trabalhando ao fundo e o logo da Inventa na parede."
+                     class="photo-tone h-[220px] sm:h-[260px] lg:h-[300px] w-full object-cover bg-[#d9d9d9]">
+                <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Com o time da Inventa</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <!-- Contato -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
+        <h2 id="contato-heading" class="flex items-baseline gap-3 font-medium text-[20px] text-[#111] m-0"><span class="font-['Geist'] font-normal text-[14px] text-[#6E6E6E] tabular-nums">05</span>Contato</h2>
+        <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">
+            Estou aberto a vagas de Product Design sênior.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 flex-wrap">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#111] underline underline-offset-4 w-fit break-all">felipeoliveira.contato@gmail.com</a>
+            <a href="../../assets/Felipe-Oliveira-Curriculo.pdf" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#111] underline underline-offset-4 w-fit">
+            Currículo em PDF <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+            <span class="sr-only">(PDF, abre em nova aba)</span>
+        </a>
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#525252] hover:text-[#111] w-fit">
+                LinkedIn <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+                <span class="sr-only">(abre em nova aba)</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 w-full pt-8 border-t border-[#E6E4DF]">
+        <div class="flex flex-col gap-1">
+            <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
+            <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
+        </div>
+        <div class="flex flex-col gap-1 sm:items-end">
+            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0">Versão <span class="text-[#111]">v2026.4</span> · atualizada em <time datetime="2026-11-03">3 nov 2026</time></p>
+            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0 flex gap-4">
+                <a href="../../changelog/index.html" class="underline underline-offset-4 hover:text-[#111]">Changelog</a>
+                <a href="../../versoes/index.html" class="underline underline-offset-4 hover:text-[#111]">Versões anteriores</a>
+            </p>
+        </div>
+    </footer>
+
+</main>
+<script>
+(function () {
+    var el = document.getElementById('hora-local');
+    if (!el || !window.Intl) return;
+    var fmt = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
+    function tick() { var now = new Date(); el.textContent = fmt.format(now); el.setAttribute('datetime', now.toISOString()); }
+    tick(); setInterval(tick, 30000);
+})();
+</script>
+<script>
+(function () {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    var titles = document.querySelectorAll('[data-parallax="title"]');
+    var photo = document.querySelector('[data-parallax="photo"]');
+    if (!titles.length && !photo) return;
+
+    // no mobile a composição é empilhada, então o parallax só roda a partir do breakpoint sm
+    var desktop = window.matchMedia('(min-width: 640px)');
+    var ticking = false;
+
+    function setOffset(photoOffset, titleOffset) {
+        if (photo) photo.style.transform = photoOffset ? 'translateY(' + photoOffset + 'px)' : '';
+        titles.forEach(function (el) {
+            el.style.transform = titleOffset ? 'translateY(' + titleOffset + 'px)' : '';
+        });
+    }
+
+    function update() {
+        ticking = false;
+        if (!desktop.matches) {
+            setOffset(0, 0);
+            return;
+        }
+        var y = window.scrollY || window.pageYOffset;
+        setOffset(Math.min(y * 0.12, 40), Math.min(y * 0.045, 16));
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            window.requestAnimationFrame(update);
+            ticking = true;
+        }
+    }, { passive: true });
+    desktop.addEventListener('change', update);
+})();
+</script>
+
+<script>
+// Prévia dos cases: segue o cursor com atraso suave, com o tom de cada case no fundo.
+// Só em telas com mouse; no toque, cada linha já mostra a miniatura.
+(function () {
+    var list = document.querySelector('[data-case-list]');
+    var preview = document.querySelector('[data-case-preview]');
+    if (!list || !preview) return;
+    var fine = window.matchMedia('(hover: hover) and (pointer: fine)');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var img = preview.querySelector('img');
+    var x = 0, y = 0, tx = 0, ty = 0, raf = null, visible = false;
+
+    // pré-carrega as imagens das prévias
+    list.querySelectorAll('[data-preview]').forEach(function (row) {
+        var i = new Image(); i.src = row.getAttribute('data-preview');
+    });
+
+    function loop() {
+        x += (tx - x) * 0.18;
+        y += (ty - y) * 0.18;
+        preview.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0) translate(0,-100%) scale(' + (visible ? 1 : 0.92) + ')';
+        if (visible || Math.abs(tx - x) > 0.5) raf = requestAnimationFrame(loop);
+        else raf = null;
+    }
+
+    list.addEventListener('mousemove', function (e) {
+        if (!fine.matches || reduce.matches) return;
+        tx = e.clientX + 28;
+        ty = e.clientY - 20;
+        if (!visible) { x = tx; y = ty; }
+        var row = e.target.closest('[data-preview]');
+        if (row) {
+            var src = row.getAttribute('data-preview');
+            if (img.getAttribute('src') !== src) img.setAttribute('src', src);
+            preview.style.backgroundColor = row.getAttribute('data-tint');
+            visible = true;
+            preview.classList.add('is-visible');
+        }
+        if (!raf) raf = requestAnimationFrame(loop);
+    });
+    list.addEventListener('mouseleave', function () {
+        visible = false;
+        preview.classList.remove('is-visible');
+    });
+})();
+</script>
+<script src="../../js/header.js" defer></script>
+
+</body>
+</html>
