@@ -20,7 +20,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#FAFAFA">
+<meta name="theme-color" content="#F7F6F3">
 <meta name="author" content="Felipe Oliveira">
 <script type="application/ld+json">
 {
@@ -56,17 +56,19 @@
     </symbol>
 </svg>
 
-<header class="sticky top-0 z-40 w-full bg-[rgba(250,250,250,0.88)] backdrop-blur-[14px] border-b border-[#e5e5e5]">
-    <nav class="w-full max-w-[1920px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2" aria-label="Navegação principal">
-        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">
+<header class="site-header" data-header>
+    <nav class="header-pill" aria-label="Navegação principal">
+        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] text-[#111] w-fit">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            Felipe Oliveira<span class="sr-only">, voltar ao portfólio</span>
+            Felipe<span class="hidden sm:inline">Oliveira</span><span class="sr-only">, voltar ao portfólio</span>
         </a>
-        <ul class="flex items-center gap-4 sm:gap-6 list-none m-0 p-0">
-            <li><a href="index.html#trajetoria-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Trajetória</a></li>
-            <li><a href="index.html#projetos-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Projetos</a></li>
-            <li><a href="index.html#contato-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Contato</a></li>
+        <p class="header-label m-0" data-section-label aria-hidden="true">nosso+</p>
+        <ul class="flex items-center justify-end gap-0.5 list-none m-0 p-0 font-['Geist'] text-[14px]">
+            <li><a href="index.html#trajetoria-heading" class="nav-link" data-nav-link>Trajetória</a></li>
+            <li><a href="index.html#projetos-heading" class="nav-link" data-nav-link>Projetos</a></li>
+            <li><a href="index.html#contato-heading" class="nav-link" data-nav-link>Contato</a></li>
         </ul>
+        <span class="header-progress" data-progress aria-hidden="true"></span>
     </nav>
 </header>
 
@@ -79,7 +81,7 @@
             <h1 class="font-bold text-[clamp(44px,9vw,168px)] leading-[0.95] tracking-[-0.03em] text-[#111] m-0 break-words">nosso+</h1>
             <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">Gestão financeira para casais alcançarem objetivos em conjunto, do simples ao complexo, sempre a dois.</p>
         </div>
-        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#e5e5e5] pt-6 m-0">
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#E6E4DF] pt-6 m-0">
             <div class="flex flex-col gap-1">
                 <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Papel</dt>
                 <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Product design ponta a ponta e implementação</dd>
@@ -108,7 +110,7 @@
     <section class="w-full" aria-label="Tela principal do projeto">
 <img src="assets/case-nosso-plus/hero.webp" width="1360" height="730" fetchpriority="high" decoding="async"
              alt="Hero da landing page do nosso+: o título Alcancem suas metas a dois de um jeito mais rápido, o botão Entrar na Lista de Espera, a foto de um casal sorrindo e o card da meta compartilhada Cozinha Nova com 68% no prazo, R$ 17.000 de R$ 25.000 e os aportes de Ana e Bruno."
-             class="w-full h-auto rounded bg-[#F2F2F2]">
+             class="w-full h-auto rounded bg-[#EFEDE8]">
     </section>
 
     <section class="flex flex-col gap-10 w-full" aria-labelledby="contexto-heading">
@@ -120,7 +122,7 @@
             </div>
         </div>
     </section>
-<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+<div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="problema-heading">
         <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24">
             <h2 id="problema-heading" class="font-medium text-[20px] text-[#111] m-0">Por que ele existe</h2>
@@ -132,7 +134,7 @@
         <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
         <img src="assets/case-nosso-plus/problema.webp" width="1440" height="852" loading="lazy" decoding="async"
              alt="Seção Por que o nosso+ existe, com três frases que todo casal já ouviu: no fim do mês, na divisão das contas e na hora de decidir."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
 
@@ -147,7 +149,7 @@
 
         <img src="assets/case-nosso-plus/metas.webp" width="1440" height="784" loading="lazy" decoding="async"
              alt="Seção de metas: De uma viagem dos sonhos à reserva para o imóvel, com seis cards: viagem, reforma, quitar dívida, reserva de emergência, comprar imóvel e investimento conjunto."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     </section>
 
     <section class="flex flex-col gap-10 w-full" aria-labelledby="fotografia-heading">
@@ -160,7 +162,7 @@
         </div>
         <img src="assets/case-nosso-plus/storytelling.webp" width="2476" height="897" loading="lazy" decoding="async"
              alt="Seção Sonhar junto faz a meta virar realidade logo: foto de um casal rindo enquanto planeja num caderno na mesa da sala, com o card de progresso da meta Passagens Lisboa, e os três passos do método ao lado."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     </section>
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="componente-heading">
         <div class="lg:col-span-4 lg:order-2 flex flex-col gap-6 lg:sticky lg:top-24">
@@ -173,7 +175,7 @@
         <div class="lg:col-span-8 lg:order-1 flex flex-col gap-6 min-w-0">
         <img src="assets/case-nosso-plus/painel.webp" width="1360" height="930" loading="lazy" decoding="async"
              alt="Seção O painel que mostra a evolução de vocês, em bento: objetivo em comum Cozinha Nova com 68% no prazo, conquistas, evolução semanal dos dois, lembrete de ritmo e próxima contribuição."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
 
@@ -187,7 +189,7 @@
         </div>
         <img src="assets/case-nosso-plus/vida-a-dois.webp" width="1360" height="950" loading="lazy" decoding="async"
              alt="Seção Feito para a vida a dois: três cards com as palavras Juntos, Claro e Real. Nas pontas, fotos do casal e de uma mulher sorrindo; no centro, um celular com a tela da meta Cozinha Nova no ritmo. Abaixo, 1 painel, 2 pessoas, 1 conquista."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     </section>
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="historia-heading">
         <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24">
@@ -200,7 +202,7 @@
         <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
         <img src="assets/case-nosso-plus/historia.webp" width="1360" height="640" loading="lazy" decoding="async"
              alt="Seção Transformem conversas em conquistas reais, rotulada como história ilustrativa: foto de um casal abraçado no sofá de olhos fechados, com o selo Meta atingida: Cozinha Nova em 8 meses, e a frase de Ana e Bruno, um casal em São Paulo, sobre trocar a ansiedade de guardar dinheiro pela empolgação de realizar."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
 
@@ -215,10 +217,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
     <img src="assets/case-nosso-plus/faq.webp" width="1440" height="929" loading="lazy" decoding="async"
              alt="Seção de dúvidas frequentes, com seis perguntas numeradas e a primeira aberta: Os dois precisam ter conta desde o primeiro dia? Não. Um entra na lista com o e-mail pessoal."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     <img src="assets/case-nosso-plus/chamada.webp" width="1340" height="590" loading="lazy" decoding="async"
              alt="Chamada final: Deem o primeiro passo para a próxima conquista. Juntos., com o botão Quero acelerar nossas metas e a foto do casal abraçado numa cozinha clara."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     </div>
     </section>
 
@@ -231,44 +233,44 @@
             </div>
         </div>
     </section>
-<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+<div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
     <section class="flex flex-col gap-10 w-full" aria-labelledby="roadmap-heading">
         <div class="flex flex-col gap-2">
             <h2 id="roadmap-heading" class="font-medium text-[20px] text-[#111] m-0">Próximos passos</h2>
         <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">O que vem depois desta primeira versão.</p>
         </div>
-        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#e5e5e5]">
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#E6E4DF]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Backend real e persistência</h3>
                 </div>
                 <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">Hoje todo o estado vive em memória, no front-end. O próximo passo é sair do mock e ter uma base de dados de verdade, com as metas e aportes de cada casal persistidos entre sessões.</p>
             </li>
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Autenticação e convite do parceiro(a)</h3>
                 </div>
                 <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">Um fluxo de login e de convite que vincula duas contas ao mesmo espaço de metas. Hoje os dois membros do casal são só dados mockados, sem conta real por trás.</p>
             </li>
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Preço de passagem de verdade</h3>
                 </div>
                 <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">O alerta de bom momento para comprar hoje roda sobre uma simulação. O próximo passo é integrar com uma API real de preços de voos e transformar o alerta em notificação (push ou e-mail), não só um aviso na tela.</p>
             </li>
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Metas e categorias customizáveis</h3>
                 </div>
                 <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">As categorias de meta hoje são fixas (viagem, casa, veículo, emergência, outro). Dar ao casal a liberdade de criar categorias e ícones próprios é um passo natural para um produto pensado para qualquer tipo de objetivo.</p>
             </li>
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Do fluxo mobile ao código</h3>
                 </div>
                 <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">O fluxo mobile "Ritmo a dois" já está desenhado no Figma (<a href="nosso-plus-app.html" class="text-[#111] underline underline-offset-4">ver case do app</a>). O próximo passo é levá-lo para o código como PWA instalável, com ícone na tela inicial e o lembrete entre o casal virando notificação de verdade.</p>
             </li>
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Storybook conectado ao Figma</h3>
                 </div>
@@ -278,7 +280,7 @@
     </section>
 
     <!-- Próximo case -->
-    <nav class="card group w-full border-t border-[#e5e5e5] pt-10" aria-label="Próximo case">
+    <nav class="card group w-full border-t border-[#E6E4DF] pt-10" aria-label="Próximo case">
         <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Próximo case</p>
         <p class="font-bold text-[clamp(32px,5vw,72px)] leading-[1.05] tracking-[-0.5px] text-[#111] pt-3 m-0">
             <a href="nosso-plus-app.html" class="card-link">nosso+ app</a>
@@ -286,7 +288,7 @@
         <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[620px] pt-3 m-0">Ritmo a dois: o que o app faz quando um dos dois atrasa a parte dele da meta. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
     </nav>
 
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
 
     <!-- Contato -->
     <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
@@ -307,11 +309,12 @@
         </div>
     </section>
 
-    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#e5e5e5]">
+    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#E6E4DF]">
         <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
         <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
     </footer>
 
 </main>
+<script src="js/header.js" defer></script>
 </body>
 </html>

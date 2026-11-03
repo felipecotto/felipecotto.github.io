@@ -20,7 +20,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#FAFAFA">
+<meta name="theme-color" content="#F7F6F3">
 <meta name="author" content="Felipe Oliveira">
 <script type="application/ld+json">
 {
@@ -56,17 +56,19 @@
     </symbol>
 </svg>
 
-<header class="sticky top-0 z-40 w-full bg-[rgba(250,250,250,0.88)] backdrop-blur-[14px] border-b border-[#e5e5e5]">
-    <nav class="w-full max-w-[1920px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2" aria-label="Navegação principal">
-        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">
+<header class="site-header" data-header>
+    <nav class="header-pill" aria-label="Navegação principal">
+        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] text-[#111] w-fit">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            Felipe Oliveira<span class="sr-only">, voltar ao portfólio</span>
+            Felipe<span class="hidden sm:inline">Oliveira</span><span class="sr-only">, voltar ao portfólio</span>
         </a>
-        <ul class="flex items-center gap-4 sm:gap-6 list-none m-0 p-0">
-            <li><a href="index.html#trajetoria-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Trajetória</a></li>
-            <li><a href="index.html#projetos-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Projetos</a></li>
-            <li><a href="index.html#contato-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Contato</a></li>
+        <p class="header-label m-0" data-section-label aria-hidden="true">UseCtt</p>
+        <ul class="flex items-center justify-end gap-0.5 list-none m-0 p-0 font-['Geist'] text-[14px]">
+            <li><a href="index.html#trajetoria-heading" class="nav-link" data-nav-link>Trajetória</a></li>
+            <li><a href="index.html#projetos-heading" class="nav-link" data-nav-link>Projetos</a></li>
+            <li><a href="index.html#contato-heading" class="nav-link" data-nav-link>Contato</a></li>
         </ul>
+        <span class="header-progress" data-progress aria-hidden="true"></span>
     </nav>
 </header>
 
@@ -79,7 +81,7 @@
             <h1 class="font-bold text-[clamp(44px,9vw,168px)] leading-[0.95] tracking-[-0.03em] text-[#111] m-0 break-words">UseCtt</h1>
             <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">Um report editorial que transforma o histórico de treinos do Strava numa maratona, do KM 0 à chegada.</p>
         </div>
-        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#e5e5e5] pt-6 m-0">
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#E6E4DF] pt-6 m-0">
             <div class="flex flex-col gap-1">
                 <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Papel</dt>
                 <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Produto ponta a ponta: conceito, design system e código</dd>
@@ -107,7 +109,7 @@
     <section class="w-full" aria-label="Tela principal do projeto">
 <img src="assets/case-usectt/cover.webp" width="1728" height="972" fetchpriority="high" decoding="async"
              alt="Capa do projeto: a marca CTT com a stack Strava API, Supabase, Next e Figma, e ao lado o site no celular com o título Seu Strava, editado em 42 km."
-             class="w-full h-auto rounded bg-[#F2F2F2]">
+             class="w-full h-auto rounded bg-[#EFEDE8]">
     </section>
 
     <section class="flex flex-col gap-10 w-full" aria-labelledby="contexto-heading">
@@ -120,7 +122,7 @@
             </div>
         </div>
     </section>
-<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+<div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
     <section class="flex flex-col gap-10 w-full" aria-labelledby="antes-heading">
         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
             <h2 id="antes-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Do painel à edição</h2>
@@ -133,13 +135,13 @@
     <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/antes.webp" width="958" height="950" loading="lazy" decoding="async"
              alt="Primeiro protótipo: título Seu Strava, editado, seguido de um número gigante de quilômetros e um gráfico de barras semanais."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Antes: organizado por gráfico</figcaption>
     </figure>
     <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/depois.webp" width="1182" height="578" loading="lazy" decoding="async"
              alt="Versão final: título Seu Strava, editado em 42 km, com uma foto de corrida anotada com horário, quilometragem e tempo da maratona."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Depois: organizado pela história</figcaption>
     </figure>
     </div>
@@ -156,23 +158,23 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start">
         <ol class="lg:col-span-4 flex flex-col gap-4 list-none m-0 p-0" aria-label="Capítulos da página">
-                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#E6E4DF">
                     <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 0</span>
                     <span class="text-[16px] font-medium text-[#111]">Largada</span>
                 </li>
-                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#E6E4DF">
                     <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 5</span>
                     <span class="text-[16px] font-medium text-[#111]">A primeira corrida</span>
                 </li>
-                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#E6E4DF">
                     <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 10</span>
                     <span class="text-[16px] font-medium text-[#111]">O hábito</span>
                 </li>
-                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#E6E4DF">
                     <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 21</span>
                     <span class="text-[16px] font-medium text-[#111]">O volume</span>
                 </li>
-                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#E6E4DF">
                     <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 21,1</span>
                     <span class="text-[16px] font-medium text-[#111]">Os recordes</span>
                 </li>
@@ -184,7 +186,7 @@
                     <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 42</span>
                     <span class="text-[16px] font-medium text-[#111]">A chegada</span>
                 </li>
-                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#e5e5e5">
+                <li class="flex items-baseline justify-between gap-4 border-t pt-3" style="border-color:#E6E4DF">
                     <span class="font-['Geist'] text-[12px] font-medium tracking-[2px] text-[#6E6E6E]">KM 42,2</span>
                     <span class="text-[16px] font-medium text-[#111]">Pós-prova</span>
                 </li>
@@ -192,7 +194,7 @@
         <div class="lg:col-span-8 min-w-0">
         <img src="assets/case-usectt/marcador.webp" width="1336" height="1528" loading="lazy" decoding="async"
              alt="Documentação do marcador de KM nos três tons: claro, tinta e ultramar, com o título Três recordes em oito semanas."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </div>
     </section>
@@ -208,10 +210,10 @@
         <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
         <img src="assets/case-usectt/muro.webp" width="1182" height="750" loading="lazy" decoding="async"
              alt="Capítulo KM 30 em fundo preto: Todo ciclo tem um muro, a forma caindo de 95 para 38 e o gráfico de forma e fadiga."
-             class="w-full h-auto rounded bg-[#F2F2F2]">
+             class="w-full h-auto rounded bg-[#EFEDE8]">
         <img src="assets/case-usectt/forma.webp" width="1440" height="600" loading="lazy" decoding="async"
              alt="Padrão do gráfico de forma e fadiga no Figma, com as maratonas marcadas, a pausa em faixa cinza e a anotação à mão aqui no ponto mais baixo."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
 
@@ -255,13 +257,13 @@
     <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/ds-cor.webp" width="1440" height="1534" loading="lazy" decoding="async"
              alt="Documentação de cor no Figma: tokens de fundo, texto, borda, gráfico e calendário, cada um com hex e valor de origem."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Tokens de cor por função</figcaption>
     </figure>
     <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/ds-tipo.webp" width="1292" height="1728" loading="lazy" decoding="async"
              alt="Escala tipográfica no Figma, do Display/Hero com 7.727 até a nota manuscrita quase todo dia, com fonte, tamanho e entrelinha de cada estilo."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Escala tipográfica</figcaption>
     </figure>
     </div>
@@ -280,12 +282,12 @@
     <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/recordes.webp" width="1182" height="680" loading="lazy" decoding="async"
              alt="Capítulo dos recordes: a maratona em destaque em ultramar, com 3:26:47 e o tempo anterior riscado, ao lado de 5K, 10K e 21K."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     </figure>
     <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-usectt/chegada.webp" width="1182" height="640" loading="lazy" decoding="async"
              alt="Capítulo KM 42 em ultramar: o tempo 3:26:47 em tamanho grande, as barras das 16 semanas de preparação e a foto da chegada."
-             class="w-full h-auto rounded bg-[#F2F2F2]">
+             class="w-full h-auto rounded bg-[#EFEDE8]">
     </figure>
     </div>
     </section>
@@ -301,7 +303,7 @@
         <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
         <img src="assets/case-usectt/vagas.webp" width="1312" height="1016" loading="lazy" decoding="async"
              alt="Os quatro estados do componente de vagas: beta aberto com 9 vagas, últimas vagas com 2, lotado com 23 na fila e a confirmação você é o número 24."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
 
@@ -315,31 +317,31 @@
         <div class="lg:col-span-8 lg:order-1 flex flex-col gap-6 min-w-0">
         <img src="assets/case-usectt/stories.webp" width="1320" height="930" loading="lazy" decoding="async"
              alt="Três versões do card do Stories, em papel, tinta e ultramar, com o tempo da maratona 3:26:47 e as barras das semanas de preparação."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
-<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+<div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
     <section class="flex flex-col gap-10 w-full" aria-labelledby="codigo-heading">
         <div class="flex flex-col gap-2">
             <h2 id="codigo-heading" class="font-medium text-[20px] text-[#111] m-0">Do Figma ao código</h2>
         <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">Figma e Claude trabalhando juntos, com o design system como fonte da verdade.</p>
         </div>
-        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#e5e5e5]">
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+        <ul class="flex flex-col w-full list-none m-0 p-0 border-t border-[#E6E4DF]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Protótipo rápido, sistema documentado</h3>
                     <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Figma Make · Figma</p>
                 </div>
                 <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">O Figma Make serviu para testar direções de página em horas. O que sobreviveu foi documentado no Figma como design system: fundamentos, 16 componentes e os padrões de gráfico, cada um com as regras de uso.</p>
             </li>
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Código a partir do sistema, não do print</h3>
                     <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">Claude · Next.js · Tailwind · shadcn/ui</p>
                 </div>
                 <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[720px] m-0">Com o Claude, os tokens e componentes do Figma viraram código em Next.js, com Tailwind e componentes shadcn/ui. Os textos de cada capítulo são funções testadas: dado um histórico, elas escolhem o fato e escrevem a frase.</p>
             </li>
-            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#e5e5e5]">
+            <li class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full py-8 border-b border-[#E6E4DF]">
                 <div class="flex flex-col w-full sm:w-[192px] shrink-0 gap-0.5">
                     <h3 class="font-medium text-[16px] text-[#111] m-0">Dados reais desde o primeiro dia</h3>
                     <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0 pt-0.5">API do Strava · Supabase · Vercel</p>
@@ -365,7 +367,7 @@
     </section>
 
     <!-- Próximo case -->
-    <nav class="card group w-full border-t border-[#e5e5e5] pt-10" aria-label="Próximo case">
+    <nav class="card group w-full border-t border-[#E6E4DF] pt-10" aria-label="Próximo case">
         <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Próximo case</p>
         <p class="font-bold text-[clamp(32px,5vw,72px)] leading-[1.05] tracking-[-0.5px] text-[#111] pt-3 m-0">
             <a href="nosso-plus.html" class="card-link">nosso+</a>
@@ -373,7 +375,7 @@
         <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[620px] pt-3 m-0">Landing page e produto para casais alcançarem metas financeiras juntos. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
     </nav>
 
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
 
     <!-- Contato -->
     <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
@@ -394,11 +396,12 @@
         </div>
     </section>
 
-    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#e5e5e5]">
+    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#E6E4DF]">
         <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
         <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
     </footer>
 
 </main>
+<script src="js/header.js" defer></script>
 </body>
 </html>

@@ -20,7 +20,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#FAFAFA">
+<meta name="theme-color" content="#F7F6F3">
 <meta name="author" content="Felipe Oliveira">
 <script type="application/ld+json">
 {
@@ -56,17 +56,19 @@
     </symbol>
 </svg>
 
-<header class="sticky top-0 z-40 w-full bg-[rgba(250,250,250,0.88)] backdrop-blur-[14px] border-b border-[#e5e5e5]">
-    <nav class="w-full max-w-[1920px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2" aria-label="Navegação principal">
-        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">
+<header class="site-header" data-header>
+    <nav class="header-pill" aria-label="Navegação principal">
+        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] text-[#111] w-fit">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            Felipe Oliveira<span class="sr-only">, voltar ao portfólio</span>
+            Felipe<span class="hidden sm:inline">Oliveira</span><span class="sr-only">, voltar ao portfólio</span>
         </a>
-        <ul class="flex items-center gap-4 sm:gap-6 list-none m-0 p-0">
-            <li><a href="index.html#trabalho-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Trabalho</a></li>
-            <li><a href="index.html#sobre-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Sobre</a></li>
-            <li><a href="index.html#contato-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Contato</a></li>
+        <p class="header-label m-0" data-section-label aria-hidden="true">Lotes de convênio</p>
+        <ul class="flex items-center justify-end gap-0.5 list-none m-0 p-0 font-['Geist'] text-[14px]">
+            <li><a href="index.html#trabalho-heading" class="nav-link" data-nav-link>Trabalho</a></li>
+            <li><a href="index.html#sobre-heading" class="nav-link" data-nav-link>Sobre</a></li>
+            <li><a href="index.html#contato-heading" class="nav-link" data-nav-link>Contato</a></li>
         </ul>
+        <span class="header-progress" data-progress aria-hidden="true"></span>
     </nav>
 </header>
 
@@ -79,7 +81,7 @@
             <h1 class="font-bold text-[clamp(44px,9vw,168px)] leading-[0.95] tracking-[-0.03em] text-[#111] m-0 break-words">Lotes de convênio</h1>
             <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">Faturamento de convênio dentro da Tivita, do zero: de planilhas e portais manuais para um fluxo de criação de lote.</p>
         </div>
-        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#e5e5e5] pt-6 m-0">
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#E6E4DF] pt-6 m-0">
             <div class="flex flex-col gap-1">
                 <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Papel</dt>
                 <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Discovery e design de produto, do zero</dd>
@@ -106,7 +108,7 @@
     <section class="w-full" aria-label="Tela principal do projeto">
 <img src="assets/case-tivita-lotes/lista.webp" width="2400" height="905" fetchpriority="high" decoding="async"
              alt="Tela de Lotes da Tivita: cinco cards de status (Total, Gerados, Erros, Enviados e Cancelados), filtros por data de criação e convênio e a tabela com nome, número, convênio, tipo de guia, execuções, valor total e status de cada lote."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     </section>
 
     <section class="flex flex-col gap-10 w-full" aria-labelledby="contexto-heading">
@@ -118,7 +120,7 @@
             </div>
         </div>
     </section>
-<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+<div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
     <section class="flex flex-col gap-10 w-full" aria-labelledby="discovery-heading">
         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
             <h2 id="discovery-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Discovery</h2>
@@ -143,10 +145,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-1 gap-6 w-full items-start">
     <img src="assets/case-tivita-lotes/etapa1.webp" width="2000" height="470" loading="lazy" decoding="async"
              alt="Etapa 1 do Novo lote, Configurações: seletor de tipo de guia entre SP/SADT e consulta, operadora, código do prestador, nome do lote opcional e número do lote gerado automaticamente, com o painel Visão geral à direita."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     <img src="assets/case-tivita-lotes/confirmar.webp" width="1686" height="1073" loading="lazy" decoding="async"
              alt="Modal Confirmar geração do lote, com o resumo do lote (tipo de guia, operadora, código do prestador, versão do XML, nome e número do lote, autorizações, execuções e valor total) e um aviso de que o lote não poderá ser editado depois de gerado."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]" style="max-width:720px">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]" style="max-width:720px">
     </div>
         </div>
     </section>
@@ -162,7 +164,7 @@
         <div class="lg:col-span-8 lg:order-1 flex flex-col gap-6 min-w-0">
         <img src="assets/case-tivita-lotes/etapa2.webp" width="2000" height="470" loading="lazy" decoding="async"
              alt="Etapa 2 do Novo lote, Execuções: controle Agrupar por Procedimento, filtros de data de execução e de procedimento e grupos de execuções com quantidade e valor total, com o painel Visão geral à direita."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
 
@@ -179,14 +181,14 @@
         <div class="grid grid-cols-1 lg:grid-cols-1 gap-6 w-full items-start">
     <img src="assets/case-tivita-lotes/detalhe.webp" width="2000" height="620" loading="lazy" decoding="async"
              alt="Detalhe de um lote: resumo com tipo de guia, operadora, código do prestador, versão do XML, número, execuções, valor total, profissionais e procedimentos; tabela de execuções com guia, procedimento, valor, profissional e paciente; e o histórico com Lote criado e Lote gerado."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     <img src="assets/case-tivita-lotes/menu.webp" width="1176" height="688" loading="lazy" decoding="async"
              alt="Menu de ações de um lote, com Visualizar detalhes, Baixar XML (arquivo .xml e .zip), Baixar guias (de autorização e de execução) e Baixar capa do lote."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]" style="max-width:720px">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]" style="max-width:720px">
     </div>
         </div>
     </section>
-<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+<div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
     <section class="flex flex-col gap-10 w-full" aria-labelledby="fakedoor-heading">
         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
             <h2 id="fakedoor-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Fake door antes do lançamento</h2>
@@ -197,7 +199,7 @@
 
         <img src="assets/case-tivita-lotes/fakedoor.webp" width="1280" height="1313" loading="lazy" decoding="async"
              alt="Página de Lotes dentro da Tivita com a proposta Fature convênios direto pela Tivita. Sem planilha, sem retrabalho, sem glosa por erro de preenchimento, o botão Quero começar a usar e quatro blocos: visão de todos os lotes, criação simples em 2 etapas, seleção de execuções e detalhe completo com histórico de ações."
-             class="w-full max-w-[1280px] h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full max-w-[1280px] h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
 
         <div class="flex items-center gap-3 flex-wrap">
             <a href="https://www.figma.com/design/Z2vEFGkpLRYdUXAvjayID9/LotesEmBreve?node-id=1-694" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] w-fit text-[14px] font-medium uppercase tracking-[1.5px] text-[#111] border border-[#111] rounded-full px-6 py-3 hover:bg-[#111] hover:text-[#FAFAFA] transition-colors">Ver o fake door no Figma <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg><span class="sr-only">(abre em nova aba)</span></a>
@@ -215,7 +217,7 @@
     </section>
 
     <!-- Próximo case -->
-    <nav class="card group w-full border-t border-[#e5e5e5] pt-10" aria-label="Próximo case">
+    <nav class="card group w-full border-t border-[#E6E4DF] pt-10" aria-label="Próximo case">
         <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Próximo case</p>
         <p class="font-bold text-[clamp(32px,5vw,72px)] leading-[1.05] tracking-[-0.5px] text-[#111] pt-3 m-0">
             <a href="usectt.html" class="card-link">UseCtt</a>
@@ -223,7 +225,7 @@
         <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[620px] pt-3 m-0">Report editorial que transforma o histórico do Strava numa maratona. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
     </nav>
 
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
 
     <!-- Contato -->
     <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
@@ -244,13 +246,13 @@
         </div>
     </section>
 
-    <footer class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 w-full pt-8 border-t border-[#e5e5e5]">
+    <footer class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 w-full pt-8 border-t border-[#E6E4DF]">
         <div class="flex flex-col gap-1">
             <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
             <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
         </div>
         <div class="flex flex-col gap-1 sm:items-end">
-            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0">Versão <span class="text-[#111]">v2026.3</span> · atualizada em <time datetime="2026-10-23">23 out 2026</time></p>
+            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0">Versão <span class="text-[#111]">v2026.4</span> · atualizada em <time datetime="2026-11-03">3 nov 2026</time></p>
             <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0 flex gap-4">
                 <a href="changelog/index.html" class="underline underline-offset-4 hover:text-[#111]">Changelog</a>
                 <a href="versoes/index.html" class="underline underline-offset-4 hover:text-[#111]">Versões anteriores</a>
@@ -259,5 +261,6 @@
     </footer>
 
 </main>
+<script src="js/header.js" defer></script>
 </body>
 </html>
