@@ -20,7 +20,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#FAFAFA">
+<meta name="theme-color" content="#F7F6F3">
 <meta name="author" content="Felipe Oliveira">
 <script type="application/ld+json">
 {
@@ -56,17 +56,19 @@
     </symbol>
 </svg>
 
-<header class="sticky top-0 z-40 w-full bg-[rgba(250,250,250,0.88)] backdrop-blur-[14px] border-b border-[#e5e5e5]">
-    <nav class="w-full max-w-[1920px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2" aria-label="Navegação principal">
-        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">
+<header class="site-header" data-header>
+    <nav class="header-pill" aria-label="Navegação principal">
+        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] text-[#111] w-fit">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
-            Felipe Oliveira<span class="sr-only">, voltar ao portfólio</span>
+            Felipe<span class="hidden sm:inline">Oliveira</span><span class="sr-only">, voltar ao portfólio</span>
         </a>
-        <ul class="flex items-center gap-4 sm:gap-6 list-none m-0 p-0">
-            <li><a href="index.html#trajetoria-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Trajetória</a></li>
-            <li><a href="index.html#projetos-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Projetos</a></li>
-            <li><a href="index.html#contato-heading" class="font-['Geist'] font-normal text-[15px] sm:text-[18px] text-[#111] hover:opacity-60">Contato</a></li>
+        <p class="header-label m-0" data-section-label aria-hidden="true">Onze</p>
+        <ul class="flex items-center justify-end gap-0.5 list-none m-0 p-0 font-['Geist'] text-[14px]">
+            <li><a href="index.html#trajetoria-heading" class="nav-link" data-nav-link>Trajetória</a></li>
+            <li><a href="index.html#projetos-heading" class="nav-link" data-nav-link>Projetos</a></li>
+            <li><a href="index.html#contato-heading" class="nav-link" data-nav-link>Contato</a></li>
         </ul>
+        <span class="header-progress" data-progress aria-hidden="true"></span>
     </nav>
 </header>
 
@@ -79,7 +81,7 @@
             <h1 class="font-bold text-[clamp(44px,9vw,168px)] leading-[0.95] tracking-[-0.03em] text-[#111] m-0 break-words">Onze</h1>
             <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">Redesign do site de uma consultoria de CRM parceira de Salesforce e monday.com, com guia de handoff para implementar no Framer.</p>
         </div>
-        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#e5e5e5] pt-6 m-0">
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#E6E4DF] pt-6 m-0">
             <div class="flex flex-col gap-1">
                 <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Papel</dt>
                 <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Design de interface, design system e handoff</dd>
@@ -107,7 +109,7 @@
     <section class="w-full" aria-label="Tela principal do projeto">
 <img src="assets/case-onze/home-hero.webp" width="1440" height="955" fetchpriority="high" decoding="async"
              alt="Hero da home redesenhada da Onze: selo de parceiro oficial Salesforce e monday.com, o título Desbloqueie o potencial do seu CRM, dois botões e quatro números de credibilidade sobre a foto de um carro de corrida num túnel."
-             class="w-full h-auto rounded bg-[#F2F2F2]">
+             class="w-full h-auto rounded bg-[#EFEDE8]">
     </section>
 
     <section class="flex flex-col gap-10 w-full" aria-labelledby="contexto-heading">
@@ -123,18 +125,18 @@
     <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-onze/onze-hero.jpg" width="700" height="345" loading="lazy" decoding="async"
              alt="Hero do site atual da Onze, com o título Desbloqueie o potencial do seu CRM sobre uma foto de um carro de corrida num túnel."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]" style="max-width:700px">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]" style="max-width:700px">
         <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Site atual: hero</figcaption>
     </figure>
     <figure class="flex flex-col gap-3 m-0 min-w-0">
         <img src="assets/case-onze/onze-crm.jpg" width="700" height="345" loading="lazy" decoding="async"
              alt="Página de CRM de Vendas do site atual, com quatro cards de benefícios ao lado da foto de um homem sorrindo para o celular."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]" style="max-width:700px">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]" style="max-width:700px">
         <figcaption class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E]">Site atual: CRM de Vendas</figcaption>
     </figure>
     </div>
     </section>
-<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+<div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="home-heading">
         <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24">
             <h2 id="home-heading" class="font-medium text-[20px] text-[#111] m-0">Uma home organizada pela oferta</h2>
@@ -146,7 +148,7 @@
         <div class="lg:col-span-8 flex flex-col gap-6 min-w-0">
         <img src="assets/case-onze/home-solucoes.webp" width="1440" height="1328" loading="lazy" decoding="async"
              alt="Seção de soluções da home em grade bento: Um CRM moldado para cada área do seu negócio, com o card de Vendas e seu funil de pipeline, Atendimento, Marketing e Backoffice com a lista de integrações."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
 
@@ -162,10 +164,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
     <img src="assets/case-onze/home-metodologia.webp" width="1440" height="1012" loading="lazy" decoding="async"
              alt="Seção Como trabalhamos, em fundo escuro: Personalização e eficiência no centro de tudo, com uma foto e quatro cards numerados de princípios."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     <img src="assets/case-onze/home-cases.webp" width="1440" height="1268" loading="lazy" decoding="async"
              alt="Seção de resultados: depoimento de um cliente de Health Tech com nota média 4.8 e quatro cards de case com os números 98%, +130, +270 e 360°."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     </div>
     </section>
 
@@ -181,10 +183,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
     <img src="assets/case-onze/solucao-hero.webp" width="1440" height="788" loading="lazy" decoding="async"
              alt="Hero da página de solução CRM de Vendas: o título CRM de Vendas que torna o pipeline previsível, dois botões, a plataforma Salesforce Sales Cloud e a foto de um homem sorrindo para o celular com o selo de parceiro certificado."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     <img src="assets/case-onze/solucao-beneficios.webp" width="1440" height="1052" loading="lazy" decoding="async"
              alt="Seção O que você ganha da página CRM de Vendas: Mais receita com menos atrito no processo comercial, com quatro cards de benefício."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
     </div>
     </section>
 
@@ -199,10 +201,10 @@
         <div class="lg:col-span-8 lg:order-1 flex flex-col gap-6 min-w-0">
         <img src="assets/case-onze/case-hero.webp" width="1440" height="544" loading="lazy" decoding="async"
              alt="Hero da página de cases: Resultados reais de quem transformou o CRM com a Onze, com os números +500 projetos entregues e 6 segmentos atendidos."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         <img src="assets/case-onze/case-conteudo.webp" width="1440" height="1231" loading="lazy" decoding="async"
              alt="Conteúdo do case Brasilcap: índice Neste case, o título Digitalizar a venda sem perder a proximidade, o bloco amarelo com 98% de taxa de abertura de mensagens e o resultado Vendas diretamente pelo WhatsApp em uma lista com check."
-             class="w-full h-auto rounded border border-[#e5e5e5] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] bg-[#EFEDE8]">
         </div>
     </section>
 
@@ -217,14 +219,14 @@
         <div class="flex flex-col md:flex-row items-start gap-6 w-full">
         <img src="assets/case-onze/tablet-hero.webp" width="810" height="839" loading="lazy" decoding="async"
              alt="Hero da home no tablet: menu compacto, o título Desbloqueie o potencial do seu CRM, dois botões e os quatro números de credibilidade."
-             class="w-full h-auto rounded border border-[#e5e5e5] md:flex-1 min-w-0 md:max-w-[810px] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] md:flex-1 min-w-0 md:max-w-[810px] bg-[#EFEDE8]">
         <div class="grid grid-cols-2 gap-4 w-full md:flex md:w-auto md:gap-6 md:shrink-0 items-start">
         <img src="assets/case-onze/mobile-hero.webp" width="390" height="901" loading="lazy" decoding="async"
              alt="Hero da home no celular, com o título Desbloqueie o potencial do seu CRM e os botões de ação."
-             class="w-full h-auto rounded border border-[#e5e5e5] md:w-[200px] lg:w-[300px] xl:w-[390px] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] md:w-[200px] lg:w-[300px] xl:w-[390px] bg-[#EFEDE8]">
         <img src="assets/case-onze/mobile-menu.webp" width="390" height="844" loading="lazy" decoding="async"
              alt="Menu mobile aberto, com as quatro soluções em lista, os links Cases, Parceiros e Quem somos e os botões Falar com especialista e Entrar."
-             class="w-full h-auto rounded border border-[#e5e5e5] md:w-[200px] lg:w-[300px] xl:w-[390px] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] md:w-[200px] lg:w-[300px] xl:w-[390px] bg-[#EFEDE8]">
         </div>
     </div>
     </section>
@@ -264,7 +266,7 @@
 
         <img src="assets/case-onze/componentes.webp" width="1528" height="1679" loading="lazy" decoding="async"
              alt="Biblioteca de componentes da Onze: botões em vários estilos e estados, tags, chips de seleção, o card de métrica +15 anos de experiência em CRM, o card de case e os campos de formulário em quatro estados."
-             class="w-full h-auto rounded border border-[#e5e5e5] max-w-[1528px] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] max-w-[1528px] bg-[#EFEDE8]">
     </section>
 
     <section class="flex flex-col gap-10 w-full" aria-labelledby="handoff-heading">
@@ -279,13 +281,13 @@
         <div class="flex flex-col lg:flex-row gap-6 w-full items-start">
         <img src="assets/case-onze/handoff-cores.webp" width="708" height="664" loading="lazy" decoding="async"
              alt="Guia de handoff, tokens de cor: Black Onze, Dark Blue Onze, Surface Dark, Border Dark, Yellow Onze, Cream Onze, White, Surface Light, Border Light, Text Muted, Text Muted Dark e Error, cada um com hex e uso."
-             class="w-full h-auto rounded border border-[#e5e5e5] lg:w-[708px] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] lg:w-[708px] bg-[#EFEDE8]">
         <img src="assets/case-onze/handoff-a11y.webp" width="708" height="701" loading="lazy" decoding="async"
              alt="Guia de handoff, contraste medido em WCAG 2.2 AA: tabela com cada par de cores, uso, razão de contraste e status, como Black sobre Yellow com 17,2 para 1."
-             class="w-full h-auto rounded border border-[#e5e5e5] lg:w-[708px] bg-[#F2F2F2]">
+             class="w-full h-auto rounded border border-[#E6E4DF] lg:w-[708px] bg-[#EFEDE8]">
     </div>
     </section>
-<div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+<div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
     <section class="flex flex-col gap-10 w-full" aria-labelledby="proximo-heading">
         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
             <h2 id="proximo-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Próximo passo</h2>
@@ -301,7 +303,7 @@
     </section>
 
     <!-- Próximo case -->
-    <nav class="card group w-full border-t border-[#e5e5e5] pt-10" aria-label="Próximo case">
+    <nav class="card group w-full border-t border-[#E6E4DF] pt-10" aria-label="Próximo case">
         <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Próximo case</p>
         <p class="font-bold text-[clamp(32px,5vw,72px)] leading-[1.05] tracking-[-0.5px] text-[#111] pt-3 m-0">
             <a href="nathalia-geraldo.html" class="card-link">Nathália Geraldo</a>
@@ -309,7 +311,7 @@
         <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[620px] pt-3 m-0">Portfólio para uma jornalista com 15 anos de carreira. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
     </nav>
 
-    <div class="w-full h-px bg-[#e5e5e5]" role="separator" aria-hidden="true"></div>
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
 
     <!-- Contato -->
     <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
@@ -330,11 +332,12 @@
         </div>
     </section>
 
-    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#e5e5e5]">
+    <footer class="flex flex-col gap-1 w-full pt-8 border-t border-[#E6E4DF]">
         <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
         <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
     </footer>
 
 </main>
+<script src="js/header.js" defer></script>
 </body>
 </html>

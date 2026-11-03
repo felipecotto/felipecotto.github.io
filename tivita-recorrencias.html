@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="motion-safe:scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recorrências de convênio: configurar um agente que opera convênios | Felipe Oliveira</title>
+<meta name="description" content="Recorrências de convênio na Tivita: como Felipe Oliveira, Product Designer sênior, desenhou a configuração que ensina a Tais, agente de convênios, a solicitar autorizações e enviar guias sozinha.">
+<meta property="og:title" content="Recorrências de convênio: configurar um agente que opera convênios | Felipe Oliveira">
+<meta property="og:description" content="Case de produto na Tivita: a clínica configura uma vez, a agente executa por meses. Discovery, V1 no ar, iteração e um fluxo em três etapas com painel de conferência.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://felipecotto.github.io/tivita-recorrencias.html">
+<meta property="og:site_name" content="Felipe Oliveira">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://felipecotto.github.io/assets/og/tivita-recorrencias.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Capa do case Recorrências de convênio, de Felipe Oliveira.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://felipecotto.github.io/tivita-recorrencias.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F7F6F3">
+<meta name="author" content="Felipe Oliveira">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Recorrências de convênio: configurar um agente que opera convênios",
+  "url": "https://felipecotto.github.io/tivita-recorrencias.html",
+  "description": "Recorrências de convênio na Tivita: como Felipe Oliveira, Product Designer sênior, desenhou a configuração que ensina a Tais, agente de convênios, a solicitar autorizações e enviar guias sozinha.",
+  "image": "https://felipecotto.github.io/assets/og/tivita-recorrencias.jpg",
+  "inLanguage": "pt-BR",
+  "author": {
+    "@type": "Person",
+    "name": "Felipe Oliveira",
+    "url": "https://felipecotto.github.io/"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="editorial-text font-normal antialiased">
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-arrow-outward" viewBox="0 0 16 16">
+        <path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+    <symbol id="icon-arrow-back" viewBox="0 0 16 16">
+        <path d="M12 4L4 12M4 12H10.5M4 12V5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+</svg>
+
+<header class="site-header" data-header>
+    <nav class="header-pill" aria-label="Navegação principal">
+        <a href="index.html" class="ext-link font-['Geist'] font-normal text-[15px] text-[#111] w-fit">
+            <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
+            Felipe<span class="hidden sm:inline">Oliveira</span><span class="sr-only">, voltar ao portfólio</span>
+        </a>
+        <p class="header-label m-0" data-section-label aria-hidden="true">Recorrências de convênio</p>
+        <ul class="flex items-center justify-end gap-0.5 list-none m-0 p-0 font-['Geist'] text-[14px]">
+            <li><a href="index.html#trabalho-heading" class="nav-link" data-nav-link>Trabalho</a></li>
+            <li><a href="index.html#sobre-heading" class="nav-link" data-nav-link>Sobre</a></li>
+            <li><a href="index.html#contato-heading" class="nav-link" data-nav-link>Contato</a></li>
+        </ul>
+        <span class="header-progress" data-progress aria-hidden="true"></span>
+    </nav>
+</header>
+
+<main id="conteudo" class="w-full max-w-[1920px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16 md:gap-24">
+
+    <!-- Abertura -->
+    <section class="hero-fade flex flex-col gap-10 w-full" aria-label="Apresentação do projeto">
+        <div class="flex flex-col gap-6">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Tivita · Healthtech e fincare · 2026</p>
+            <h1 class="font-bold text-[clamp(44px,9vw,168px)] leading-[0.95] tracking-[-0.03em] text-[#111] m-0 break-words">Recorrências de convênio</h1>
+            <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[960px] m-0">Como desenhei a configuração de um agente que opera convênios: a clínica configura uma vez, e a Tais executa sozinha por meses.</p>
+        </div>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-t border-[#E6E4DF] pt-6 m-0">
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Papel</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Primeiro designer do time: discovery, UX/UI e design system</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Com quem</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Produto, engenharia e clínicas de terapia ABA em São Paulo</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Entrega</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">Criação em três etapas, painel de conferência, gestão e edição em massa</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+                <dt class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Processo</dt>
+                <dd class="text-[16px] leading-[1.5] text-[#111] m-0">V1 no ar para validar, iteração com clínicas e redesenho</dd>
+            </div>
+        </dl>
+    </section>
+
+    <!-- Visual principal -->
+    <section class="w-full rounded-[14px] bg-[var(--tint-sage)] p-4 sm:p-8 lg:p-14" aria-label="Tela principal do projeto">
+        <img src="assets/case-tivita-recorrencias/etapa2.webp" width="1095" height="760" fetchpriority="high" decoding="async"
+             alt="Nova recorrência, etapa Execução: grade semanal da psicoterapia com sessões às 8h na segunda, quarta e sexta, e o painel de conferência à direita com paciente, convênio, profissional e a execução semanal."
+             class="w-full max-w-[1280px] mx-auto h-auto rounded-[8px] border border-[rgba(17,17,17,0.06)] bg-white shadow-[0_24px_48px_-28px_rgba(17,17,17,0.35)]">
+    </section>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="contexto-heading">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-8 w-full">
+            <h2 id="contexto-heading" class="font-medium text-[20px] text-[#111] m-0 sm:w-[192px] shrink-0">Contexto</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] w-full sm:w-[720px] max-w-full flex flex-col gap-4">
+                <p class="m-0 text-[clamp(20px,2.2vw,26px)] leading-[1.35] text-[#111]">A Tais é a agente de convênios da Tivita. Ela emite guias, solicita autorizações e envia tudo às operadoras, sem depender da equipe da clínica.</p>
+                <p class="m-0">A Tivita é uma healthtech e fincare para clínicas de pequeno e médio porte: agenda, prontuário, faturamento de convênios e pagamentos.</p>
+                <p class="m-0">Na implantação, o time da Tivita personaliza a Tais com a clínica. Depois disso, é pela recorrência que a própria clínica diz o que solicitar, para quem, em que ritmo e com qual regra. A recorrência é o que ensina a Tais a agir.</p>
+                <p class="m-0">Fui o primeiro designer do time e cuidei de discovery, UX/UI e design system de ponta a ponta, junto de produto e engenharia.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="problema-heading">
+        <div class="flex flex-col gap-6">
+            <h2 id="problema-heading" class="font-medium text-[20px] text-[#111] m-0">O problema</h2>
+            <p class="font-medium text-[clamp(28px,4vw,56px)] leading-[1.08] tracking-[-0.02em] text-[#111] max-w-[1200px] m-0">Configurar algo que um agente vai executar sozinho. Um erro aqui não vira um erro: vira uma série deles.</p>
+        </div>
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8 list-none m-0 p-0">
+            <li class="flex flex-col gap-2 border-t border-[#111] pt-4">
+                <h3 class="font-medium text-[18px] text-[#111] m-0">Guia gerada errada vira glosa</h3>
+                <p class="text-[16px] leading-[1.6] text-[#525252] m-0">Se a configuração estiver errada, a Tais repete o erro em todas as guias da recorrência, e o convênio não paga.</p>
+            </li>
+            <li class="flex flex-col gap-2 border-t border-[#111] pt-4">
+                <h3 class="font-medium text-[18px] text-[#111] m-0">Fora do padrão vira recusa</h3>
+                <p class="text-[16px] leading-[1.6] text-[#525252] m-0">Cada convênio tem a sua regra: dia a dia, semanal ou mensal. Pedir fora dela é ter a autorização negada.</p>
+            </li>
+            <li class="flex flex-col gap-2 border-t border-[#111] pt-4">
+                <h3 class="font-medium text-[18px] text-[#111] m-0">O desafio de design</h3>
+                <p class="text-[16px] leading-[1.6] text-[#525252] m-0">Criar um fluxo em que a clínica configure uma vez, com segurança, e consiga conferir tudo antes de entregar para a Tais.</p>
+            </li>
+        </ul>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="discovery-heading" data-label="Discovery">
+        <div class="lg:col-span-5 flex flex-col gap-6">
+            <h2 id="discovery-heading" class="font-medium text-[20px] text-[#111] m-0">Discovery: observar antes de perguntar</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[640px] flex flex-col gap-4">
+                <p class="m-0"><span class="font-medium text-[#111]">Shadowing em clínicas de São Paulo.</span> Acompanhei recepção e faturistas no dia a dia, para ver quem faz o quê e onde o processo quebra.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">Estudo do padrão TISS com IA.</span> Usei os documentos oficiais da ANS no NotebookLM para entender guias de consulta, SP/SADT e lotes antes de desenhar.</p>
+            </div>
+        </div>
+        <figure class="lg:col-span-7 flex flex-col gap-3 m-0 min-w-0">
+            <img src="assets/case-tivita-recorrencias/discovery-chamada.webp" width="900" height="455" loading="lazy" decoding="async"
+                 alt="Chamada de vídeo com a equipe de uma clínica parceira, com os rostos dos participantes desfocados e Felipe em uma das janelas."
+                 class="w-full h-auto rounded-[8px] border border-[#E6E4DF] bg-[#EFEDE8]">
+            <figcaption class="font-['Geist'] text-[13px] text-[#6E6E6E]">Chamada de mapeamento do fluxo de faturamento com a equipe de uma clínica parceira.</figcaption>
+        </figure>
+    </section>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="jornada-heading">
+        <div class="flex flex-col gap-4">
+            <h2 id="jornada-heading" class="font-medium text-[20px] text-[#111] m-0">Jornada atual</h2>
+            <p class="font-medium text-[clamp(26px,3.2vw,44px)] leading-[1.1] tracking-[-0.02em] text-[#111] max-w-[1000px] m-0">Oito etapas, cinco papéis e ferramentas soltas entre elas.</p>
+        </div>
+        <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-8 gap-x-4 gap-y-8 list-none m-0 p-0">
+            <li class="journey-step flex flex-col gap-2 pt-3">
+                <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0 tabular-nums">01</p>
+                <h3 class="font-medium text-[17px] text-[#111] m-0">Agendamento</h3>
+                <p class="font-['Geist'] text-[13px] text-[#111] m-0">Recepção</p>
+                <p class="text-[14px] leading-[1.5] text-[#6E6E6E] m-0">Agenda do sistema, WhatsApp, telefone</p>
+                <p class="breaks text-[14px] leading-[1.45] text-[#111] m-0"><span class="block font-['Geist'] uppercase tracking-[1.4px] text-[11px] text-[#6E6E6E] pb-1">Onde quebra</span>Paciente ABA tem várias sessões por semana, com profissionais diferentes.</p>
+            </li>
+            <li class="journey-step flex flex-col gap-2 pt-3">
+                <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0 tabular-nums">02</p>
+                <h3 class="font-medium text-[17px] text-[#111] m-0">Verificação de convênio</h3>
+                <p class="font-['Geist'] text-[13px] text-[#111] m-0">Recepção</p>
+                <p class="text-[14px] leading-[1.5] text-[#6E6E6E] m-0">Cartão do convênio, TISS, portais</p>
+            </li>
+            <li class="journey-step flex flex-col gap-2 pt-3">
+                <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0 tabular-nums">03</p>
+                <h3 class="font-medium text-[17px] text-[#111] m-0">Autorização prévia</h3>
+                <p class="font-['Geist'] text-[13px] text-[#111] m-0">Recepção e convênio</p>
+                <p class="text-[14px] leading-[1.5] text-[#6E6E6E] m-0">Portais específicos de cada operadora</p>
+                <p class="breaks text-[14px] leading-[1.45] text-[#111] m-0"><span class="block font-['Geist'] uppercase tracking-[1.4px] text-[11px] text-[#6E6E6E] pb-1">Onde quebra</span>Cada convênio tem sua regra. Fora dela, recusa.</p>
+                <p class="m-0"><span class="agent-tag font-['Geist'] text-[12px]">A Tais assume</span></p>
+            </li>
+            <li class="journey-step flex flex-col gap-2 pt-3">
+                <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0 tabular-nums">04</p>
+                <h3 class="font-medium text-[17px] text-[#111] m-0">Atendimento</h3>
+                <p class="font-['Geist'] text-[13px] text-[#111] m-0">Profissional de saúde</p>
+                <p class="text-[14px] leading-[1.5] text-[#6E6E6E] m-0">Prontuário eletrônico</p>
+                <p class="breaks text-[14px] leading-[1.45] text-[#111] m-0"><span class="block font-['Geist'] uppercase tracking-[1.4px] text-[11px] text-[#6E6E6E] pb-1">Onde quebra</span>Cada execução pede prova: a clínica tirava print no portal, sessão por sessão.</p>
+            </li>
+            <li class="journey-step flex flex-col gap-2 pt-3">
+                <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0 tabular-nums">05</p>
+                <h3 class="font-medium text-[17px] text-[#111] m-0">Emissão da guia</h3>
+                <p class="font-['Geist'] text-[13px] text-[#111] m-0">Secretária ou faturista</p>
+                <p class="text-[14px] leading-[1.5] text-[#6E6E6E] m-0">Planilhas, sistema, preenchimento manual</p>
+                <p class="breaks text-[14px] leading-[1.45] text-[#111] m-0"><span class="block font-['Geist'] uppercase tracking-[1.4px] text-[11px] text-[#6E6E6E] pb-1">Onde quebra</span>Um erro de preenchimento se repete em todas as guias.</p>
+                <p class="m-0"><span class="agent-tag font-['Geist'] text-[12px]">A Tais assume</span></p>
+            </li>
+            <li class="journey-step flex flex-col gap-2 pt-3">
+                <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0 tabular-nums">06</p>
+                <h3 class="font-medium text-[17px] text-[#111] m-0">Envio do lote</h3>
+                <p class="font-['Geist'] text-[13px] text-[#111] m-0">Faturista</p>
+                <p class="text-[14px] leading-[1.5] text-[#6E6E6E] m-0">Portais ou XML via TISS</p>
+                <p class="m-0"><span class="agent-tag font-['Geist'] text-[12px]">A Tais assume</span></p>
+            </li>
+            <li class="journey-step flex flex-col gap-2 pt-3">
+                <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0 tabular-nums">07</p>
+                <h3 class="font-medium text-[17px] text-[#111] m-0">Glosas e recursos</h3>
+                <p class="font-['Geist'] text-[13px] text-[#111] m-0">Faturista</p>
+                <p class="text-[14px] leading-[1.5] text-[#6E6E6E] m-0">Excel, e-mails, ligações</p>
+                <p class="breaks text-[14px] leading-[1.45] text-[#111] m-0"><span class="block font-['Geist'] uppercase tracking-[1.4px] text-[11px] text-[#6E6E6E] pb-1">Onde quebra</span>O erro aparece só aqui, já como retrabalho.</p>
+            </li>
+            <li class="journey-step flex flex-col gap-2 pt-3">
+                <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0 tabular-nums">08</p>
+                <h3 class="font-medium text-[17px] text-[#111] m-0">Conciliação e relatórios</h3>
+                <p class="font-['Geist'] text-[13px] text-[#111] m-0">Financeiro</p>
+                <p class="text-[14px] leading-[1.5] text-[#6E6E6E] m-0">Planilhas ou software</p>
+            </li>
+        </ol>
+        <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0">Fonte: mapeamento da jornada feito no discovery. A recorrência é o que permite à Tais assumir as etapas 03, 05 e 06.</p>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="v1-heading" data-label="Primeira versão">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <h2 id="v1-heading" class="font-medium text-[20px] text-[#111] m-0">A V1 foi ao ar para validar rápido</h2>
+                <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[640px] flex flex-col gap-4">
+                    <p class="m-0"><span class="font-medium text-[#111]">Da apresentação direto para o produto.</span> Em startup, colocar no ar é o jeito mais rápido de validar. E validou: as clínicas queriam automatizar a recorrência.</p>
+                    <p class="m-0"><span class="font-medium text-[#111]">O uso real mostrou o que confundia.</span> Data, horário, quantidade e regra do convênio ficavam no mesmo lugar. Configurações erradas viravam chamados no suporte.</p>
+                    <p class="m-0"><span class="font-medium text-[#111]">Iterar antes de redesenhar.</span> Separei em etapas e testei controles por dia. Cada versão mostrou com mais clareza o que precisava ficar separado.</p>
+                </div>
+            </div>
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 min-w-0 items-start">
+                <figure class="flex flex-col gap-3 m-0">
+                    <img src="assets/case-tivita-recorrencias/v1-formulario.webp" width="530" height="272" loading="lazy" decoding="async"
+                         alt="Primeira versão da recorrência: um formulário único com convênio, procedimento, profissionais e a lista de dias da semana na mesma tela."
+                         class="w-full h-auto rounded-[8px] border border-[#E6E4DF] bg-white">
+                    <figcaption class="font-['Geist'] text-[13px] text-[#6E6E6E]">Primeira versão: um formulário único, com dias, horários e quantidades juntos.</figcaption>
+                </figure>
+                <figure class="flex flex-col gap-3 m-0">
+                    <img src="assets/case-tivita-recorrencias/v1-iteracao.webp" width="528" height="347" loading="lazy" decoding="async"
+                         alt="Iteração da V1: etapas separadas no topo e controles liga e desliga para cada dia da semana, com a quantidade por dia."
+                         class="w-full h-auto rounded-[8px] border border-[#E6E4DF] bg-white">
+                    <figcaption class="font-['Geist'] text-[13px] text-[#6E6E6E]">Iteração: etapas separadas e controles por dia da semana.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="mapa-heading">
+        <div class="flex flex-col gap-4">
+            <h2 id="mapa-heading" class="font-medium text-[20px] text-[#111] m-0">Mapa da solução</h2>
+            <p class="font-medium text-[clamp(26px,3.2vw,44px)] leading-[1.1] tracking-[-0.02em] text-[#111] max-w-[1100px] m-0">Separar o que nunca muda do que muda toda semana. E conferir tudo antes de entregar à Tais.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <div class="lg:col-span-6 flex flex-col gap-3">
+                <p class="font-['Geist'] uppercase tracking-[1.6px] text-[12px] text-[#6E6E6E] m-0">A clínica configura <span class="normal-case tracking-normal">· recepção, supervisor clínico e psicólogos</span></p>
+                <ol class="grid grid-cols-1 sm:grid-cols-3 gap-3 list-none m-0 p-0">
+                    <li class="decision flex flex-col gap-1"><span class="font-['Geist'] text-[13px] text-[#6E6E6E]">1</span><span class="font-medium text-[17px] text-[#111]">Configurações</span><span class="text-[14px] leading-[1.5] text-[#525252]">O que não muda: paciente, convênio, profissional, pedido médico.</span></li>
+                    <li class="decision flex flex-col gap-1"><span class="font-['Geist'] text-[13px] text-[#6E6E6E]">2</span><span class="font-medium text-[17px] text-[#111]">Execução</span><span class="text-[14px] leading-[1.5] text-[#525252]">A rotina: dias, horários e profissionais.</span></li>
+                    <li class="decision flex flex-col gap-1"><span class="font-['Geist'] text-[13px] text-[#6E6E6E]">3</span><span class="font-medium text-[17px] text-[#111]">Autorização</span><span class="text-[14px] leading-[1.5] text-[#525252]">A regra do convênio: quando e como solicitar.</span></li>
+                </ol>
+                <p class="breaks text-[14px] text-[#111] m-0">Painel de conferência acompanha as três etapas</p>
+            </div>
+            <div class="lg:col-span-3 flex flex-col gap-3">
+                <p class="font-['Geist'] uppercase tracking-[1.6px] text-[12px] text-[#6E6E6E] m-0">A Tais executa <span class="normal-case tracking-normal">· sozinha, por meses</span></p>
+                <div class="rounded-[12px] bg-[var(--tint-sage)] p-5 flex flex-col gap-1 h-full">
+                    <span class="font-medium text-[17px] text-[#111]">Solicita, gera e envia</span>
+                    <span class="text-[14px] leading-[1.5] text-[#525252]">Pede as autorizações na regra do convênio, gera as guias e envia o XML à operadora.</span>
+                </div>
+            </div>
+            <div class="lg:col-span-3 flex flex-col gap-3">
+                <p class="font-['Geist'] uppercase tracking-[1.6px] text-[12px] text-[#6E6E6E] m-0">O faturista acompanha <span class="normal-case tracking-normal">· nos lotes</span></p>
+                <div class="decision flex flex-col gap-1 h-full">
+                    <span class="font-medium text-[17px] text-[#111]">Confere guias e lotes</span>
+                    <span class="text-[14px] leading-[1.5] text-[#525252]">Vê se as guias estão sendo geradas e fecha o lote.</span>
+                </div>
+            </div>
+        </div>
+        <p class="text-[16px] leading-[1.6] text-[#525252] max-w-[760px] m-0"><span class="font-medium text-[#111]">No dia a dia,</span> a gestão mostra status e validade de cada recorrência, e a edição em massa ajusta dias, horários e profissionais de todas as recorrências do paciente. A rotina ajustada volta para a Tais sem refazer a configuração.</p>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="etapa1-heading" data-label="Etapa 1 · Configurações">
+        <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-28">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Etapa 1 · Configurações</p>
+            <h2 id="etapa1-heading" class="font-medium text-[clamp(24px,2.4vw,32px)] leading-[1.15] tracking-[-0.01em] text-[#111] m-0">O que não muda fica de um lado só</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] flex flex-col gap-4">
+                <p class="m-0"><span class="font-medium text-[#111]">O que já existe não se digita de novo.</span> Ao escolher o paciente, os convênios e documentos do cadastro dele já aparecem. A clínica seleciona, não redigita.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">Travas antes do erro.</span> O tipo do documento é obrigatório, e o sistema avisa quando a validade vence em menos de 15 dias.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">Painel de conferência sempre visível.</span> O resumo à direita acompanha cada etapa. É ali que a clínica confere o que a Tais vai executar.</p>
+            </div>
+            <div class="decision flex flex-col gap-1">
+                <p class="font-['Geist'] uppercase tracking-[1.6px] text-[11px] text-[#6E6E6E] m-0">Decisão</p>
+                <p class="font-medium text-[16px] text-[#111] m-0">Por que etapas, e não um formulário só</p>
+                <p class="text-[15px] leading-[1.55] text-[#525252] m-0">A primeira versão tinha tudo numa tela e gerava configuração errada. Em etapas, cada decisão vem com o contexto de que precisa.</p>
+            </div>
+        </div>
+        <div class="lg:col-span-8 min-w-0">
+            <img src="assets/case-tivita-recorrencias/etapa1.webp" width="1023" height="760" loading="lazy" decoding="async"
+                 alt="Nova recorrência, etapa Configurações: paciente, convênio, profissional solicitante, indicação clínica e observações, e um pedido médico anexado com tipo, data de emissão, validade e o aviso de que vence em menos de 15 dias."
+                 class="w-full h-auto rounded-[8px] border border-[#E6E4DF] bg-white">
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="etapa2-heading" data-label="Etapa 2 · Execução">
+        <div class="lg:col-span-4 lg:order-2 flex flex-col gap-6 lg:sticky lg:top-28">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Etapa 2 · Execução</p>
+            <h2 id="etapa2-heading" class="font-medium text-[clamp(24px,2.4vw,32px)] leading-[1.15] tracking-[-0.01em] text-[#111] m-0">A rotina do paciente vira um calendário</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] flex flex-col gap-4">
+                <p class="m-0"><span class="font-medium text-[#111]">Visão de semana, não de formulário.</span> É assim que recepção e supervisor clínico já pensam a agenda: segunda, quarta e sexta às 8h.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">Cada sessão é um clique na grade.</span> O popover abre sobre o dia escolhido, só com quantidade, horário e profissional executante. Remover fica ao lado de aplicar, para corrigir um dia sem refazer a grade.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">Semanas específicas.</span> A recorrência semanal pode repetir toda semana ou a cada 2, 3 ou 4 semanas.</p>
+            </div>
+            <div class="decision flex flex-col gap-1">
+                <p class="font-['Geist'] uppercase tracking-[1.6px] text-[11px] text-[#6E6E6E] m-0">Decisão</p>
+                <p class="font-medium text-[16px] text-[#111] m-0">Grade semanal, e não lista de datas</p>
+                <p class="text-[15px] leading-[1.55] text-[#525252] m-0">A recorrência vale por meses. A semana é a unidade que recepção e supervisor clínico já usam para montar a agenda.</p>
+            </div>
+            <div class="decision flex flex-col gap-1">
+                <p class="font-['Geist'] uppercase tracking-[1.6px] text-[11px] text-[#6E6E6E] m-0">Decisão</p>
+                <p class="font-medium text-[16px] text-[#111] m-0">Popover, e não modal</p>
+                <p class="text-[15px] leading-[1.55] text-[#525252] m-0">O modal esconde a semana. No popover, a pessoa edita um dia vendo os outros e percebe conflito na hora.</p>
+            </div>
+        </div>
+        <div class="lg:col-span-8 lg:order-1 flex flex-col gap-6 min-w-0">
+            <img src="assets/case-tivita-recorrencias/popover.webp" width="1095" height="760" loading="lazy" decoding="async"
+                 alt="Etapa Execução com o popover Adicionar execução aberto sobre a terça: quantidade, horário, profissional executante e os botões Aplicar horário e Remover."
+                 class="w-full h-auto rounded-[8px] border border-[#E6E4DF] bg-white">
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="etapa3-heading" data-label="Etapa 3 · Autorização">
+        <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-28">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Etapa 3 · Autorização</p>
+            <h2 id="etapa3-heading" class="font-medium text-[clamp(24px,2.4vw,32px)] leading-[1.15] tracking-[-0.01em] text-[#111] m-0">A regra do convênio é configurada uma vez</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] flex flex-col gap-4">
+                <p class="m-0"><span class="font-medium text-[#111]">Semanal ou mensal.</span> Semanal: solicita sempre no mesmo dia, para a semana inteira. Mensal: uma vez por mês, num dia específico.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">Limite à vista.</span> O alerta mostra quantas sessões serão solicitadas frente à quantidade aprovada pelo convênio.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">Período definido.</span> Primeira autorização e última execução delimitam até quando a Tais trabalha.</p>
+            </div>
+            <div class="decision flex flex-col gap-1">
+                <p class="font-['Geist'] uppercase tracking-[1.6px] text-[11px] text-[#6E6E6E] m-0">Decisão</p>
+                <p class="font-medium text-[16px] text-[#111] m-0">Cards lado a lado, e não um select</p>
+                <p class="text-[15px] leading-[1.55] text-[#525252] m-0">Semanal e mensal mudam o resto da etapa. Ver as duas antes de escolher ajuda a casar com a regra do convênio.</p>
+            </div>
+        </div>
+        <div class="lg:col-span-8 min-w-0">
+            <img src="assets/case-tivita-recorrencias/etapa3.webp" width="1095" height="760" loading="lazy" decoding="async"
+                 alt="Etapa Autorização: frequência semanal ou mensal em cards, solicitar em dia fixo da semana, alerta de limite de 12 sessões aprovadas e o período da recorrência, de 02/03/2026 a 31/08/2026."
+                 class="w-full h-auto rounded-[8px] border border-[#E6E4DF] bg-white">
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-center rounded-[14px] bg-[var(--tint-sage)] p-6 sm:p-10 lg:p-14" aria-labelledby="conferencia-heading" data-label="Conferência">
+        <div class="lg:col-span-7 flex flex-col gap-6">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#525252] m-0">Conferência</p>
+            <h2 id="conferencia-heading" class="font-medium text-[clamp(26px,3vw,40px)] leading-[1.12] tracking-[-0.02em] text-[#111] m-0">Antes de entregar à Tais, tudo passa pelo painel de conferência</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[640px] flex flex-col gap-4">
+                <p class="m-0">O painel lateral fica fixo da configuração à autorização, com paciente, convênio, indicação, profissional, execução e regra de autorização num só lugar. A clínica nunca perde de vista o que já preencheu.</p>
+            </div>
+            <div class="decision flex flex-col gap-1 max-w-[640px]">
+                <p class="font-['Geist'] uppercase tracking-[1.6px] text-[11px] text-[#6E6E6E] m-0">Decisão</p>
+                <p class="font-medium text-[16px] text-[#111] m-0">Painel fixo, e não uma revisão no final</p>
+                <p class="text-[15px] leading-[1.55] text-[#525252] m-0">Erro visto na etapa em que nasce custa menos que erro achado no resumo. E a Tais repete a instrução por meses.</p>
+            </div>
+        </div>
+        <div class="lg:col-span-5 flex justify-center min-w-0">
+            <img src="assets/case-tivita-recorrencias/painel.webp" width="305" height="480" loading="lazy" decoding="async"
+                 alt="Painel de conferência: paciente, convênio, indicação clínica, observações, profissional solicitante com CBO e conselho, e a execução semanal de psicoterapia às segundas, quartas e sextas às 8h com Ana Ribeiro."
+                 class="w-full max-w-[380px] h-auto rounded-[10px] border border-[rgba(17,17,17,0.06)] bg-white shadow-[0_24px_48px_-28px_rgba(17,17,17,0.35)]">
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 w-full items-start" aria-labelledby="gestao-heading" data-label="Gestão">
+        <div class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-28">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Gestão</p>
+            <h2 id="gestao-heading" class="font-medium text-[clamp(24px,2.4vw,32px)] leading-[1.15] tracking-[-0.01em] text-[#111] m-0">Depois de criadas, as recorrências são acompanhadas numa lista</h2>
+            <div class="font-normal text-[16px] leading-[1.6] text-[#525252] flex flex-col gap-4">
+                <p class="m-0"><span class="font-medium text-[#111]">Status em primeiro plano.</span> Ativas, vencendo em 15 dias, vencidas e inativas.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">Validade da autorização.</span> Quem configura vê o que precisa renovar antes de virar glosa.</p>
+            </div>
+        </div>
+        <div class="lg:col-span-8 min-w-0">
+            <img src="assets/case-tivita-recorrencias/gestao.webp" width="1152" height="772" loading="lazy" decoding="async"
+                 alt="Lista de Recorrências com cards de status (total, ativas, vencem em 15 dias, vencidas e inativas), filtros por convênio, paciente e validade, e a tabela com paciente, convênio, procedimento, autorização, status e validade."
+                 class="w-full h-auto rounded-[8px] bg-transparent">
+        </div>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="massa-heading" data-label="Edição em massa">
+        <div class="flex flex-col gap-4">
+            <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Edição em massa</p>
+            <h2 id="massa-heading" class="font-medium text-[clamp(26px,3.2vw,44px)] leading-[1.1] tracking-[-0.02em] text-[#111] max-w-[1000px] m-0">Um paciente ABA: 25 sessões e 6 profissionais numa única semana.</h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+            <div class="lg:col-span-5 font-normal text-[16px] leading-[1.6] text-[#525252] flex flex-col gap-4">
+                <p class="m-0"><span class="font-medium text-[#111]">O sinal.</span> As clínicas ABA mandavam à Amil uma ficha impressa com a grade de cada paciente: procedimentos nas linhas, dias e horários nas colunas.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">O problema.</span> Um paciente ABA tem vários procedimentos em paralelo. Mudar um horário obrigava a abrir recorrência por recorrência.</p>
+                <p class="m-0"><span class="font-medium text-[#111]">A decisão.</span> Levar a grade para o perfil do paciente. A regra de autorização fica na recorrência; dias, horários e profissionais se editam em massa.</p>
+            </div>
+            <figure class="lg:col-span-7 flex flex-col gap-3 m-0 min-w-0">
+                <img src="assets/case-tivita-recorrencias/agenda-aba.webp" width="900" height="452" loading="lazy" decoding="async"
+                     alt="Agenda semanal de um paciente ABA no sistema de uma clínica, com blocos de sessões de 8h às 16h de segunda a sexta e os nomes desfocados."
+                     class="w-full h-auto rounded-[8px] border border-[#E6E4DF] bg-white">
+                <figcaption class="font-['Geist'] text-[13px] text-[#6E6E6E]">Grade real de atendimentos de um paciente ABA numa semana, no sistema de uma clínica (anonimizada).</figcaption>
+            </figure>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+            <div class="lg:col-span-7 min-w-0 lg:order-1">
+                <img src="assets/case-tivita-recorrencias/edicao-massa.webp" width="820" height="706" loading="lazy" decoding="async"
+                     alt="Perfil da paciente, aba Recorrências de convênio: psicoterapia, fonoaudiologia e terapia ocupacional, cada uma com a grade semanal editável e o próprio botão Salvar."
+                     class="w-full h-auto rounded-[8px] border border-[#E6E4DF] bg-white">
+            </div>
+            <div class="lg:col-span-5 lg:order-2 flex flex-col gap-6 lg:sticky lg:top-28">
+                <h3 class="font-medium text-[clamp(22px,2.2vw,28px)] leading-[1.15] text-[#111] m-0">Todas as recorrências da paciente numa grade só</h3>
+                <div class="font-normal text-[16px] leading-[1.6] text-[#525252] flex flex-col gap-4">
+                    <p class="m-0"><span class="font-medium text-[#111]">Mesmo modelo da ficha.</span> Procedimentos nas linhas, dias nas colunas. A clínica reconhece a grade que já preenchia no papel.</p>
+                    <p class="m-0"><span class="font-medium text-[#111]">Salva por recorrência.</span> Cada bloco salva separado, e o botão só acende quando algo mudou. A regra de autorização não muda aqui.</p>
+                </div>
+                <div class="decision flex flex-col gap-1">
+                    <p class="font-['Geist'] uppercase tracking-[1.6px] text-[11px] text-[#6E6E6E] m-0">Decisão</p>
+                    <p class="font-medium text-[16px] text-[#111] m-0">No perfil do paciente, e não em cada recorrência</p>
+                    <p class="text-[15px] leading-[1.55] text-[#525252] m-0">No ABA, a mudança costuma ser de rotina, não de regra. Horário, quantidade e profissional se editam direto na célula, tudo junto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <section class="flex flex-col gap-10 w-full" aria-labelledby="resultado-heading" data-label="Resultado">
+        <div class="flex flex-col gap-4">
+            <h2 id="resultado-heading" class="font-medium text-[20px] text-[#111] m-0">Resultado e aprendizados</h2>
+            <p class="font-medium text-[clamp(28px,4vw,56px)] leading-[1.08] tracking-[-0.02em] text-[#111] max-w-[1100px] m-0">A clínica passou a configurar sozinha.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10">
+            <div class="flex flex-col gap-3 border-t border-[#111] pt-4">
+                <h3 class="font-medium text-[18px] text-[#111] m-0">O que mudou</h3>
+                <ul class="m-0 pl-5 list-disc flex flex-col gap-2 text-[16px] leading-[1.6] text-[#525252]">
+                    <li>Autonomia: as clínicas passaram a montar as próprias recorrências, sem depender do time Tivita para configurar</li>
+                    <li>Gestão num só lugar, sem alternar entre o portal da operadora, o calendário e o Excel</li>
+                    <li>Configuração feita uma vez, sem retrabalho semanal</li>
+                </ul>
+                <p class="font-['Geist'] text-[13px] leading-[1.5] text-[#6E6E6E] m-0">Observado no uso com as clínicas, ainda sem número medido.</p>
+            </div>
+            <div class="flex flex-col gap-3 border-t border-[#111] pt-4">
+                <h3 class="font-medium text-[18px] text-[#111] m-0">Como eu mediria</h3>
+                <ul class="m-0 pl-5 list-disc flex flex-col gap-2 text-[16px] leading-[1.6] text-[#525252]">
+                    <li>% de recorrências criadas pela própria clínica, sem apoio do time Tivita</li>
+                    <li>% de guias glosadas ou solicitações recusadas por erro de configuração</li>
+                    <li>Chamados de suporte sobre recorrência</li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-3 border-t border-[#111] pt-4">
+                <h3 class="font-medium text-[18px] text-[#111] m-0">Aprendizados</h3>
+                <ul class="m-0 pl-5 list-disc flex flex-col gap-2 text-[16px] leading-[1.6] text-[#525252]">
+                    <li>Separar o que não muda do que muda simplificou mais do que qualquer ajuste de tela</li>
+                    <li>Aprender o domínio (TISS) antes de desenhar evitou soluções genéricas</li>
+                    <li>Quando um agente executa, conferir antes faz parte da solução, não é um passo extra</li>
+                </ul>
+            </div>
+        </div>
+        <p class="font-['Geist'] text-[13px] text-[#6E6E6E] m-0">Todas as telas deste case usam dados fictícios. Fotos e agenda de clínicas foram anonimizadas.</p>
+    </section>
+
+    <!-- Próximo case -->
+    <nav class="card group w-full border-t border-[#E6E4DF] pt-10" aria-label="Próximo case">
+        <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Próximo case</p>
+        <p class="font-bold text-[clamp(32px,5vw,72px)] leading-[1.05] tracking-[-0.5px] text-[#111] pt-3 m-0">
+            <a href="tivita-lotes.html" class="card-link">Lotes de convênio</a>
+        </p>
+        <p class="font-normal text-[16px] leading-[1.6] text-[#525252] max-w-[620px] pt-3 m-0">O outro lado do faturamento na Tivita: fechar e enviar os lotes, do discovery ao fluxo em produção. <span class="group-hover:text-[#111] transition-colors" aria-hidden="true">→</span></p>
+    </nav>
+
+    <div class="w-full h-px bg-[#E6E4DF]" role="separator" aria-hidden="true"></div>
+
+    <!-- Contato -->
+    <section class="flex flex-col gap-6 w-full" aria-labelledby="contato-heading">
+        <h2 id="contato-heading" class="font-medium text-[20px] text-[#111] m-0">Contato</h2>
+        <p class="font-normal text-[clamp(24px,3.5vw,40px)] leading-[1.2] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">
+            Gostou do que viu? Vamos conversar.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 flex-wrap">
+            <a href="mailto:felipeoliveira.contato@gmail.com" class="font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#111] underline underline-offset-4 w-fit break-all">felipeoliveira.contato@gmail.com</a>
+            <a href="https://linkedin.com/in/felipecotto" target="_blank" rel="noopener noreferrer" class="ext-link font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#525252] hover:text-[#111] w-fit">
+                LinkedIn <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-outward"/></svg>
+                <span class="sr-only">(abre em nova aba)</span>
+            </a>
+            <a href="index.html" class="ext-link font-['Geist'] font-medium text-[16px] sm:text-[18px] text-[#525252] hover:text-[#111] w-fit">
+                <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
+                Voltar ao portfólio
+            </a>
+        </div>
+    </section>
+
+    <footer class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 w-full pt-8 border-t border-[#E6E4DF]">
+        <div class="flex flex-col gap-1">
+            <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
+            <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
+        </div>
+        <div class="flex flex-col gap-1 sm:items-end">
+            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0">Versão <span class="text-[#111]">v2026.4</span> · atualizada em <time datetime="2026-11-03">3 nov 2026</time></p>
+            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0 flex gap-4">
+                <a href="changelog/index.html" class="underline underline-offset-4 hover:text-[#111]">Changelog</a>
+                <a href="versoes/index.html" class="underline underline-offset-4 hover:text-[#111]">Versões anteriores</a>
+            </p>
+        </div>
+    </footer>
+
+</main>
+<script src="js/header.js" defer></script>
+</body>
+</html>
