@@ -21,7 +21,7 @@
 <meta name="author" content="Felipe Oliveira">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/site.css">
 
 </head>
@@ -39,12 +39,12 @@
 </svg>
 <header class="site-header" data-header>
     <nav class="header-pill" aria-label="Navegação principal">
-        <a href="../index.html" class="ext-link font-['Geist'] font-normal text-[15px] text-[#111] w-fit">
+        <a href="../index.html" class="ext-link font-normal text-[15px] text-[#111] w-fit">
             <svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-arrow-back"/></svg>
             Felipe<span class="hidden sm:inline">Oliveira</span><span class="sr-only">, voltar ao portfólio</span>
         </a>
         <p class="header-label m-0" data-section-label aria-hidden="true">Changelog</p>
-        <ul class="flex items-center justify-end gap-0.5 list-none m-0 p-0 font-['Geist'] text-[14px]">
+        <ul class="flex items-center justify-end gap-0.5 list-none m-0 p-0 text-[14px]">
             <li><a href="../index.html#trabalho-heading" class="nav-link" data-nav-link>Trabalho</a></li>
             <li><a href="../index.html#sobre-heading" class="nav-link" data-nav-link>Sobre</a></li>
             <li><a href="../index.html#contato-heading" class="nav-link" data-nav-link>Contato</a></li>
@@ -54,21 +54,40 @@
 </header>
 <main id="conteudo" class="w-full max-w-[1920px] mx-auto px-6 py-16 md:py-24 flex flex-col gap-16 md:gap-24">
     <section class="hero-fade flex flex-col gap-6 w-full" aria-label="Apresentação">
-        <p class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Registro</p>
-        <h1 class="font-bold text-[clamp(44px,8vw,140px)] leading-[0.95] tracking-[-0.03em] text-[#111] m-0">Changelog</h1>
-        <p class="font-normal text-[clamp(22px,3vw,36px)] leading-[1.25] tracking-[-0.3px] text-[#111] max-w-[900px] m-0">O que mudou em cada versão deste portfólio, da mais recente para a mais antiga.</p>
+        <p class="t-label text-[#6E6E6E] m-0">Registro</p>
+        <h1 class="t-display text-[#111] m-0">Changelog</h1>
+        <p class="t-lead text-[#111] max-w-[900px] m-0">O que mudou em cada versão deste portfólio, da mais recente para a mais antiga.</p>
     </section>
     <section class="flex flex-col w-full border-t border-[#E6E4DF]" aria-label="Mudanças por versão">
+        <article id="v2026-5" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 border-b border-[#E6E4DF]">
+            <header class="lg:col-span-4 flex flex-col gap-2">
+                <h2 class="t-subtitle text-[#111] m-0">v2026.5</h2>
+                <p class="font-normal text-[15px] text-[#6E6E6E] m-0">3 nov 2026</p>
+                <a href="../index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Ver a versão atual</a>
+            </header>
+            <div class="lg:col-span-8 flex flex-col gap-6 max-w-[760px]">
+                <p class="text-[17px] leading-[1.6] text-[#111] m-0">Uma família tipográfica só e uma escala de sete estilos no lugar dos 22 tamanhos de título que existiam.</p>
+                <div class="flex flex-col gap-2">
+                    <h3 class="t-label text-[#6E6E6E] m-0">Alterado</h3>
+                    <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
+                        <li>Instrument Sans em todo o site; o Geist saiu dos rótulos e do menu</li>
+                        <li>Escala tipográfica com sete estilos: display, título, subtítulo, lead, métrica, seção e item, mais o rótulo em caixa alta</li>
+                        <li>Títulos de abertura em semibold e no mesmo tamanho em todas as páginas</li>
+                        <li>Todos os números com o mesmo estilo, da home às páginas de case</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
         <article id="v2026-4" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 border-b border-[#E6E4DF]">
             <header class="lg:col-span-4 flex flex-col gap-2">
-                <h2 class="font-semibold text-[32px] leading-none tracking-[-0.02em] text-[#111] m-0">v2026.4</h2>
-                <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">3 nov 2026</p>
-                <a href="../index.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Ver a versão atual</a>
+                <h2 class="t-subtitle text-[#111] m-0">v2026.4</h2>
+                <p class="font-normal text-[15px] text-[#6E6E6E] m-0">3 nov 2026</p>
+                <a href="../versoes/2026-4/index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2026.4</a>
             </header>
             <div class="lg:col-span-8 flex flex-col gap-6 max-w-[760px]">
                 <p class="text-[17px] leading-[1.6] text-[#111] m-0">Um case novo da Tivita, sobre configurar uma agente de IA, abre a lista. Os cases viraram linhas compactas com prévia no hover, o header ficou flutuante e o site ganhou cor, com moderação.</p>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Adicionado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Adicionado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Case das recorrências de convênio da Tivita: discovery, V1 no ar, iteração e o fluxo em três etapas com painel de conferência</li>
                         <li>Prévia de cada case que segue o cursor, com o tom do case no fundo</li>
@@ -76,7 +95,7 @@
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Alterado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Alterado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Cases em linhas compactas, com o principal resultado sempre visível e miniatura no celular</li>
                         <li>Header flutuante e centralizado em todas as páginas</li>
@@ -87,14 +106,14 @@
         </article>
         <article id="v2026-3" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 border-b border-[#E6E4DF]">
             <header class="lg:col-span-4 flex flex-col gap-2">
-                <h2 class="font-semibold text-[32px] leading-none tracking-[-0.02em] text-[#111] m-0">v2026.3</h2>
-                <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">23 out a 3 nov 2026</p>
-                <a href="../versoes/2026-3/index.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2026.3</a>
+                <h2 class="t-subtitle text-[#111] m-0">v2026.3</h2>
+                <p class="font-normal text-[15px] text-[#6E6E6E] m-0">23 out a 3 nov 2026</p>
+                <a href="../versoes/2026-3/index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2026.3</a>
             </header>
             <div class="lg:col-span-8 flex flex-col gap-6 max-w-[760px]">
                 <p class="text-[17px] leading-[1.6] text-[#111] m-0">Os cases de empresa vieram para o topo, separados dos projetos próprios, e a home ficou quase 30% mais curta.</p>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Adicionado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Adicionado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Seção Cases, com Tivita, Inventa e Olist lado a lado e o principal resultado de cada um</li>
                         <li>Case dos lotes de convênio da Tivita, feature em produção</li>
@@ -103,7 +122,7 @@
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Alterado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Alterado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Projetos próprios e de clientes em grade de duas colunas, com capas no mesmo formato</li>
                         <li>Métricas da Inventa e da Olist saíram da trajetória e foram para os cases, sem repetição</li>
@@ -115,14 +134,14 @@
         </article>
         <article id="v2026-2" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 border-b border-[#E6E4DF]">
             <header class="lg:col-span-4 flex flex-col gap-2">
-                <h2 class="font-semibold text-[32px] leading-none tracking-[-0.02em] text-[#111] m-0">v2026.2</h2>
-                <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">13 a 23 out 2026</p>
-                <a href="../versoes/2026-2/index.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2026.2</a>
+                <h2 class="t-subtitle text-[#111] m-0">v2026.2</h2>
+                <p class="font-normal text-[15px] text-[#6E6E6E] m-0">13 a 23 out 2026</p>
+                <a href="../versoes/2026-2/index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2026.2</a>
             </header>
             <div class="lg:col-span-8 flex flex-col gap-6 max-w-[760px]">
                 <p class="text-[17px] leading-[1.6] text-[#111] m-0">Os cases da Inventa e da Olist ganharam páginas próprias com os números em destaque, o Sobre ficou mais amplo e o portfólio passou a guardar todas as versões anteriores.</p>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Adicionado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Adicionado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Arquivo de versões, com cada versão antiga navegável do jeito que era</li>
                         <li>Changelog com as mudanças de cada versão</li>
@@ -133,7 +152,7 @@
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Alterado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Alterado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Sobre mais abrangente: pesquisa, dados, IA e ensino, com design system como ferramenta e não como foco</li>
                         <li>Trabalho antes do Sobre, para quem recruta ver resultados primeiro</li>
@@ -146,14 +165,14 @@
         </article>
         <article id="v2026-1" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 border-b border-[#E6E4DF]">
             <header class="lg:col-span-4 flex flex-col gap-2">
-                <h2 class="font-semibold text-[32px] leading-none tracking-[-0.02em] text-[#111] m-0">v2026.1</h2>
-                <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">16 set a 5 out 2026</p>
-                <a href="../versoes/2026-1/index.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2026.1</a>
+                <h2 class="t-subtitle text-[#111] m-0">v2026.1</h2>
+                <p class="font-normal text-[15px] text-[#6E6E6E] m-0">16 set a 5 out 2026</p>
+                <a href="../versoes/2026-1/index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2026.1</a>
             </header>
             <div class="lg:col-span-8 flex flex-col gap-6 max-w-[760px]">
                 <p class="text-[17px] leading-[1.6] text-[#111] m-0">Reescrita do zero: editorial em preto e branco, trajetória completa e projetos independentes com páginas de case.</p>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Adicionado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Adicionado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Abertura com PRODUCT e DESIGNER sobrepostos à foto</li>
                         <li>Trajetória completa, de Goomer a Tivita, com os cases da Inventa e da Olist em PDF</li>
@@ -164,13 +183,13 @@
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Alterado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Alterado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Bootstrap trocado por Tailwind CSS, com o CSS gerado localmente</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Removido</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Removido</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Hotjar e Google Tag Manager</li>
                     </ul>
@@ -179,21 +198,21 @@
         </article>
         <article id="v2025" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 border-b border-[#E6E4DF]">
             <header class="lg:col-span-4 flex flex-col gap-2">
-                <h2 class="font-semibold text-[32px] leading-none tracking-[-0.02em] text-[#111] m-0">v2025</h2>
-                <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">12 a 31 mar 2025</p>
-                <a href="../versoes/2025/index.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2025</a>
+                <h2 class="t-subtitle text-[#111] m-0">v2025</h2>
+                <p class="font-normal text-[15px] text-[#6E6E6E] m-0">12 a 31 mar 2025</p>
+                <a href="../versoes/2025/index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2025</a>
             </header>
             <div class="lg:col-span-8 flex flex-col gap-6 max-w-[760px]">
                 <p class="text-[17px] leading-[1.6] text-[#111] m-0">Um cartão de visitas: cargo atual, empresas anteriores e contato, em inglês.</p>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Adicionado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Adicionado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Lista de empresas anteriores: Inventa, Olist, Stone, Meiuca e Goomer</li>
                         <li>Google Analytics 4</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Alterado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Alterado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Cargo de Designer & UI Developer para Senior Product Designer</li>
                         <li>Tipografia de Arvo e Lato para Lora e Albert Sans</li>
@@ -201,7 +220,7 @@
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Removido</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Removido</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Links para Dribbble, Behance, Instagram e Twitter</li>
                     </ul>
@@ -210,14 +229,14 @@
         </article>
         <article id="v2019" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 border-b border-[#E6E4DF]">
             <header class="lg:col-span-4 flex flex-col gap-2">
-                <h2 class="font-semibold text-[32px] leading-none tracking-[-0.02em] text-[#111] m-0">v2019</h2>
-                <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">10 jan a 30 set 2019</p>
-                <a href="../versoes/2019/index.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2019</a>
+                <h2 class="t-subtitle text-[#111] m-0">v2019</h2>
+                <p class="font-normal text-[15px] text-[#6E6E6E] m-0">10 jan a 30 set 2019</p>
+                <a href="../versoes/2019/index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2019</a>
             </header>
             <div class="lg:col-span-8 flex flex-col gap-6 max-w-[760px]">
                 <p class="text-[17px] leading-[1.6] text-[#111] m-0">A primeira versão como designer: fundo escuro, foto em preto e branco e links para as redes.</p>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Adicionado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Adicionado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Foto e versão para celular</li>
                         <li>Links para LinkedIn, Dribbble, Behance, Instagram, Twitter e e-mail</li>
@@ -225,13 +244,13 @@
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Alterado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Alterado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Cargo de Web Developer para Designer & UI Developer</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Removido</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Removido</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>jQuery e Modernizr</li>
                     </ul>
@@ -240,14 +259,14 @@
         </article>
         <article id="v2018" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 border-b border-[#E6E4DF]">
             <header class="lg:col-span-4 flex flex-col gap-2">
-                <h2 class="font-semibold text-[32px] leading-none tracking-[-0.02em] text-[#111] m-0">v2018</h2>
-                <p class="font-['Geist'] font-light text-[15px] text-[#6E6E6E] m-0">1 fev a 18 abr 2018</p>
-                <a href="../versoes/2018/index.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2018</a>
+                <h2 class="t-subtitle text-[#111] m-0">v2018</h2>
+                <p class="font-normal text-[15px] text-[#6E6E6E] m-0">1 fev a 18 abr 2018</p>
+                <a href="../versoes/2018/index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit pt-2">Abrir a versão 2018</a>
             </header>
             <div class="lg:col-span-8 flex flex-col gap-6 max-w-[760px]">
                 <p class="text-[17px] leading-[1.6] text-[#111] m-0">Onde tudo começou: um parágrafo de apresentação de quem ainda era desenvolvedor front-end.</p>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-['Geist'] font-medium uppercase tracking-[2px] text-[12px] text-[#6E6E6E] m-0">Adicionado</h3>
+                    <h3 class="t-label text-[#6E6E6E] m-0">Adicionado</h3>
                     <ul class="m-0 pl-5 list-disc flex flex-col gap-1.5 text-[16px] leading-[1.6] text-[#525252]">
                         <li>Primeira versão do site, com apresentação e links para LinkedIn e GitHub</li>
                     </ul>
@@ -257,15 +276,15 @@
             </div>
         </article>
     </section>
-    <a href="../versoes/index.html" class="ext-link font-['Geist'] font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">Ver todas as versões lado a lado</a>
+    <a href="../versoes/index.html" class="ext-link font-medium text-[14px] text-[#111] underline underline-offset-4 w-fit">Ver todas as versões lado a lado</a>
     <footer class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 w-full pt-8 border-t border-[#E6E4DF]">
         <div class="flex flex-col gap-1">
             <p class="font-medium text-[14px] uppercase tracking-[1.5px] text-[#111] m-0">Felipe Oliveira</p>
-            <p class="font-['Geist'] font-normal text-[12px] uppercase tracking-[1.54px] text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
+            <p class="t-label text-[#6E6E6E] m-0">Product designer sênior · São Paulo</p>
         </div>
         <div class="flex flex-col gap-1 sm:items-end">
-            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0">Versão <span class="text-[#111]">v2026.4</span> · atualizada em <time datetime="2026-11-03">3 nov 2026</time></p>
-            <p class="font-['Geist'] font-normal text-[13px] text-[#6E6E6E] m-0 flex gap-4">
+            <p class="font-normal text-[13px] text-[#6E6E6E] m-0">Versão <span class="text-[#111]">v2026.5</span> · atualizada em <time datetime="2026-11-03">3 nov 2026</time></p>
+            <p class="font-normal text-[13px] text-[#6E6E6E] m-0 flex gap-4">
                 <a href="../changelog/index.html" class="underline underline-offset-4 hover:text-[#111]">Changelog</a>
                 <a href="../versoes/index.html" class="underline underline-offset-4 hover:text-[#111]">Versões anteriores</a>
             </p>
